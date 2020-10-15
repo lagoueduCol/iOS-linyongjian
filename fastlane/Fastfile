@@ -29,4 +29,10 @@ desc "Run unit tests"
       output_types: "html", 
       buildlog_path: "./fastlane/dist")
   end
+
+  lane :swiftformat do
+    swiftlint(
+      mode: :autocorrect, 
+      raise_if_swiftlint_error: true)
+  end
 end
