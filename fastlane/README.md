@@ -21,9 +21,14 @@ or alternatively using `brew install fastlane`
 fastlane ios tests
 ```
 Run unit tests
-### ios swiftformat
+### ios codelint
 ```
-fastlane ios swiftformat
+fastlane ios codelint
+```
+
+### ios codeformat
+```
+fastlane ios codeformat
 ```
 
 

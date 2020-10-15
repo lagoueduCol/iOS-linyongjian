@@ -29,10 +29,18 @@ desc "Run unit tests"
       output_types: "html", 
       buildlog_path: "./fastlane/dist")
   end
-
-  lane :swiftformat do
+  
+  lane :codelint do
     swiftlint(
-      mode: :autocorrect, 
+      mode: :lint,
+      executable: "Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      raise_if_swiftlint_error: true)
+  end
+
+  lane :codeformat do
+    swiftlint(
+      mode: :autocorrect,
+      executable: "Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
       raise_if_swiftlint_error: true)
   end
 end
