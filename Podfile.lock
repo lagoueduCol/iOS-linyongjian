@@ -1,0 +1,34 @@
+PODS:
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
+  - SnapKit (5.0.1)
+  - SwiftLint (0.40.3)
+
+DEPENDENCIES:
+  - Kingfisher (= 5.15.6)
+  - Nimble (= 9.0.0)
+  - Quick (= 3.0.0)
+  - SnapKit (= 5.0.1)
+  - SwiftLint (= 0.40.3)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - Nimble
+    - Quick
+    - SnapKit
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+
+PODFILE CHECKSUM: 8b5acfbdfc11fcc00615c4ee073c4a66427f919d
+
+COCOAPODS: 1.9.3
