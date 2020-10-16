@@ -1,0 +1,5 @@
+#include "../Pods/Target Support Files/Pods-Moments/Pods-Moments.debug.xcconfig"
+#include "BaseTarget.xcconfig"
+
+PRODUCT_BUNDLE_NAME = $(inherited) α
+PRODUCT_BUNDLE_IDENTIFIER = $(inherited).development
