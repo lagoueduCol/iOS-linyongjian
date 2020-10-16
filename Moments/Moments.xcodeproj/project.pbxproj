@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		100EF5C5168B01E6D7E8CBD9 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */; };
+		AE73790D2539D62C0025AA69 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73790C2539D62C0025AA69 /* Functions.swift */; };
 		AE8A243825381E4F00DE782E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A243725381E4F00DE782E /* AppDelegate.swift */; };
 		AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A243925381E4F00DE782E /* SceneDelegate.swift */; };
 		AE8A243C25381E4F00DE782E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A243B25381E4F00DE782E /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		440EF30DA4BD52745F7D9A2C /* Pods-MomentsTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.appstore.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9243B0C9A02DCFD124AB21A0 /* Pods-Moments.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.appstore.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.appstore.xcconfig"; sourceTree = "<group>"; };
+		AE73790C2539D62C0025AA69 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AE8A243425381E4F00DE782E /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8A243725381E4F00DE782E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8A243925381E4F00DE782E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,22 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		AE73790A2539D62C0025AA69 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				AE73790B2539D62C0025AA69 /* Utilities */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		AE73790B2539D62C0025AA69 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AE73790C2539D62C0025AA69 /* Functions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		AE8A242B25381E4F00DE782E = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBC893A253958D0001D534E /* Configurations */,
+				AE73790A2539D62C0025AA69 /* Foundations */,
 				AE8A243725381E4F00DE782E /* AppDelegate.swift */,
 				AE8A244025381E5100DE782E /* Assets.xcassets */,
 				AE8A244525381E5100DE782E /* Info.plist */,
@@ -456,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8A243825381E4F00DE782E /* AppDelegate.swift in Sources */,
+				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE8A243C25381E4F00DE782E /* ViewController.swift in Sources */,
 			);
