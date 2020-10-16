@@ -112,14 +112,14 @@
 		2EE3B01EC6415C95EAAFABF5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3377C8D20EE7BE1F43B9DAA0 /* Pods-Moments.debug.xcconfig */,
-				D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */,
-				C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */,
-				244222E3830F8E30DDD8C5F7 /* Pods-MomentsTests.release.xcconfig */,
-				FA74E78DBEF802EB48651748 /* Pods-Moments.internal.xcconfig */,
 				9243B0C9A02DCFD124AB21A0 /* Pods-Moments.appstore.xcconfig */,
-				EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */,
+				3377C8D20EE7BE1F43B9DAA0 /* Pods-Moments.debug.xcconfig */,
+				FA74E78DBEF802EB48651748 /* Pods-Moments.internal.xcconfig */,
+				D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */,
 				440EF30DA4BD52745F7D9A2C /* Pods-MomentsTests.appstore.xcconfig */,
+				C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */,
+				EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */,
+				244222E3830F8E30DDD8C5F7 /* Pods-MomentsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -152,12 +152,12 @@
 			children = (
 				AEBC893A253958D0001D534E /* Configurations */,
 				AE8A243725381E4F00DE782E /* AppDelegate.swift */,
+				AE8A244025381E5100DE782E /* Assets.xcassets */,
+				AE8A244525381E5100DE782E /* Info.plist */,
+				AE8A244225381E5100DE782E /* LaunchScreen.storyboard */,
+				AE8A243D25381E4F00DE782E /* Main.storyboard */,
 				AE8A243925381E4F00DE782E /* SceneDelegate.swift */,
 				AE8A243B25381E4F00DE782E /* ViewController.swift */,
-				AE8A243D25381E4F00DE782E /* Main.storyboard */,
-				AE8A244025381E5100DE782E /* Assets.xcassets */,
-				AE8A244225381E5100DE782E /* LaunchScreen.storyboard */,
-				AE8A244525381E5100DE782E /* Info.plist */,
 			);
 			path = Moments;
 			sourceTree = "<group>";
@@ -165,8 +165,8 @@
 		AE8A244D25381E5100DE782E /* MomentsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE8A244E25381E5100DE782E /* MomentsTests.swift */,
 				AE8A245025381E5100DE782E /* Info.plist */,
+				AE8A244E25381E5100DE782E /* MomentsTests.swift */,
 			);
 			path = MomentsTests;
 			sourceTree = "<group>";
@@ -174,8 +174,8 @@
 		AE8A245825381E5100DE782E /* MomentsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AE8A245925381E5100DE782E /* MomentsUITests.swift */,
 				AE8A245B25381E5100DE782E /* Info.plist */,
+				AE8A245925381E5100DE782E /* MomentsUITests.swift */,
 			);
 			path = MomentsUITests;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 		AEBC893A253958D0001D534E /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				AEBC894B25395A21001D534E /* Shared */,
 				AEBC894A25395A02001D534E /* Project */,
+				AEBC894B25395A21001D534E /* Shared */,
 				AEBC894C25395AA3001D534E /* Targets */,
 			);
 			path = Configurations;
@@ -214,9 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				AEBC893D253958D0001D534E /* AppStoreTarget.xcconfig */,
+				AEBC8948253958D0001D534E /* BaseTarget.xcconfig */,
 				AEBC8941253958D0001D534E /* DebugTarget.xcconfig */,
 				AEBC8942253958D0001D534E /* InternalTarget.xcconfig */,
-				AEBC8948253958D0001D534E /* BaseTarget.xcconfig */,
 			);
 			name = Targets;
 			sourceTree = "<group>";
@@ -329,8 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE8A244425381E5100DE782E /* LaunchScreen.storyboard in Resources */,
 				AE8A244125381E5100DE782E /* Assets.xcassets in Resources */,
+				AE8A244425381E5100DE782E /* LaunchScreen.storyboard in Resources */,
 				AE8A243F25381E4F00DE782E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,9 +455,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE8A243C25381E4F00DE782E /* ViewController.swift in Sources */,
 				AE8A243825381E4F00DE782E /* AppDelegate.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
+				AE8A243C25381E4F00DE782E /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
