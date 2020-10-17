@@ -7,17 +7,23 @@ platform :ios, '14.0'
 use_frameworks!
 
 def core_pods
-    pod 'SwiftLint', '0.40.3'
+    pod 'SwiftLint', '0.40.3', configurations: ['Debug']
+    pod 'RxSwift', '5.1.1'
+    pod 'RxRelay', '5.1.1'
 end
 
 def ui_pods
     pod 'SnapKit', '5.0.1'
     pod 'Kingfisher', '5.15.6'
+    pod 'RxCocoa', '5.1.1'
+    pod 'RxDataSources', '4.0.1'
 end
 
 def test_pods
     pod 'Quick', '3.0.0'
     pod 'Nimble', '9.0.0'
+    pod 'RxTest', '5.1.1'
+    pod 'RxBlocking', '5.1.1'
 end
 
 target 'Moments' do
