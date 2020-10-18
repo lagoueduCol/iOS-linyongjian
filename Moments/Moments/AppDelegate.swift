@@ -40,7 +40,7 @@ extension UIWindow {
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         let appRouter: AppRouting = AppRouter.instance
         if motion == .motionShake {
-            appRouter.routeToInternalMenu(.present, from: rootViewController)
+            appRouter.presentInternalMenu(from: rootViewController)
         }
     }
 }

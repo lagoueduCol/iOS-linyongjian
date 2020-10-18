@@ -7,12 +7,8 @@
 
 import UIKit
 
-enum NavigationAction {
-    case present, push
-}
-
 protocol AppRouting {
-    func routeToInternalMenu(_ action: NavigationAction, from: UIViewController?)
+    func presentInternalMenu(from viewController: UIViewController?)
 }
 
 struct AppRouter: AppRouting {
@@ -22,12 +18,12 @@ struct AppRouter: AppRouting {
 
     private init() { }
 
-    func routeToInternalMenu(_ action: NavigationAction, from: UIViewController?) {
-        guard let rootViewController = rootViewController else { return }
+    func presentInternalMenu(from viewController: UIViewController?) {
+        guard let fromViewController = viewController else { return }
 
         let viewModel = InternalMenuViewModel(appRouter: self)
         let viewController = InternalMenuViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
-        rootViewController.present(navigationController, animated: true)
+        fromViewController.present(navigationController, animated: true)
     }
 }
