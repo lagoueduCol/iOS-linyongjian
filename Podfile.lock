@@ -1,4 +1,5 @@
 PODS:
+  - DesignKit (1.0.0)
   - Differentiator (4.0.1)
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
@@ -23,6 +24,7 @@ PODS:
   - SwiftLint (0.40.3)
 
 DEPENDENCIES:
+  - DesignKit (from `./Frameworks/DesignKit`)
   - Kingfisher (= 5.15.6)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
@@ -50,7 +52,12 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
 
+EXTERNAL SOURCES:
+  DesignKit:
+    :path: "./Frameworks/DesignKit"
+
 SPEC CHECKSUMS:
+  DesignKit: 2538711c55dd9588c021a1346b8f1a1b96328a8a
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
@@ -64,6 +71,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: 591c4664fb915f8c2431a24e247479bfd2197f64
+PODFILE CHECKSUM: 45fd0be92c68e2544ee262d0c7aeb31d41519f84
 
 COCOAPODS: 1.9.3
