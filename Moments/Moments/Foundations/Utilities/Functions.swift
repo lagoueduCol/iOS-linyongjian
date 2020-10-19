@@ -1,5 +1,5 @@
 //
-//  InternalMenuViewModelType.swift
+//  Functions.swift
 //  Moments
 //
 //  Created by Jake Lin on 17/10/20.

@@ -7,7 +7,7 @@
 
 import RxDataSources
 
-struct InternalMenuSection : SectionModelType {
+struct InternalMenuSection: SectionModelType {
     let title: String
     let items: [InternalMenuItemViewModel]
     let footer: String?
