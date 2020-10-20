@@ -31,6 +31,7 @@
 		AED4C789253D805E0001AAFC /* InternalMenuActionTriggerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */; };
 		AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */; };
 		AED4C79E253E77120001AAFC /* InternalMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */; };
+		AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuActionTriggerCell.swift; sourceTree = "<group>"; };
 		AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoItemViewModel.swift; sourceTree = "<group>"; };
 		AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuRouter.swift; sourceTree = "<group>"; };
+		AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoViewController.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		AE7379312539D9880025AA69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */,
 				AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */,
 				AE73794F2539DE020025AA69 /* InternalMenuCell.swift */,
 				AE737986253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift */,
@@ -585,6 +588,7 @@
 				AE7379622539E3530025AA69 /* AppRouter.swift in Sources */,
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
 				AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */,
+				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
 				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
 				AED4C789253D805E0001AAFC /* InternalMenuActionTriggerCell.swift in Sources */,
 				AED4C784253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift in Sources */,

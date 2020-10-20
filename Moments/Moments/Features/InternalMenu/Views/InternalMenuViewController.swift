@@ -9,7 +9,7 @@ import UIKit
 import RxDataSources
 import SnapKit
 
-class InternalMenuViewController: BaseViewController {
+final class InternalMenuViewController: BaseViewController {
     var viewModel: InternalMenuViewModelType!
 
     lazy var tableView: UITableView = configure(UITableView(frame: CGRect.zero, style: .grouped)) {
