@@ -61,3 +61,24 @@ public extension UIFont {
         }
     }
 }
+
+public extension UILabel {
+    func setDynamicFont(_ dynamicFont: UIFont) {
+        adjustsFontForContentSizeCategory = true
+        font = dynamicFont
+    }
+}
+
+public extension UITextView {
+    func setDynamicFont(_ dynamicFont: UIFont) {
+        adjustsFontForContentSizeCategory = true
+        font = dynamicFont
+    }
+}
+
+public extension UIButton {
+    func setDynamicFont(_ dynamicFont: UIFont) {
+        titleLabel?.adjustsFontForContentSizeCategory = true
+        titleLabel?.font = dynamicFont
+    }
+}
