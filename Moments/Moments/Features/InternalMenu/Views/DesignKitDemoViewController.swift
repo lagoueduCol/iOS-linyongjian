@@ -23,15 +23,16 @@ private extension DesignKitDemoViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
-        self.view.addSubview(scrollView)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)])
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
 
         let rootStackView = configure(UIStackView(arrangedSubviews: [
-            buildTypography()
+            buildTypography(),
+            buildColors()
         ])) {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.axis = .vertical
@@ -64,9 +65,10 @@ private extension DesignKitDemoViewController {
                  ("caption", UIFont.designKit.caption),
                  ("small", UIFont.designKit.small)]
 
-        let title = UILabel()
-        title.text = "# Typography"
-        title.font = UIFont.designKit.title1
+        let title = configure(UILabel()) {
+            $0.text = "# Typography"
+            $0.font = UIFont.designKit.title1
+        }
 
         let stack = configure(UIStackView(arrangedSubviews: [title])) {
             $0.axis = .vertical
@@ -77,6 +79,40 @@ private extension DesignKitDemoViewController {
             let label = configure(UILabel()) {
                 $0.text = item.0
                 $0.setDynamicFont(item.1)
+            }
+
+            stack.addArrangedSubview(label)
+        }
+
+        return stack
+    }
+
+    func buildColors() -> UIView {
+        let items = [("primary", UIColor.designKit.primary),
+                 ("background", UIColor.designKit.background),
+                 ("secondaryBackground", UIColor.designKit.secondaryBackground),
+                 ("tertiaryBackground", UIColor.designKit.tertiaryBackground),
+                 ("line", UIColor.designKit.line),
+                 ("primaryText", UIColor.designKit.primaryText),
+                 ("secondaryText", UIColor.designKit.secondaryText),
+                 ("tertiaryText", UIColor.designKit.tertiaryText),
+                 ("quaternaryText", UIColor.designKit.quaternaryText)]
+
+        let title = configure(UILabel()) {
+            $0.text = "# Colors"
+            $0.font = UIFont.designKit.title1
+        }
+
+        let stack = configure(UIStackView(arrangedSubviews: [title])) {
+            $0.axis = .vertical
+            $0.spacing = 8
+        }
+        items.forEach {
+            let item = $0
+            let label = configure(UILabel()) {
+                $0.text = item.0
+                $0.textColor = UIColor.designKit.primaryText
+                $0.backgroundColor = item.1
             }
 
             stack.addArrangedSubview(label)
