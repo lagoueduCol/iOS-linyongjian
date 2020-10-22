@@ -9,8 +9,12 @@ use_frameworks!
 # ignore all warnings from all dependencies
 inhibit_all_warnings!
 
-def core_pods
+def dev_pods
   pod 'SwiftLint', '0.40.3', configurations: ['Debug']
+  pod 'SwiftGen', '6.4.0', configurations: ['Debug']
+end
+
+def core_pods
   pod 'RxSwift', '5.1.1'
   pod 'RxRelay', '5.1.1'
 end
@@ -34,6 +38,7 @@ def test_pods
 end
 
 target 'Moments' do
+  dev_pods
   core_pods
   ui_pods
   internal_pods
