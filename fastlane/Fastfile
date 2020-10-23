@@ -33,14 +33,16 @@ desc "Run unit tests"
   lane :code_lint do
     swiftlint(
       mode: :lint,
-      executable: "Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      config_file: './Moments/.swiftlint.yml',
       raise_if_swiftlint_error: true)
   end
 
   lane :code_format do
     swiftlint(
       mode: :autocorrect,
-      executable: "Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      config_file: './Moments/.swiftlint.yml',
       raise_if_swiftlint_error: true)
   end
 
