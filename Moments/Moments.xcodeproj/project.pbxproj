@@ -253,8 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				AE781DA425419F22001CFD77 /* LaunchScreen.storyboard */,
-				AE781DA225419F22001CFD77 /* Main.storyboard */,
 				AE781DBD2541A0C5001CFD77 /* Localizable.strings */,
+				AE781DA225419F22001CFD77 /* Main.storyboard */,
 			);
 			name = Resources;
 			path = Moments/Resources;
@@ -484,10 +484,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE781DA625419F22001CFD77 /* Main.storyboard in Resources */,
-				AE781DBF2541A0C5001CFD77 /* Localizable.strings in Resources */,
-				AE781DA725419F22001CFD77 /* LaunchScreen.storyboard in Resources */,
 				AE8A244125381E5100DE782E /* Assets.xcassets in Resources */,
+				AE781DA725419F22001CFD77 /* LaunchScreen.storyboard in Resources */,
+				AE781DBF2541A0C5001CFD77 /* Localizable.strings in Resources */,
+				AE781DA625419F22001CFD77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,8 +703,8 @@
 		AE781DBD2541A0C5001CFD77 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE781DC42541A0CB001CFD77 /* zh-Hans */,
 				AE781E312543DA16001CFD77 /* en */,
+				AE781DC42541A0CB001CFD77 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
