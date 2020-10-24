@@ -16,7 +16,8 @@ class InternalMenuCell<T: InternalMenuItemViewModel> : UITableViewCell, Internal
         (item as? T).map { update($0) }
     }
 
+    // swiftlint:disable unavailable_function
     func update(_ item: T) {
-        fatalError("Subclass has to implement this function")
+        fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
 }

@@ -8,7 +8,6 @@
 import UIKit
 
 public extension UIFont {
-
     static let designKit = DesignKitTypography()
 
     struct DesignKitTypography {

@@ -46,12 +46,12 @@ final class InternalMenuViewController: BaseViewController {
                 if let cell = cell as? InternalMenuItemViewing {
                     cell.update(with: item)
                 }
-            return cell
-        }, titleForHeaderInSection: { dataSource, section in
-            return dataSource.sectionModels[section].title
-        }, titleForFooterInSection: { dataSource, section in
-            return dataSource.sectionModels[section].footer
-        })
+                return cell
+            }, titleForHeaderInSection: { dataSource, section in
+                return dataSource.sectionModels[section].title
+            }, titleForFooterInSection: { dataSource, section in
+                return dataSource.sectionModels[section].footer
+            })
 
         viewModel.sections
             .bind(to: tableView.rx.items(dataSource: dataSource))

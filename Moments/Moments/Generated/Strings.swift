@@ -10,12 +10,36 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Avatars
-  internal static let internalMenuAvatars = L10n.tr("Localizable", "internalMenuAvatars")
-  /// Colors
-  internal static let internalMenuColors = L10n.tr("Localizable", "internalMenuColors")
-  /// Typography
-  internal static let internalMenuTypography = L10n.tr("Localizable", "internalMenuTypography")
+
+  internal enum Development {
+    /// Default Configuration
+    internal static let defaultConfiguration = L10n.tr("Localizable", "development.defaultConfiguration")
+    /// This property has been accessed before the superview has been loaded. Only use this property in `viewDidLoad` or later, as accessing it inside `init` may add a second instance of this view to the hierarchy.
+    internal static let fatalErrorAccessedAutomaticallyAdjustedContentViewEarly = L10n.tr("Localizable", "development.fatalErrorAccessedAutomaticallyAdjustedContentViewEarly")
+    /// init(coder:) has not been implemented
+    internal static let fatalErrorInitCoderNotImplemented = L10n.tr("Localizable", "development.fatalErrorInitCoderNotImplemented")
+    /// Subclass has to implement this function
+    internal static let fatalErrorSubclassToImplement = L10n.tr("Localizable", "development.fatalErrorSubclassToImplement")
+  }
+
+  internal enum InternalMenu {
+    /// Area 51
+    internal static let area51 = L10n.tr("Localizable", "internalMenu.area51")
+    /// Avatars
+    internal static let avatars = L10n.tr("Localizable", "internalMenu.avatars")
+    /// CFBundleVersion
+    internal static let cfBundleVersion = L10n.tr("Localizable", "internalMenu.CFBundleVersion")
+    /// Colors
+    internal static let colors = L10n.tr("Localizable", "internalMenu.colors")
+    /// DesignKit Demo
+    internal static let designKitDemo = L10n.tr("Localizable", "internalMenu.designKitDemo")
+    /// General Info
+    internal static let generalInfo = L10n.tr("Localizable", "internalMenu.generalInfo")
+    /// Typography
+    internal static let typography = L10n.tr("Localizable", "internalMenu.typography")
+    /// Version
+    internal static let version = L10n.tr("Localizable", "internalMenu.version")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

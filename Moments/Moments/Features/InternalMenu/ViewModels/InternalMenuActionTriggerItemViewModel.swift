@@ -22,4 +22,3 @@ class InternalMenuActionTriggerItemViewModel: InternalMenuItemViewModel {
 
     func select() {}
 }
-

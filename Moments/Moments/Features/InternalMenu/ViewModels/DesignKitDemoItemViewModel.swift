@@ -8,7 +8,6 @@
 import Foundation
 
 final class DesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
-
     private let router: InternalMenuRouting
 
     init(router: InternalMenuRouting) {
@@ -16,7 +15,7 @@ final class DesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
     }
 
     override var title: String {
-        return "DesignKit Demo"
+        return L10n.InternalMenu.designKitDemo
     }
 
     override func select() {

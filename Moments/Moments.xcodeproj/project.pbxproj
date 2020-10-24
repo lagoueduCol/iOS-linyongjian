@@ -74,9 +74,8 @@
 		AE737A62253C32040025AA69 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		AE781DA325419F22001CFD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE781DA525419F22001CFD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AE781DBE2541A0C5001CFD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AE781DC32541A0CA001CFD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE781DC42541A0CB001CFD77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AE781E312543DA16001CFD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE81B4C725416EA200472755 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		AE8A243425381E4F00DE782E /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8A243725381E4F00DE782E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -383,8 +382,8 @@
 			buildConfigurationList = AE8A245E25381E5100DE782E /* Build configuration list for PBXNativeTarget "Moments" */;
 			buildPhases = (
 				BFE63426A1AECFD387A2907C /* [CP] Check Pods Manifest.lock */,
-				AE8A243025381E4F00DE782E /* Sources */,
 				AE81B4B125416B8500472755 /* Run SwiftGen */,
+				AE8A243025381E4F00DE782E /* Sources */,
 				AEBC891725387D09001D534E /* Run SwiftLint */,
 				AE8A243125381E4F00DE782E /* Frameworks */,
 				AE8A243225381E4F00DE782E /* Resources */,
@@ -704,9 +703,8 @@
 		AE781DBD2541A0C5001CFD77 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE781DBE2541A0C5001CFD77 /* Base */,
-				AE781DC32541A0CA001CFD77 /* en */,
 				AE781DC42541A0CB001CFD77 /* zh-Hans */,
+				AE781E312543DA16001CFD77 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

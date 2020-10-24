@@ -7,6 +7,18 @@
 */
 
 // Internal Menu
-"internalMenuTypography" = "字体";
-"internalMenuColors" = "颜色";
-"internalMenuAvatars" = "人像";
+"internalMenu.area51" = "51 区";
+"internalMenu.generalInfo" = "通用信息";
+"internalMenu.version" = "版本号";
+"internalMenu.CFBundleVersion" = "CFBundleVersion";
+"internalMenu.designKitDemo" = "DesignKit 范例";
+
+"internalMenu.typography" = "字体";
+"internalMenu.colors" = "颜色";
+"internalMenu.avatars" = "人像";
+
+// Development messages
+"development.defaultConfiguration" = "Default Configuration";
+"development.fatalErrorInitCoderNotImplemented" = "init(coder:) has not been implemented";
+"development.fatalErrorAccessedAutomaticallyAdjustedContentViewEarly" = "This property has been accessed before the superview has been loaded. Only use this property in `viewDidLoad` or later, as accessing it inside `init` may add a second instance of this view to the hierarchy.";
+"development.fatalErrorSubclassToImplement" = "Subclass has to implement this function";

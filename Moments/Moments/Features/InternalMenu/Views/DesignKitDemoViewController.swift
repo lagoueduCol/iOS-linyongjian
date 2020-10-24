@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import DesignKit
 
 final class DesignKitDemoViewController: UIViewController {
     override func viewDidLoad() {
@@ -56,21 +57,22 @@ private extension DesignKitDemoViewController {
     }
 
     func buildTypography() -> UIView {
+        // swiftlint:disable no_hardcoded_strings
         let items = [("display1", UIFont.designKit.display1),
-                 ("display2", UIFont.designKit.display2),
-                 ("title1", UIFont.designKit.title1),
-                 ("title2", UIFont.designKit.title2),
-                 ("title3", UIFont.designKit.title3),
-                 ("title4", UIFont.designKit.title4),
-                 ("title5", UIFont.designKit.title5),
-                 ("bodyBold", UIFont.designKit.bodyBold),
-                 ("body", UIFont.designKit.body),
-                 ("captionBold", UIFont.designKit.captionBold),
-                 ("caption", UIFont.designKit.caption),
-                 ("small", UIFont.designKit.small)]
+                     ("display2", UIFont.designKit.display2),
+                     ("title1", UIFont.designKit.title1),
+                     ("title2", UIFont.designKit.title2),
+                     ("title3", UIFont.designKit.title3),
+                     ("title4", UIFont.designKit.title4),
+                     ("title5", UIFont.designKit.title5),
+                     ("bodyBold", UIFont.designKit.bodyBold),
+                     ("body", UIFont.designKit.body),
+                     ("captionBold", UIFont.designKit.captionBold),
+                     ("caption", UIFont.designKit.caption),
+                     ("small", UIFont.designKit.small)]
 
         let title = configure(UILabel()) {
-            $0.text = L10n.internalMenuTypography
+            $0.text = L10n.InternalMenu.typography
             $0.font = UIFont.designKit.title1
         }
 
@@ -93,17 +95,17 @@ private extension DesignKitDemoViewController {
 
     func buildColors() -> UIView {
         let items = [("primary", UIColor.designKit.primary),
-                 ("background", UIColor.designKit.background),
-                 ("secondaryBackground", UIColor.designKit.secondaryBackground),
-                 ("tertiaryBackground", UIColor.designKit.tertiaryBackground),
-                 ("line", UIColor.designKit.line),
-                 ("primaryText", UIColor.designKit.primaryText),
-                 ("secondaryText", UIColor.designKit.secondaryText),
-                 ("tertiaryText", UIColor.designKit.tertiaryText),
-                 ("quaternaryText", UIColor.designKit.quaternaryText)]
+                     ("background", UIColor.designKit.background),
+                     ("secondaryBackground", UIColor.designKit.secondaryBackground),
+                     ("tertiaryBackground", UIColor.designKit.tertiaryBackground),
+                     ("line", UIColor.designKit.line),
+                     ("primaryText", UIColor.designKit.primaryText),
+                     ("secondaryText", UIColor.designKit.secondaryText),
+                     ("tertiaryText", UIColor.designKit.tertiaryText),
+                     ("quaternaryText", UIColor.designKit.quaternaryText)]
 
         let title = configure(UILabel()) {
-            $0.text = L10n.internalMenuColors
+            $0.text = L10n.InternalMenu.colors
             $0.font = UIFont.designKit.title1
         }
 
@@ -150,7 +152,7 @@ private extension DesignKitDemoViewController {
                  ]
 
         let title = configure(UILabel()) {
-            $0.text = L10n.internalMenuAvatars
+            $0.text = L10n.InternalMenu.avatars
             $0.font = UIFont.designKit.title1
         }
 

@@ -32,7 +32,6 @@ whitelist_rules:
   - explicit_self
   - extension_access_modifier
   - fatal_error_message
-  - file_name
   - first_where
   - flatmap_over_map_reduce
   - for_where
@@ -100,7 +99,6 @@ whitelist_rules:
   - switch_case_alignment
   - syntactic_sugar
   - todo
-  - trailing_closure
   - trailing_comma
   - trailing_newline
   - trailing_semicolon
@@ -131,7 +129,6 @@ excluded:
 
 custom_rules:
   no_hardcoded_strings:
-    # included: "/Moments/.+/(Controller|View|ViewModel)/.+swift"
     regex: "([A-Za-z]+)"
     match_kinds: string
     message: "Please do not hardcode strings and add them to the appropriate `Localizable.strings` file; a build script compiles all strings into strongly typed resources available through `Generated/Strings.swift`, e.g. `L10n.accessCamera"
