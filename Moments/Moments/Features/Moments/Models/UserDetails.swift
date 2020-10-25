@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct UserDetails: Codable {
+    let id: String
+    let name: String
+    let avatar: String
+    let backgroundImage: String
+}

@@ -65,6 +65,7 @@ private extension APISession {
                         do {
                             let model = try JSONDecoder().decode(T.self, from: data)
                             observer.onNext(model)
+                            observer.onCompleted()
                         } catch {
                             observer.onError(error)
                         }

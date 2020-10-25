@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct MomentsDetails {
+    let userDetails: UserDetails
+    let moments: [Moment]
+}
