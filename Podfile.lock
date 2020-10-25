@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.3.0)
   - DesignKit (1.0.0)
   - Differentiator (4.0.1)
   - Kingfisher (5.15.6):
@@ -25,6 +26,7 @@ PODS:
   - SwiftLint (0.40.3)
 
 DEPENDENCIES:
+  - Alamofire (= 5.3.0)
   - DesignKit (from `./Frameworks/DesignKit`)
   - Kingfisher (= 5.15.6)
   - Nimble (= 9.0.0)
@@ -41,6 +43,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Differentiator
     - Kingfisher
     - Nimble
@@ -60,6 +63,7 @@ EXTERNAL SOURCES:
     :path: "./Frameworks/DesignKit"
 
 SPEC CHECKSUMS:
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   DesignKit: 2538711c55dd9588c021a1346b8f1a1b96328a8a
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: fbaed1bc16abdfee3f8d7c443f37b1006894532b
+PODFILE CHECKSUM: c5d65acfe31d5db242c6dfb50b864875f12a44d3
 
 COCOAPODS: 1.9.3
