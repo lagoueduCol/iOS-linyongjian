@@ -10,6 +10,7 @@
 		100EF5C5168B01E6D7E8CBD9 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */; };
 		AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B7FD25455EDB003DFED0 /* Configuration.swift */; };
 		AE47B80425455FCF003DFED0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B80325455FCF003DFED0 /* API.swift */; };
+		AE47B8552545AD61003DFED0 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8542545AD61003DFED0 /* APISession.swift */; };
 		AE73790D2539D62C0025AA69 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73790C2539D62C0025AA69 /* Functions.swift */; };
 		AE7379332539D9880025AA69 /* InternalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7379322539D9880025AA69 /* InternalMenuViewController.swift */; };
 		AE7379382539DA7F0025AA69 /* InternalMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7379372539DA7F0025AA69 /* InternalMenuViewModel.swift */; };
@@ -66,6 +67,7 @@
 		AE47B7F925455DD2003DFED0 /* BaseConfigurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfigurations.xcconfig; sourceTree = "<group>"; };
 		AE47B7FD25455EDB003DFED0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		AE47B80325455FCF003DFED0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AE47B8542545AD61003DFED0 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		AE73790C2539D62C0025AA69 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AE7379322539D9880025AA69 /* InternalMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalMenuViewController.swift; sourceTree = "<group>"; };
 		AE7379372539DA7F0025AA69 /* InternalMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuViewModel.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				AE47B80325455FCF003DFED0 /* API.swift */,
+				AE47B8542545AD61003DFED0 /* APISession.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				AED4C784253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift in Sources */,
 				AE7379502539DE020025AA69 /* InternalMenuCell.swift in Sources */,
 				AE737987253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift in Sources */,
+				AE47B8552545AD61003DFED0 /* APISession.swift in Sources */,
 				AE737979253ABC490025AA69 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				AE7379452539DB6C0025AA69 /* InternalMenuItemViewModel.swift in Sources */,
 				AED4C79E253E77120001AAFC /* InternalMenuRouter.swift in Sources */,
