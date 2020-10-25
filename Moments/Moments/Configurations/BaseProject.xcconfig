@@ -1,2 +1,3 @@
 #include "CompilerAndLanguage.xcconfig"
 #include "SDKAndDeviceSupport.xcconfig"
+#include "BaseConfigurations.xcconfig"

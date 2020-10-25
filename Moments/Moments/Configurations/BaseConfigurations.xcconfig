@@ -1,0 +1,13 @@
+//
+//  BaseConfigurations.xcconfig
+//  Moments
+//
+//  Created by Jake Lin on 25/10/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//
+// Store App base configurations like API URLs
+
+API_BASE_URL = https:\/\/momentsapi.herokuapp.com
