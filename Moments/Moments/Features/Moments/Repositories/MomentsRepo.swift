@@ -12,7 +12,7 @@ protocol MomentsRepoType {
     func getMoments(userID: String) -> Observable<MomentsDetails>
 }
 
-class MomentsRepo: MomentsRepoType {
+struct MomentsRepo: MomentsRepoType {
     private let getMomentsByUserIDAPISessionBuilder: () -> GetMomentsByUserIDAPISessionType
 
     static var shared: MomentsRepo = {
