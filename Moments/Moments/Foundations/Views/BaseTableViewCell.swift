@@ -8,10 +8,18 @@
 import Foundation
 import UIKit
 
-class BaseTableViewCell<T: ListItemViewModel>: UITableViewCell, ListItemComponent {
+final class BaseTableViewCell<V: BaseListItemView<VM>, VM: ListItemViewModel>: UITableViewCell, ListItemComponent {
+    private let view: V
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        view = .init()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
+
+        contentView.addSubview(view)
+        view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     // swiftlint:disable unavailable_function
@@ -20,11 +28,10 @@ class BaseTableViewCell<T: ListItemViewModel>: UITableViewCell, ListItemComponen
     }
 
     final func update(with viewModel: ListItemViewModel) {
-        (viewModel as? T).map { update($0) }
+        (viewModel as? VM).map { update($0) }
     }
 
-    // swiftlint:disable unavailable_function
-    func update(_ viewModel: T) {
-        fatalError(L10n.Development.fatalErrorSubclassToImplement)
+    func update(_ viewModel: VM) {
+        view.update(viewModel)
     }
 }

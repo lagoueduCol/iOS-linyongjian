@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 import DesignKit
 
-final class UserProfileListItemView<T: ListItemViewModel>: UIView {
+final class UserProfileListItemView<VM: ListItemViewModel>: BaseListItemView<VM> {
+//    typealias ViewModel = ListItemViewModel
+
     private let backgroundImageView: UIImageView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFill
@@ -61,7 +63,7 @@ final class UserProfileListItemView<T: ListItemViewModel>: UIView {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
 
-    func update(_ viewModel: T) {
+    func update(_ viewModel: ListItemViewModel) {
         guard let viewModel = viewModel as? UserProfileListItemViewModel else {
             return
         }
