@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-final class BaseTableViewCell<V: BaseListItemView<VM>, VM: ListItemViewModel>: UITableViewCell, ListItemComponent {
+final class BaseTableViewCell<V: BaseListItemView<VM>, VM: ListItemViewModel>: UITableViewCell, ListItemCell {
+    typealias ViewModel = VM
+
     private let view: V
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,11 +29,7 @@ final class BaseTableViewCell<V: BaseListItemView<VM>, VM: ListItemViewModel>: U
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
 
-    final func update(with viewModel: ListItemViewModel) {
-        (viewModel as? VM).map { update($0) }
-    }
-
-    func update(_ viewModel: VM) {
+    func update(with viewModel: ViewModel) {
         view.update(viewModel)
     }
 }
