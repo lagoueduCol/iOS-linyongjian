@@ -36,7 +36,9 @@ struct MomentsListViewModel: ListViewModel {
 
 private extension MomentsListViewModel {
     func onQueryExecuteSuccess(momentsDetails: MomentsDetails) {
-        let items: [ListItemViewModel] = []
+        let items: [ListItemViewModel] = [
+            UserProfileListItemViewModel(userDetails: momentsDetails.userDetails)
+        ]
         listItems.onNext([SectionModel(model: "", items: items)])
     }
 
