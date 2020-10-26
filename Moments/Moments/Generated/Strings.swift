@@ -20,6 +20,8 @@ internal enum L10n {
     internal static let fatalErrorInitCoderNotImplemented = L10n.tr("Localizable", "development.fatalErrorInitCoderNotImplemented")
     /// Subclass has to implement this function
     internal static let fatalErrorSubclassToImplement = L10n.tr("Localizable", "development.fatalErrorSubclassToImplement")
+    /// /graphql
+    internal static let graphqlPath = L10n.tr("Localizable", "development.graphqlPath")
   }
 
   internal enum InternalMenu {

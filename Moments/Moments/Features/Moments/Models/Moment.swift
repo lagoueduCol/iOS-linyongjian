@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Moment {
+struct Moment: Codable {
     let id: String
     let userDetails: UserDetails
     let type: MomentType

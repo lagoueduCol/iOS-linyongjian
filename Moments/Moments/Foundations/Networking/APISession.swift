@@ -16,12 +16,11 @@ public enum APISessionError: Error {
 }
 
 protocol APISession {
-    // swiftlint:disable type_name
-    associatedtype T: Codable
+    associatedtype ModelType: Codable
 
     var defaultHeaders: HTTPHeaders { get }
 
-    func post(_ path: String, parameters: Parameters?, headers: HTTPHeaders) -> Observable<T>
+    func post(_ path: String, parameters: Parameters?, headers: HTTPHeaders) -> Observable<ModelType>
 }
 
 extension APISession {
@@ -40,13 +39,13 @@ extension APISession {
         return API.baseURL
     }
 
-    func post(_ path: String, parameters: Parameters? = nil, headers: HTTPHeaders = [:]) -> Observable<T> {
+    func post(_ path: String, parameters: Parameters? = nil, headers: HTTPHeaders = [:]) -> Observable<ModelType> {
         return request(path, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
     }
 }
 
 private extension APISession {
-    func request(_ path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, headers: HTTPHeaders) -> Observable<T> {
+    func request(_ path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, headers: HTTPHeaders) -> Observable<ModelType> {
         let url = baseUrl.appendingPathComponent(path)
         var allHeaders = defaultHeaders
         headers.forEach { allHeaders.add($0) }
@@ -63,7 +62,7 @@ private extension APISession {
                             return
                         }
                         do {
-                            let model = try JSONDecoder().decode(T.self, from: data)
+                            let model = try JSONDecoder().decode(ModelType.self, from: data)
                             observer.onNext(model)
                             observer.onCompleted()
                         } catch {
