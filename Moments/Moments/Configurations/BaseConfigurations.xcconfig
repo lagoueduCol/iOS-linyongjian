@@ -10,4 +10,4 @@
 //
 // Store App base configurations like API URLs
 
-API_BASE_URL = https:\/\/momentsapi.herokuapp.com
+API_BASE_URL = momentsapi.herokuapp.com

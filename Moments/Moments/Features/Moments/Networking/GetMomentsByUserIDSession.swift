@@ -1,5 +1,5 @@
 //
-//  GetMomentsByUserIDAPISession.swift
+//  GetMomentsByUserIDSession.swift
 //  Moments
 //
 //  Created by Jake Lin on 26/10/20.
@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 import RxSwift
 
-protocol GetMomentsByUserIDAPISessionType {
+protocol GetMomentsByUserIDSessionType {
     func getMoments(userID: String) -> Observable<MomentsDetails>
 }
 
 // swiftlint:disable no_hardcoded_strings
-struct GetMomentsByUserIDAPISession: GetMomentsByUserIDAPISessionType {
+struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
     private struct Session: APISession {
         typealias ModelType = MomentsDetails
 

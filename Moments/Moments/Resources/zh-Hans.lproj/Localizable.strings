@@ -17,6 +17,9 @@
 "internalMenu.colors" = "颜色";
 "internalMenu.avatars" = "人像";
 
+// Moments List
+"momentsList.errorMessage" = "出错啦，请稍后再试";
+
 // Development messages
 "development.defaultConfiguration" = "Default Configuration";
 "development.fatalErrorInitCoderNotImplemented" = "init(coder:) has not been implemented";

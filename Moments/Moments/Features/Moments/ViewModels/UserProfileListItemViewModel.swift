@@ -17,4 +17,8 @@ struct UserProfileListItemViewModel: ListItemViewModel {
         avatarURL = URL(string: userDetails.avatar)
         backgroundImageURL = URL(string: userDetails.backgroundImage)
     }
+
+    static var reuseIdentifier: String {
+        String(describing: self)
+    }
 }

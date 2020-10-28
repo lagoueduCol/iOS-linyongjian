@@ -42,6 +42,11 @@ internal enum L10n {
     /// Version
     internal static let version = L10n.tr("Localizable", "internalMenu.version")
   }
+
+  internal enum MomentsList {
+    /// Something went wrong, please try again later
+    internal static let errorMessage = L10n.tr("Localizable", "momentsList.errorMessage")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

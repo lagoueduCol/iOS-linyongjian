@@ -17,6 +17,9 @@
 "internalMenu.colors" = "Colors";
 "internalMenu.avatars" = "Avatars";
 
+// Moments List
+"momentsList.errorMessage" = "Something went wrong, please try again later";
+
 // Development messages
 "development.defaultConfiguration" = "Default Configuration";
 "development.fatalErrorInitCoderNotImplemented" = "init(coder:) has not been implemented";
