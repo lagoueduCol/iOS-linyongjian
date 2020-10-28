@@ -30,6 +30,6 @@ final class BaseTableViewCell<V: BaseListItemView<VM>, VM: ListItemViewModel>: U
     }
 
     func update(with viewModel: ViewModel) {
-        view.update(viewModel)
+        view.update(with: viewModel)
     }
 }

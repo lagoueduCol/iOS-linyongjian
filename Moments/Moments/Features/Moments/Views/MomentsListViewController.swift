@@ -14,13 +14,13 @@ import DesignKit
 
 final class MomentsListViewController: BaseViewController {
     private var viewModel: MomentsListViewModel!
-    private var loadingDisposeBag = DisposeBag()
 
     private let tableView: UITableView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.separatorStyle = .none
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 100
+        $0.contentInsetAdjustmentBehavior = .never
     }
     private let activityIndicatorView: UIActivityIndicatorView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -79,9 +79,22 @@ private extension MomentsListViewController {
     }
 
     func setupBindings() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.rx.controlEvent(.valueChanged)
+            .map { refreshControl.isRefreshing }
+            .filter { $0 }
+            .bind { [weak self] _ in _ = self?.viewModel.load() }
+            .disposed(by: disposeBag)
+
+        tableView.refreshControl = refreshControl
+
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ListItemViewModel>>(configureCell: { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: item)), for: indexPath)
-//            (cell as? BaseTableViewCell)?.update(with: item)
+
+            if let cell = cell as? BaseTableViewCell<UserProfileListItemView<UserProfileListItemViewModel>, UserProfileListItemViewModel>, let item = item as? UserProfileListItemViewModel {
+                cell.update(with: item)
+            }
+
             return cell
         })
 
@@ -95,6 +108,6 @@ private extension MomentsListViewController {
             .startWith(true)
             .distinctUntilChanged()
             .bind(to: activityIndicatorView.rx.isAnimating)
-            .disposed(by: loadingDisposeBag)
+            .disposed(by: disposeBag)
     }
 }
