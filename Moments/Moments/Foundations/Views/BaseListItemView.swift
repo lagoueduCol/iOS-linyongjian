@@ -8,12 +8,10 @@
 import Foundation
 import UIKit
 
-class BaseListItemView<VM: ListItemViewModel>: UIView, ListItemView {
-    typealias ViewModel = VM
-
+class BaseListItemView: UIView, ListItemView {
     // Implemented by subclass
     // swiftlint:disable unavailable_function
-    func update(with viewModel: VM) {
+    func update(with viewModel: ListItemViewModel) {
         fatalError(L10n.Development.fatalErrorSubclassToImplement)
     }
 }

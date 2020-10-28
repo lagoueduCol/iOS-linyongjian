@@ -50,7 +50,7 @@ final class MomentsListViewController: BaseViewController {
 private extension MomentsListViewController {
     func setupUI() {
         let cells = [UserProfileListItemViewModel.reuseIdentifier:
-                        BaseTableViewCell<UserProfileListItemView<UserProfileListItemViewModel>, UserProfileListItemViewModel>.self
+                        BaseTableViewCell<UserProfileListItemView>.self
         ]
 
         cells.forEach {
@@ -90,11 +90,7 @@ private extension MomentsListViewController {
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ListItemViewModel>>(configureCell: { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: item)), for: indexPath)
-
-            if let cell = cell as? BaseTableViewCell<UserProfileListItemView<UserProfileListItemViewModel>, UserProfileListItemViewModel>, let item = item as? UserProfileListItemViewModel {
-                cell.update(with: item)
-            }
-
+            (cell as? ListItemCell)?.update(with: item)
             return cell
         })
 
