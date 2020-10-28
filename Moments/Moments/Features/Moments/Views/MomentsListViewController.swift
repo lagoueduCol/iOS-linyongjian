@@ -43,7 +43,11 @@ final class MomentsListViewController: BaseViewController {
 
         setupUI()
         setupConstraints()
-        setupBindings()
+        DispatchQueue.main.async {
+            // Walkaround for a warning
+            // https://github.com/RxSwiftCommunity/RxDataSources/issues/331
+            self.setupBindings()
+        }
     }
 }
 
