@@ -7,9 +7,14 @@
 
 import Foundation
 
+struct MomentUserDetails: Codable {
+    let name: String
+    let avatar: String
+}
+
 struct Moment: Codable {
     let id: String
-    let userDetails: UserDetails
+    let userDetails: MomentUserDetails
     let type: MomentType
     let title: String?
     let url: String?

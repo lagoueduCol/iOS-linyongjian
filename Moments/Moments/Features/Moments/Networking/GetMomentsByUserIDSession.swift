@@ -16,7 +16,7 @@ protocol GetMomentsByUserIDSessionType {
 // swiftlint:disable no_hardcoded_strings
 struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
     private struct Session: APISession {
-        typealias ModelType = MomentsDetails
+        typealias ReponseType = Response
 
         let path = L10n.Development.graphqlPath
         let parameters: Parameters
@@ -28,7 +28,15 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
                           "variables": variables]
         }
 
-        fileprivate func post() -> Observable<MomentsDetails> {
+        struct Response: Codable {
+            let data: Data
+
+            struct Data: Codable {
+                let getMomentsDetailsByUserID: MomentsDetails
+            }
+        }
+
+        fileprivate func post() -> Observable<Response> {
             return post(path, parameters: parameters, headers: headers)
         }
 
@@ -59,6 +67,6 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
 
     func getMoments(userID: String) -> Observable<MomentsDetails> {
         let session = Session(userID: userID)
-        return session.post()
+        return session.post().map { $0.data.getMomentsDetailsByUserID }
     }
 }
