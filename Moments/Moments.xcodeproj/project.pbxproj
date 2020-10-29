@@ -11,9 +11,6 @@
 		AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B7FD25455EDB003DFED0 /* Configuration.swift */; };
 		AE47B80425455FCF003DFED0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B80325455FCF003DFED0 /* API.swift */; };
 		AE47B8552545AD61003DFED0 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8542545AD61003DFED0 /* APISession.swift */; };
-		AE47B8A1254676DF003DFED0 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8A0254676DF003DFED0 /* UserDetails.swift */; };
-		AE47B8A625467846003DFED0 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8A525467846003DFED0 /* Moment.swift */; };
-		AE47B8AB2546786E003DFED0 /* MomentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8AA2546786E003DFED0 /* MomentType.swift */; };
 		AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8AF254679BE003DFED0 /* MomentsDetails.swift */; };
 		AE47B8BD25467BA0003DFED0 /* GetMomentsByUserIDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */; };
 		AE73790D2539D62C0025AA69 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73790C2539D62C0025AA69 /* Functions.swift */; };
@@ -82,9 +79,6 @@
 		AE47B7FD25455EDB003DFED0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		AE47B80325455FCF003DFED0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AE47B8542545AD61003DFED0 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
-		AE47B8A0254676DF003DFED0 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
-		AE47B8A525467846003DFED0 /* Moment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
-		AE47B8AA2546786E003DFED0 /* MomentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentType.swift; sourceTree = "<group>"; };
 		AE47B8AF254679BE003DFED0 /* MomentsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsDetails.swift; sourceTree = "<group>"; };
 		AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSession.swift; sourceTree = "<group>"; };
 		AE73790C2539D62C0025AA69 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -230,10 +224,7 @@
 		AE47B89E25467436003DFED0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE47B8A525467846003DFED0 /* Moment.swift */,
 				AE47B8AF254679BE003DFED0 /* MomentsDetails.swift */,
-				AE47B8AA2546786E003DFED0 /* MomentType.swift */,
-				AE47B8A0254676DF003DFED0 /* UserDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -771,16 +762,13 @@
 				AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */,
 				AEA67AAB2546F14B00D783CD /* ListItemViewModel.swift in Sources */,
 				AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */,
-				AE47B8A625467846003DFED0 /* Moment.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
 				AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
-				AE47B8AB2546786E003DFED0 /* MomentType.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
 				AE737A63253C32040025AA69 /* UIApplicationExtension.swift in Sources */,
-				AE47B8A1254676DF003DFED0 /* UserDetails.swift in Sources */,
 				AEA67ACA2547015300D783CD /* UserProfileListItemView.swift in Sources */,
 				AEA67AB32546FBA300D783CD /* UserProfileListItemViewModel.swift in Sources */,
 			);

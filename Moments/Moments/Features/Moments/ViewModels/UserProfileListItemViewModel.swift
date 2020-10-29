@@ -12,7 +12,7 @@ struct UserProfileListItemViewModel: ListItemViewModel {
     let avatarURL: URL?
     let backgroundImageURL: URL?
 
-    init(userDetails: UserDetails) {
+    init(userDetails: MomentsDetails.UserDetails) {
         name = userDetails.name
         avatarURL = URL(string: userDetails.avatar)
         backgroundImageURL = URL(string: userDetails.backgroundImage)
