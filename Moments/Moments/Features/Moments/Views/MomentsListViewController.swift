@@ -53,11 +53,13 @@ final class MomentsListViewController: BaseViewController {
 
 private extension MomentsListViewController {
     func setupUI() {
-        let cells = [UserProfileListItemViewModel.reuseIdentifier:
-                        BaseTableViewCell<UserProfileListItemView>.self
-        ]
+        view.backgroundColor = UIColor.designKit.background
+        tableView.backgroundColor = UIColor.designKit.background
 
-        cells.forEach {
+        [
+            UserProfileListItemViewModel.reuseIdentifier: BaseTableViewCell<UserProfileListItemView>.self,
+            MomentListItemViewModel.reuseIdentifier: BaseTableViewCell<MomentListItemView>.self
+        ].forEach {
             tableView.register($0.value, forCellReuseIdentifier: $0.key)
         }
 

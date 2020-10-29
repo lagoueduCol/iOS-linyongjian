@@ -43,6 +43,8 @@
 		AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AD12547857F00D783CD /* ListItemView.swift */; };
 		AEA67AEE254790B500D783CD /* BaseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AED254790B500D783CD /* BaseListItemView.swift */; };
 		AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67B73254905D800D783CD /* MomentsListViewController.swift */; };
+		AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */; };
+		AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC83254AE35800D8140C /* MomentListItemView.swift */; };
 		AED4C784253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C783253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift */; };
 		AED4C789253D805E0001AAFC /* InternalMenuActionTriggerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */; };
 		AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */; };
@@ -128,6 +130,8 @@
 		AEBC8947253958D0001D534E /* BaseProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseProject.xcconfig; sourceTree = "<group>"; };
 		AEBC8948253958D0001D534E /* BaseTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseTarget.xcconfig; sourceTree = "<group>"; };
 		AEBC8949253958D0001D534E /* SDKAndDeviceSupport.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SDKAndDeviceSupport.xcconfig; sourceTree = "<group>"; };
+		AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemViewModel.swift; sourceTree = "<group>"; };
+		AEBEEC83254AE35800D8140C /* MomentListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemView.swift; sourceTree = "<group>"; };
 		AED4C783253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuActionTriggerItemViewModel.swift; sourceTree = "<group>"; };
 		AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuActionTriggerCell.swift; sourceTree = "<group>"; };
 		AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoItemViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		AE47B89D25467436003DFED0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */,
 				AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */,
 				AEA67AB22546FBA300D783CD /* UserProfileListItemViewModel.swift */,
 			);
@@ -232,6 +237,7 @@
 		AE47B89F25467436003DFED0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEBEEC83254AE35800D8140C /* MomentListItemView.swift */,
 				AEA67B73254905D800D783CD /* MomentsListViewController.swift */,
 				AEA67AC92547015300D783CD /* UserProfileListItemView.swift */,
 			);
@@ -762,6 +768,8 @@
 				AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */,
 				AEA67AAB2546F14B00D783CD /* ListItemViewModel.swift in Sources */,
 				AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */,
+				AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */,
+				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
 				AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */,
