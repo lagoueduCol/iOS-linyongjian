@@ -22,7 +22,7 @@ class BaseTableViewController: BaseViewController {
         $0.estimatedRowHeight = 100
         $0.contentInsetAdjustmentBehavior = .never
     }
-    private let activityIndicatorView: UIActivityIndicatorView = configure(.init()) {
+    private let activityIndicatorView: UIActivityIndicatorView = configure(.init(style: .large)) {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     private let errorLabel: UILabel = configure(.init()) {
@@ -71,8 +71,6 @@ private extension BaseTableViewController {
 
         activityIndicatorView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.equalTo(60)
-            $0.height.equalTo(60)
         }
 
         errorLabel.snp.makeConstraints {
@@ -103,7 +101,10 @@ private extension BaseTableViewController {
 
     func loadViewModel() {
         viewModel.load()
-            .do(onDispose: { self.activityIndicatorView.rx.isAnimating.onNext(false) })
+            .do(onDispose: {
+                self.activityIndicatorView.rx.isAnimating.onNext(false)
+                self.tableView.refreshControl?.endRefreshing()
+            })
             .map { false }
             .startWith(true)
             .distinctUntilChanged()
