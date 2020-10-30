@@ -42,6 +42,8 @@ class BaseTableViewController: BaseViewController {
             // https://github.com/RxSwiftCommunity/RxDataSources/issues/331
             self.setupBindings()
         }
+
+        loadViewModel()
     }
 }
 
@@ -83,7 +85,7 @@ private extension BaseTableViewController {
         refreshControl.rx.controlEvent(.valueChanged)
             .map { refreshControl.isRefreshing }
             .filter { $0 }
-            .bind { [weak self] _ in _ = self?.viewModel.load() }
+            .bind { [weak self] _ in self?.loadViewModel() }
             .disposed(by: disposeBag)
 
         tableView.refreshControl = refreshControl
@@ -97,7 +99,9 @@ private extension BaseTableViewController {
         viewModel.listItems
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+    }
 
+    func loadViewModel() {
         viewModel.load()
             .do(onDispose: { self.activityIndicatorView.rx.isAnimating.onNext(false) })
             .map { false }
