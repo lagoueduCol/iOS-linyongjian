@@ -51,7 +51,7 @@ private extension APISession {
 
         return Observable.create { observer -> Disposable in
             let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: allHeaders, interceptor: nil, requestModifier: nil)
-                .validate()
+                .validate(statusCode: 200..<300)
                 .responseJSON { response in
                     switch response.result {
                     case .success:
