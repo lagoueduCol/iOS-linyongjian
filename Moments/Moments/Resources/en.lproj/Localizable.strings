@@ -17,6 +17,8 @@
 "internalMenu.colors" = "Colors";
 "internalMenu.avatars" = "Avatars";
 
+"internalMenu.likeButtonForMomentEnabled" = "Like Button Enable";
+
 // Moments List
 "momentsList.errorMessage" = "Something went wrong, please try again later";
 

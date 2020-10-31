@@ -17,6 +17,8 @@
 "internalMenu.colors" = "颜色";
 "internalMenu.avatars" = "人像";
 
+"internalMenu.likeButtonForMomentEnabled" = "开启点赞按钮";
+
 // Moments List
 "momentsList.errorMessage" = "出错啦，请稍后再试";
 
