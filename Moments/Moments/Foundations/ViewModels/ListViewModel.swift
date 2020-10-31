@@ -12,8 +12,9 @@ import RxDataSources
 protocol ListViewModel {
     var listItems: BehaviorSubject<[SectionModel<String, ListItemViewModel>]> { get }
     var hasContent: Observable<Bool> { get }
+    var hasError: BehaviorSubject<Bool> { get }
 
-    func load() -> Observable<Void>
+    func loadItems() -> Observable<Void>
 
     // Need the conformed class to implements
     func executeQuery() -> Observable<Void>
@@ -26,7 +27,7 @@ extension ListViewModel {
         }.distinctUntilChanged()
     }
 
-    func load() -> Observable<Void> {
+    func loadItems() -> Observable<Void> {
         listItems.onNext([SectionModel(model: "", items: [])])
         return executeQuery()
     }

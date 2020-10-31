@@ -10,7 +10,8 @@ import RxSwift
 import RxDataSources
 
 struct MomentsListViewModel: ListViewModel {
-    var listItems = BehaviorSubject<[SectionModel<String, ListItemViewModel>]>(value: [])
+    var listItems: BehaviorSubject<[SectionModel<String, ListItemViewModel>]> = .init(value: [])
+    var hasError: BehaviorSubject<Bool> = .init(value: false)
 
     private let userID: String
     private let momentsRepo: MomentsRepoType
@@ -44,6 +45,7 @@ private extension MomentsListViewModel {
     }
 
     func onQueryExecuteFailure(error: Error) {
-        listItems.onError(error)
+        hasError.onNext(true)
+        // If there is some custom error handling logic, put them here
     }
 }
