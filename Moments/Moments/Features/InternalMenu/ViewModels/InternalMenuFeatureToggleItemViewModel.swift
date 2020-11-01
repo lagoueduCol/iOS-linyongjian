@@ -12,17 +12,18 @@ class InternalMenuFeatureToggleItemViewModel: InternalMenuItemViewModel {
         .featureToggle
     }
 
-    var title: String { "" }
+    var title: String { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
     var on: Bool { false }
 
-    func toggleOn() { }
-    func toggleOff() { }
+    // swiftlint:disable unavailable_function
+    func toggleOn() { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
+    func toggleOff() { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
     func select() { }
 }
 
 // swiftlint:disable type_name
 final class InternalMenuLikeButtonToggleItemViewModel: InternalMenuFeatureToggleItemViewModel {
-    private let toggleStore: TogglesDataStoreType
+    private let toggleDataStore: TogglesDataStoreType
     private var isOn: Bool
 
     override var title: String {
@@ -33,16 +34,16 @@ final class InternalMenuLikeButtonToggleItemViewModel: InternalMenuFeatureToggle
        return isOn
     }
 
-    init(toggleStore: TogglesDataStoreType) {
-        self.toggleStore = toggleStore
-        self.isOn = toggleStore.isToggleOn(.isLikeButtonForMomentEnabled)
+    init(toggleDataStore: TogglesDataStoreType) {
+        self.toggleDataStore = toggleDataStore
+        self.isOn = toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled)
     }
 
     override func toggleOn() {
-        toggleStore.update(toggle: .isLikeButtonForMomentEnabled, value: true)
+        toggleDataStore.update(toggle: .isLikeButtonForMomentEnabled, value: true)
     }
 
     override func toggleOff() {
-        toggleStore.update(toggle: .isLikeButtonForMomentEnabled, value: false)
+        toggleDataStore.update(toggle: .isLikeButtonForMomentEnabled, value: false)
     }
 }

@@ -35,6 +35,8 @@ internal enum L10n {
     internal static let colors = L10n.tr("Localizable", "internalMenu.colors")
     /// DesignKit Demo
     internal static let designKitDemo = L10n.tr("Localizable", "internalMenu.designKitDemo")
+    /// Feature Toggles
+    internal static let featureToggles = L10n.tr("Localizable", "internalMenu.featureToggles")
     /// General Info
     internal static let generalInfo = L10n.tr("Localizable", "internalMenu.generalInfo")
     /// Like Button Enable

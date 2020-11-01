@@ -18,28 +18,42 @@ final class InternalMenuViewController: BaseViewController {
 
         $0.register(InternalMenuDescriptionCell.self, forCellReuseIdentifier: InternalMenuItemType.description.rawValue)
         $0.register(InternalMenuActionTriggerCell.self, forCellReuseIdentifier: InternalMenuItemType.actionTrigger.rawValue)
+        $0.register(InternalMenuFeatureToggleCell.self, forCellReuseIdentifier: InternalMenuItemType.featureToggle.rawValue)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = viewModel.title
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                                            target: self,
-                                                            action: #selector(dismissModal))
+        setupUI()
+        setupConstraints()
 
-        setupLayout()
-        setupBindings()
+        DispatchQueue.main.async {
+            // Walkaround for a warning
+            // https://github.com/RxSwiftCommunity/RxDataSources/issues/331
+            self.setupBindings()
+        }
+    }
+}
+
+private extension InternalMenuViewController {
+    func setupUI() {
+        title = viewModel.title
+        view.addSubview(tableView)
     }
 
-    func setupLayout() {
-        view.addSubview(tableView)
+    func setupConstraints() {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
 
     func setupBindings() {
+        let dismissBarButtonItem: UIBarButtonItem = UIBarButtonItem(systemItem: .done)
+        dismissBarButtonItem.rx.tap.subscribe(onNext: {
+            self.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
+        navigationItem.rightBarButtonItem = dismissBarButtonItem
+
         let dataSource = RxTableViewSectionedReloadDataSource<InternalMenuSection>(
             configureCell: { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: item.type.rawValue, for: indexPath)

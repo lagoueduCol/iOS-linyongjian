@@ -12,6 +12,7 @@
 "internalMenu.version" = "Version";
 "internalMenu.CFBundleVersion" = "CFBundleVersion";
 "internalMenu.designKitDemo" = "DesignKit Demo";
+"internalMenu.featureToggles" = "Feature Toggles";
 
 "internalMenu.typography" = "Typography";
 "internalMenu.colors" = "Colors";
