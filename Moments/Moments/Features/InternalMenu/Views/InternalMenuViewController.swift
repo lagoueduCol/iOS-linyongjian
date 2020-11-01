@@ -85,9 +85,4 @@ private extension InternalMenuViewController {
             })
             .disposed(by: disposeBag)
     }
-
-    @objc
-    func dismissModal() {
-        dismiss(animated: true, completion: nil)
-    }
 }
