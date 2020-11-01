@@ -46,8 +46,8 @@ private extension InternalMenuFeatureToggleCell {
         switchControl.rx.isOn.changed
             .distinctUntilChanged()
             .asObservable()
-            .subscribe(onNext: {
-                self.item?.toggle(isOn: $0)
+            .subscribe(onNext: { [weak self] in
+                self?.item?.toggle(isOn: $0)
             })
             .disposed(by: disposeBag)
     }

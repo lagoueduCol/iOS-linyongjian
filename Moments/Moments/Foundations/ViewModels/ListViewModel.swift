@@ -28,7 +28,7 @@ extension ListViewModel {
     }
 
     func loadItems() -> Observable<Void> {
-        listItems.onNext([SectionModel(model: "", items: [])])
+        listItems.onNext([])
         return executeQuery()
     }
 }

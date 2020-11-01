@@ -10,8 +10,8 @@ import RxSwift
 import RxDataSources
 
 struct MomentsListViewModel: ListViewModel {
-    var listItems: BehaviorSubject<[SectionModel<String, ListItemViewModel>]> = .init(value: [])
-    var hasError: BehaviorSubject<Bool> = .init(value: false)
+    private(set) var listItems: BehaviorSubject<[SectionModel<String, ListItemViewModel>]> = .init(value: [])
+    private(set) var hasError: BehaviorSubject<Bool> = .init(value: false)
 
     private let userID: String
     private let momentsRepo: MomentsRepoType
