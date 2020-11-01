@@ -7,20 +7,21 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleItemViewModel> {
-    var item: InternalMenuFeatureToggleItemViewModel?
-
     private let switchControl: UISwitch = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
+    private var item: InternalMenuFeatureToggleItemViewModel?
+    private lazy var disposeBag = DisposeBag()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        selectionStyle = .none
-        accessoryView = switchControl
-        switchControl.addTarget(self, action: #selector(toggleSwitch), for: .valueChanged)
+        setupUI()
+        setupBindings()
     }
 
     // swiftlint:disable unavailable_function
@@ -33,13 +34,21 @@ class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleI
         textLabel?.text = item.title
         switchControl.isOn = item.on
     }
+}
 
-    @objc
-    func toggleSwitch() {
-        if switchControl.isOn {
-            item?.toggleOn()
-        } else {
-            item?.toggleOff()
-        }
+private extension InternalMenuFeatureToggleCell {
+    func setupUI() {
+        selectionStyle = .none
+        accessoryView = switchControl
+    }
+
+    func setupBindings() {
+        switchControl.rx.isOn.changed
+            .distinctUntilChanged()
+            .asObservable()
+            .subscribe(onNext: {
+                self.item?.toggle(isOn: $0)
+            })
+            .disposed(by: disposeBag)
     }
 }
