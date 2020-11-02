@@ -28,7 +28,7 @@ public extension UIColor {
     }
 }
 
-private extension UIColor {
+public extension UIColor {
     convenience init(hex: Int) {
         let components = (
                 R: CGFloat((hex >> 16) & 0xff) / 255,

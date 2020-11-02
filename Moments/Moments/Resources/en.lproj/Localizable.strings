@@ -17,6 +17,8 @@
 "internalMenu.typography" = "Typography";
 "internalMenu.colors" = "Colors";
 "internalMenu.avatars" = "Avatars";
+"internalMenu.favoriteButton" = "Favorite button";
+
 
 "internalMenu.likeButtonForMomentEnabled" = "Like Button Enable";
 
