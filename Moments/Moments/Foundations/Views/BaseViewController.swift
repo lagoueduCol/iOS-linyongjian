@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 class BaseViewController: UIViewController {
-    lazy var disposeBag = DisposeBag()
+    lazy var disposeBag: DisposeBag = .init()
 
     init() {
       super.init(nibName: nil, bundle: nil)

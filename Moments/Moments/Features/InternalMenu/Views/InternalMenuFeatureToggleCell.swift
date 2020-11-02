@@ -15,7 +15,7 @@ class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleI
     }
 
     private var item: InternalMenuFeatureToggleItemViewModel?
-    private lazy var disposeBag = DisposeBag()
+    private lazy var disposeBag: DisposeBag = .init()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

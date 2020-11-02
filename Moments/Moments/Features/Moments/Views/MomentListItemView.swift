@@ -59,13 +59,15 @@ final class MomentListItemView: BaseListItemView {
     }
 
     private let toggleDataStore: TogglesDataStoreType
+    private let userDataStore: UserDataStoreType
 
     override convenience init(frame: CGRect = .zero) {
         self.init(frame: frame, toggleDataStore: TogglesDataStore.shared)
     }
 
-    init(frame: CGRect = .zero, toggleDataStore: TogglesDataStoreType = TogglesDataStore.shared) {
+    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, toggleDataStore: TogglesDataStoreType = TogglesDataStore.shared) {
         self.toggleDataStore = toggleDataStore
+        self.userDataStore = userDataStore
         super.init(frame: frame)
 
         setupUI()
@@ -87,6 +89,16 @@ final class MomentListItemView: BaseListItemView {
         titleLabel.text = viewModel.title
         momentImageView.kf.setImage(with: viewModel.photoURL)
         postDateDescriptionLabel.text = viewModel.postDateDescription
+
+        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+            favoriteButton.isSelected = viewModel.isLiked
+            favoriteButton.rx.tap
+                .bind(onNext: { [weak self] in
+                    guard let self = self else { return }
+                    viewModel.like(from: self.userDataStore.userID)
+                })
+                .disposed(by: disposeBag)
+        }
     }
 }
 

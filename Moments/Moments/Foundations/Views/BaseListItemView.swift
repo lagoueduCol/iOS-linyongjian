@@ -7,8 +7,11 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class BaseListItemView: UIView, ListItemView {
+    lazy var disposeBag: DisposeBag = .init()
+
     // Implemented by subclass
     // swiftlint:disable unavailable_function
     func update(with viewModel: ListItemViewModel) {

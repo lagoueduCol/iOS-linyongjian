@@ -13,11 +13,20 @@ struct MomentListItemViewModel: ListItemViewModel {
     let title: String?
     let photoURL: URL? // This version only supports one image
     let postDateDescription: String?
+    let isLiked: Bool
+    let likes: [String]
 
-    init(moment: MomentsDetails.Moment, now: Date = Date()) {
+    private let momentID: String
+    private let momentsRepo: MomentsRepoType
+
+    init(moment: MomentsDetails.Moment, momentsRepo: MomentsRepoType = MomentsRepo.shared, now: Date = Date()) {
+        momentID = moment.id
+        self.momentsRepo = momentsRepo
         userAvatarURL = URL(string: moment.userDetails.avatar)
         userName = moment.userDetails.name
         title = moment.title
+        isLiked = moment.isLiked ?? false
+        likes = moment.likes ?? []
 
         if let firstPhoto = moment.photos.first {
             photoURL = URL(string: firstPhoto)
@@ -38,5 +47,9 @@ struct MomentListItemViewModel: ListItemViewModel {
 
     static var reuseIdentifier: String {
         String(describing: self)
+    }
+
+    func like(from userID: String) {
+        momentsRepo.updateLike(momentID: momentID, from: userID)
     }
 }
