@@ -18,7 +18,8 @@
 "internalMenu.colors" = "Colors";
 "internalMenu.avatars" = "Avatars";
 "internalMenu.favoriteButton" = "Favorite button";
-
+"internalMenu.starFavoriteButton" = "Star favorite button";
+"internalMenu.heartFavoriteButton" = "Heart favorite button";
 
 "internalMenu.likeButtonForMomentEnabled" = "Like Button Enable";
 
