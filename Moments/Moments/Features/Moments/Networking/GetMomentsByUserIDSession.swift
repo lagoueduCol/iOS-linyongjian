@@ -42,7 +42,7 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         }
 
         private static let query = """
-           query getMomentsDetailsByUserID($userID: ID!, $withLikes: Boolean!){
+           query getMomentsDetailsByUserID($userID: ID!, $withLikes: Boolean!) {
              getMomentsDetailsByUserID(userID: $userID) {
                userDetails {
                  id
@@ -60,8 +60,11 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
                  title
                  photos
                  createdDate
-                 isLiked @include(if: $withLikes),
-                 likes @include(if: $withLikes)
+                 isLiked @include(if: $withLikes)
+                 likes @include(if: $withLikes) {
+                   id
+                   avatar
+                 }
                }
              }
            }

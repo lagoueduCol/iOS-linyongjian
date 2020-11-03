@@ -15,7 +15,7 @@ struct MomentListItemViewModel: ListItemViewModel {
     let photoURL: URL? // This version only supports one image
     let postDateDescription: String?
     let isLiked: Bool
-    let likes: [String]
+    let likes: [URL]
 
     private let momentID: String
     private let momentsRepo: MomentsRepoType
@@ -27,7 +27,7 @@ struct MomentListItemViewModel: ListItemViewModel {
         userName = moment.userDetails.name
         title = moment.title
         isLiked = moment.isLiked ?? false
-        likes = moment.likes ?? []
+        likes = moment.likes?.compactMap { URL(string: $0.avatar) } ?? []
 
         if let firstPhoto = moment.photos.first {
             photoURL = URL(string: firstPhoto)

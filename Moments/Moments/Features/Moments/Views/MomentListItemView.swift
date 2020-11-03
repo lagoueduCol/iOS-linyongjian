@@ -117,19 +117,18 @@ final class MomentListItemView: BaseListItemView {
                 likesStakeView.addArrangedSubview(likeImageView)
             }
             viewModel.likes.forEach {
-                if let avatarURL = URL(string: $0) {
-                    let avatar: UIImageView = configure(.init()) {
-                        $0.translatesAutoresizingMaskIntoConstraints = false
-                        $0.asAvatar(cornerRadius: 2)
-                        $0.kf.setImage(with: avatarURL)
-                    }
-
-                    avatar.snp.makeConstraints {
-                        $0.width.equalTo(20)
-                        $0.height.equalTo(20)
-                    }
-                    likesStakeView.addArrangedSubview(avatar)
+                let avatarURL = $0
+                let avatar: UIImageView = configure(.init()) {
+                    $0.translatesAutoresizingMaskIntoConstraints = false
+                    $0.asAvatar(cornerRadius: 2)
+                    $0.kf.setImage(with: avatarURL)
                 }
+
+                avatar.snp.makeConstraints {
+                    $0.width.equalTo(20)
+                    $0.height.equalTo(20)
+                }
+                likesStakeView.addArrangedSubview(avatar)
             }
         }
     }

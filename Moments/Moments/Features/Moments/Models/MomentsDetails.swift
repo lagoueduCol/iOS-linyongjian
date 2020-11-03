@@ -27,10 +27,15 @@ struct MomentsDetails: Codable {
         let photos: [String]
         let createdDate: String
         let isLiked: Bool? // Change to non-optional when removing `isLikeButtonForMomentEnabled` toggle
-        let likes: [String]? // Change to non-optional when removing `isLikeButtonForMomentEnabled` toggle
+        let likes: [LikedUserDetails]? // Change to non-optional when removing `isLikeButtonForMomentEnabled` toggle
 
         struct MomentUserDetails: Codable {
             let name: String
+            let avatar: String
+        }
+
+        struct LikedUserDetails: Codable {
+            let id: String
             let avatar: String
         }
 
