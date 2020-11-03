@@ -24,8 +24,6 @@ struct UserDefaultsPersistentDataStore: PersistentDataStoreType {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(momentsDetails) {
             defaults.set(encoded, forKey: momentsDetailsKey)
-
-//            defaults.set("123", forKey: "A")
         }
     }
 }
@@ -38,14 +36,7 @@ private extension UserDefaultsPersistentDataStore {
             .map { try? JSONDecoder().decode(MomentsDetails.self, from:$0) }
             .compactMap { $0 }
             .debug()
-//            .distinctUntilChanged( { $0 != $1 })
             .subscribe(onNext: { momentsDetails.onNext($0) })
             .disposed(by: disposeBage)
-
-//        defaults.rx
-//            .observe(String.self, "A")
-//            .subscribe(onNext: { data in
-//                print(data)
-//            })
     }
 }
