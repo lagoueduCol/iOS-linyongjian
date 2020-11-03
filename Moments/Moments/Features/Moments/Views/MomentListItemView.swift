@@ -56,8 +56,10 @@ final class MomentListItemView: BaseListItemView {
     private let likesStakeView: UIStackView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.secondaryBackground
-        $0.layer.cornerRadius = 2
+        $0.layer.cornerRadius = 4
         $0.spacing = Spacing.twoExtraSmall
+        $0.isLayoutMarginsRelativeArrangement = true
+        $0.directionalLayoutMargins = NSDirectionalEdgeInsets(top: Spacing.twoExtraSmall, leading: Spacing.twoExtraSmall, bottom: Spacing.twoExtraSmall, trailing: Spacing.twoExtraSmall)
     }
 
     private let dividerView: UIView = configure(.init()) {
@@ -80,6 +82,7 @@ final class MomentListItemView: BaseListItemView {
 
         setupUI()
         setupConstraints()
+        setupBindings()
     }
 
     // swiftlint:disable unavailable_function
@@ -105,6 +108,8 @@ final class MomentListItemView: BaseListItemView {
             likesStakeView.arrangedSubviews.forEach {
                 $0.removeFromSuperview()
             }
+            likesStakeView.isHidden = viewModel.likes.isEmpty
+
             if !viewModel.likes.isEmpty {
                 likesStakeView.addArrangedSubview(likeImageView)
             }
@@ -188,7 +193,9 @@ private extension MomentListItemView {
             $0.bottom.equalToSuperview()
             $0.height.equalTo(1)
         }
+    }
 
+    func setupBindings() {
         if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
             favoriteButton.rx.tap
                 .bind(onNext: { [weak self] in

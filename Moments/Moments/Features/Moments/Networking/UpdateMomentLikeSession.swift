@@ -43,7 +43,7 @@ struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
         }
 
         private static let query = """
-           mutation updateMomentLike($momentID: ID!, $userID: ID!, $isLiked: Boolean!){
+           mutation updateMomentLike($momentID: ID!, $userID: ID!, $isLiked: Boolean!) {
              updateMomentLike(momentID: $momentID, userID: $userID, isLiked: $isLiked) {
                userDetails {
                  id

@@ -12,9 +12,9 @@ protocol UserDataStoreType {
 }
 
 struct UserDataStore: UserDataStoreType {
-    // Hardcode the user id to 1
+    // Hardcode the user id to 0
     var userID: String {
-        "1"
+        "0"
     }
 
     private init() { }
