@@ -53,6 +53,13 @@ final class MomentListItemView: BaseListItemView {
         $0.asHeartFavoriteButton()
     }
 
+    private let likesStakeView: UIStackView = configure(.init()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = UIColor.designKit.secondaryBackground
+        $0.layer.cornerRadius = 2
+        $0.spacing = Spacing.twoExtraSmall
+    }
+
     private let dividerView: UIView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.line
@@ -102,6 +109,28 @@ final class MomentListItemView: BaseListItemView {
                     }
                 })
                 .disposed(by: disposeBag)
+
+            likesStakeView.arrangedSubviews.forEach {
+                $0.removeFromSuperview()
+            }
+            if !viewModel.likes.isEmpty {
+                likesStakeView.addArrangedSubview(likeImageView)
+            }
+            viewModel.likes.forEach {
+                if let avatarURL = URL(string: $0) {
+                    let avatar: UIImageView = configure(.init()) {
+                        $0.translatesAutoresizingMaskIntoConstraints = false
+                        $0.asAvatar(cornerRadius: 2)
+                        $0.kf.setImage(with: avatarURL)
+                    }
+
+                    avatar.snp.makeConstraints {
+                        $0.width.equalTo(20)
+                        $0.height.equalTo(20)
+                    }
+                    likesStakeView.addArrangedSubview(avatar)
+                }
+            }
         }
     }
 }
@@ -115,6 +144,10 @@ private extension MomentListItemView {
             $0.axis = .vertical
             $0.alignment = .leading
             $0.spacing = Spacing.extraSmall
+        }
+
+        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+            verticalStackView.addArrangedSubview(likesStakeView)
         }
 
         let horizontalStackView: UIStackView = configure(.init(arrangedSubviews:[userAvatarImageView, verticalStackView])) {
@@ -163,6 +196,18 @@ private extension MomentListItemView {
             $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.height.equalTo(1)
+        }
+    }
+}
+
+private extension MomentListItemView {
+    var likeImageView: UIImageView {
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 16, weight: .light, scale: .default)
+        // swiftlint:disable no_hardcoded_strings
+        let heartImage = UIImage(systemName: "heart", withConfiguration: symbolConfiguration)
+        return configure(.init(image: heartImage)) {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.tintColor = UIColor.designKit.secondaryText
         }
     }
 }
