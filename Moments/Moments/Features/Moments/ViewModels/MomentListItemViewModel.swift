@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct MomentListItemViewModel: ListItemViewModel {
     let userAvatarURL: URL?
@@ -49,7 +50,17 @@ struct MomentListItemViewModel: ListItemViewModel {
         String(describing: self)
     }
 
-    func like(from userID: String) {
-        momentsRepo.updateLike(momentID: momentID, from: userID)
+    func like(from userID: String) -> Observable<Void> {
+        return momentsRepo.updateLike(isLiked: true, momentID: momentID, from: userID)
+            .map { _ in }
+            .catchError { _ in return Observable.just(()) }
+            .share()
+    }
+
+    func unlike(from userID: String) -> Observable<Void> {
+        return momentsRepo.updateLike(isLiked: false, momentID: momentID, from: userID)
+            .map { _ in }
+            .catchError { _ in return Observable.just(()) }
+            .share()
     }
 }

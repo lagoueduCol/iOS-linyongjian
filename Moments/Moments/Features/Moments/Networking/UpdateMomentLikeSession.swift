@@ -1,20 +1,20 @@
 //
-//  GetMomentsByUserIDSession.swift
+//  UpdateMomentLikeSession.swift
 //  Moments
 //
-//  Created by Jake Lin on 26/10/20.
+//  Created by Jake Lin on 3/11/20.
 //
 
 import Foundation
 import Alamofire
 import RxSwift
 
-protocol GetMomentsByUserIDSessionType {
-    func getMoments(userID: String) -> Observable<MomentsDetails>
+protocol UpdateMomentLikeSessionType {
+    func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails>
 }
 
 // swiftlint:disable no_hardcoded_strings
-struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
+struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
     private struct Session: APISession {
         typealias ReponseType = Response
 
@@ -22,9 +22,10 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         let parameters: Parameters
         let headers: HTTPHeaders = .init()
 
-        init(userID: String, toggleDataStore: TogglesDataStoreType = TogglesDataStore.shared) {
-            let variables: [AnyHashable: Encodable] = ["userID": userID,
-                                                       "withLikes": toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled)]
+        init(momentID: String, userID: String, isLiked: Bool) {
+            let variables: [AnyHashable: Encodable] = ["momentID": momentID,
+                                                       "userID": userID,
+                                                       "isLiked": isLiked]
             parameters = ["query": Self.query,
                           "variables": variables]
         }
@@ -33,7 +34,7 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
             let data: Data
 
             struct Data: Codable {
-                let getMomentsDetailsByUserID: MomentsDetails
+                let updateMomentLike: MomentsDetails
             }
         }
 
@@ -42,8 +43,8 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         }
 
         private static let query = """
-           query getMomentsDetailsByUserID($userID: ID!, $withLikes: Boolean!){
-             getMomentsDetailsByUserID(userID: $userID) {
+           mutation updateMomentLike($momentID: ID!, $userID: ID!, $isLiked: Boolean!){
+             updateMomentLike(momentID: $momentID, userID: $userID, isLiked: $isLiked) {
                userDetails {
                  id
                  name
@@ -60,16 +61,16 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
                  title
                  photos
                  createdDate
-                 isLiked @include(if: $withLikes),
-                 likes @include(if: $withLikes)
+                 isLiked,
+                 likes
                }
              }
            }
         """
     }
 
-    func getMoments(userID: String) -> Observable<MomentsDetails> {
-        let session = Session(userID: userID)
-        return session.post().map { $0.data.getMomentsDetailsByUserID }
+    func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails> {
+        let session = Session(momentID: momentID, userID: userID, isLiked: isLiked)
+        return session.post().map { $0.data.updateMomentLike }
     }
 }
