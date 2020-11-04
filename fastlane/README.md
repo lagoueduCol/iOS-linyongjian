@@ -21,21 +21,26 @@ or alternatively using `brew install fastlane`
 fastlane ios tests
 ```
 Run unit tests
-### ios code_lint
+### ios lint_code
 ```
-fastlane ios code_lint
+fastlane ios lint_code
 ```
-
-### ios code_format
+Lint code
+### ios format_code
 ```
-fastlane ios code_format
+fastlane ios format_code
 ```
-
+Lint and format code
 ### ios sort_files
 ```
 fastlane ios sort_files
 ```
-
+Sort Xcode project files
+### ios archive_appstore
+```
+fastlane ios archive_appstore
+```
+Creates an archive of the Production app with Appstore distribution
 
 ----
 
