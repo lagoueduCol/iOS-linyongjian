@@ -34,6 +34,7 @@ private extension MomentsListViewModel {
     func setupBindings() {
         momentsRepo.momentsDetails.asObservable()
             .observeOn(MainScheduler.instance)
+            .compactMap { $0 }
             .subscribe(onNext: {
                 transform(momentsDetails: $0)
             }, onError: { _ in

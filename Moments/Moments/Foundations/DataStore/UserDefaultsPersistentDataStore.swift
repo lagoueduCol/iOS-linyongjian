@@ -11,7 +11,7 @@ import RxSwift
 struct UserDefaultsPersistentDataStore: PersistentDataStoreType {
     static let shared: UserDefaultsPersistentDataStore = .init()
 
-    private(set) var momentsDetails: PublishSubject<MomentsDetails> = .init()
+    private(set) var momentsDetails: BehaviorSubject<MomentsDetails?> = .init(value: nil)
     private let disposeBage: DisposeBag = .init()
     private let defaults = UserDefaults.standard
     private let momentsDetailsKey = String(describing: MomentsDetails.self)
@@ -35,7 +35,6 @@ private extension UserDefaultsPersistentDataStore {
             .compactMap { $0 }
             .map { try? JSONDecoder().decode(MomentsDetails.self, from:$0) }
             .compactMap { $0 }
-            .debug()
             .subscribe(onNext: { momentsDetails.onNext($0) })
             .disposed(by: disposeBage)
     }
