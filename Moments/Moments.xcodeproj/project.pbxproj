@@ -13,6 +13,16 @@
 		AE47B8552545AD61003DFED0 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8542545AD61003DFED0 /* APISession.swift */; };
 		AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8AF254679BE003DFED0 /* MomentsDetails.swift */; };
 		AE47B8BD25467BA0003DFED0 /* GetMomentsByUserIDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */; };
+		AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */; };
+		AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60125541DED00CBD66B /* TrackingProvider.swift */; };
+		AE4FB60725541E1100CBD66B /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60625541E1100CBD66B /* TrackingEvent.swift */; };
+		AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */; };
+		AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */; };
+		AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */; };
+		AE4FB63D255425A000CBD66B /* ActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */; };
+		AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB6492554261B00CBD66B /* FirebaseActionTrackingEvent.swift */; };
+		AE4FB65B255428F500CBD66B /* LikeActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB65A255428F500CBD66B /* LikeActionTrackingEvent.swift */; };
+		AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB65F25542CCF00CBD66B /* UnlikeActionTrackingEvent.swift */; };
 		AE73790D2539D62C0025AA69 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73790C2539D62C0025AA69 /* Functions.swift */; };
 		AE7379332539D9880025AA69 /* InternalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7379322539D9880025AA69 /* InternalMenuViewController.swift */; };
 		AE7379382539DA7F0025AA69 /* InternalMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7379372539DA7F0025AA69 /* InternalMenuViewModel.swift */; };
@@ -91,6 +101,19 @@
 		AE47B8542545AD61003DFED0 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		AE47B8AF254679BE003DFED0 /* MomentsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsDetails.swift; sourceTree = "<group>"; };
 		AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSession.swift; sourceTree = "<group>"; };
+		AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingRepo.swift; sourceTree = "<group>"; };
+		AE4FB60125541DED00CBD66B /* TrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingProvider.swift; sourceTree = "<group>"; };
+		AE4FB60625541E1100CBD66B /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTrackingProvider.swift; sourceTree = "<group>"; };
+		AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEventType.swift; sourceTree = "<group>"; };
+		AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB6492554261B00CBD66B /* FirebaseActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseActionTrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB65A255428F500CBD66B /* LikeActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeActionTrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB65F25542CCF00CBD66B /* UnlikeActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlikeActionTrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB66D2554387000CBD66B /* GoogleService-Info-Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Development.plist"; sourceTree = "<group>"; };
+		AE4FB66E2554387000CBD66B /* GoogleService-Info-Internal.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Internal.plist"; sourceTree = "<group>"; };
+		AE4FB66F2554387000CBD66B /* GoogleService-Info-AppStore.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-AppStore.plist"; sourceTree = "<group>"; };
 		AE73790C2539D62C0025AA69 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AE7379322539D9880025AA69 /* InternalMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalMenuViewController.swift; sourceTree = "<group>"; };
 		AE7379372539DA7F0025AA69 /* InternalMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuViewModel.swift; sourceTree = "<group>"; };
@@ -223,6 +246,7 @@
 		AE47B89C25467410003DFED0 /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				AE4FB62E255423CA00CBD66B /* Analytics */,
 				AE47B89E25467436003DFED0 /* Models */,
 				AE47B8B825467B7E003DFED0 /* Networking */,
 				AE47B8B725467B77003DFED0 /* Repositories */,
@@ -277,9 +301,60 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		AE4FB5FB25541D2500CBD66B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FB641255425E800CBD66B /* Common */,
+				AE4FB645255425F400CBD66B /* Firebase */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		AE4FB62E255423CA00CBD66B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FB65A255428F500CBD66B /* LikeActionTrackingEvent.swift */,
+				AE4FB65F25542CCF00CBD66B /* UnlikeActionTrackingEvent.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		AE4FB641255425E800CBD66B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */,
+				AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */,
+				AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */,
+				AE4FB60625541E1100CBD66B /* TrackingEvent.swift */,
+				AE4FB60125541DED00CBD66B /* TrackingProvider.swift */,
+				AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AE4FB645255425F400CBD66B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FB6492554261B00CBD66B /* FirebaseActionTrackingEvent.swift */,
+				AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		AE4FB66C2554387000CBD66B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FB66F2554387000CBD66B /* GoogleService-Info-AppStore.plist */,
+				AE4FB66D2554387000CBD66B /* GoogleService-Info-Development.plist */,
+				AE4FB66E2554387000CBD66B /* GoogleService-Info-Internal.plist */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		AE73790A2539D62C0025AA69 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				AE4FB5FB25541D2500CBD66B /* Analytics */,
 				AEBEEC9F254D580600D8140C /* DataStore */,
 				AE737A61253C31FD0025AA69 /* Extensions */,
 				AE47B80225455F46003DFED0 /* Networking */,
@@ -462,6 +537,7 @@
 		AEBC893A253958D0001D534E /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
+				AE4FB66C2554387000CBD66B /* Firebase */,
 				AEBC894A25395A02001D534E /* Project */,
 				AEBC894B25395A21001D534E /* Shared */,
 				AEBC894C25395AA3001D534E /* Targets */,
@@ -531,6 +607,7 @@
 				AE81B4B125416B8500472755 /* Run SwiftGen */,
 				AE8A243025381E4F00DE782E /* Sources */,
 				AEBC891725387D09001D534E /* Run SwiftLint */,
+				AE4FB673255438A500CBD66B /* Copy Firebase Config File */,
 				AE8A243125381E4F00DE782E /* Frameworks */,
 				AE8A243225381E4F00DE782E /* Resources */,
 				03EEE48EB506EB2722125A7E /* [CP] Embed Pods Frameworks */,
@@ -709,6 +786,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE4FB673255438A500CBD66B /* Copy Firebase Config File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Firebase Config File";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${PROJECT_DIR}/Moments/Configurations/Firebase/${FIREBASE_CONFIG_FILENAME}.plist\" \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/GoogleService-Info.plist\"\n";
+		};
 		AE81B4B125416B8500472755 /* Run SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4FB63D255425A000CBD66B /* ActionTrackingEvent.swift in Sources */,
 				AE47B80425455FCF003DFED0 /* API.swift in Sources */,
 				AE47B8552545AD61003DFED0 /* APISession.swift in Sources */,
 				AE8A243825381E4F00DE782E /* AppDelegate.swift in Sources */,
@@ -785,6 +881,8 @@
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
 				AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */,
 				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
+				AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */,
+				AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */,
 				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
 				AE47B8BD25467BA0003DFED0 /* GetMomentsByUserIDSession.swift in Sources */,
 				AED4C789253D805E0001AAFC /* InternalMenuActionTriggerCell.swift in Sources */,
@@ -799,6 +897,7 @@
 				AE7379402539DAAE0025AA69 /* InternalMenuSection.swift in Sources */,
 				AE7379332539D9880025AA69 /* InternalMenuViewController.swift in Sources */,
 				AE7379382539DA7F0025AA69 /* InternalMenuViewModel.swift in Sources */,
+				AE4FB65B255428F500CBD66B /* LikeActionTrackingEvent.swift in Sources */,
 				AEA67ABB2546FE9700D783CD /* ListItemCell.swift in Sources */,
 				AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */,
 				AEA67AAB2546F14B00D783CD /* ListItemViewModel.swift in Sources */,
@@ -811,9 +910,15 @@
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
+				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
+				AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
 				AEBEECA1254D581000D8140C /* TogglesDataSource.swift in Sources */,
+				AE4FB60725541E1100CBD66B /* TrackingEvent.swift in Sources */,
+				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,
+				AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */,
 				AE737A63253C32040025AA69 /* UIApplicationExtension.swift in Sources */,
+				AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */,
 				AEBEED23255127B500D8140C /* UpdateMomentLikeSession.swift in Sources */,
 				AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */,
 				AEBEED3925517E2400D8140C /* UserDefaultsPersistentDataStore.swift in Sources */,

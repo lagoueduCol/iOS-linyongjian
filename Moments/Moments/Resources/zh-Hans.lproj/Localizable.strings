@@ -32,3 +32,6 @@
 "development.fatalErrorAccessedAutomaticallyAdjustedContentViewEarly" = "This property has been accessed before the superview has been loaded. Only use this property in `viewDidLoad` or later, as accessing it inside `init` may add a second instance of this view to the hierarchy.";
 "development.fatalErrorSubclassToImplement" = "Subclass has to implement this function";
 "development.graphqlPath" = "/graphql";
+
+// Tracking events
+"Tracking.momentsScreen" = "Moments screen";

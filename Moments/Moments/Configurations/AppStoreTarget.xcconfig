@@ -3,3 +3,4 @@
 
 PRODUCT_BUNDLE_NAME = $(inherited)
 PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments
+FIREBASE_CONFIG_FILENAME = GoogleService-Info-AppStore

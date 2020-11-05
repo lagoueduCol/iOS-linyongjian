@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>374168413412-v1k1gmt5p0tl4g59ldb7ucbh28t2c8dn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.374168413412-v1k1gmt5p0tl4g59ldb7ucbh28t2c8dn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAC-ZpOnV2luh0JdacvODnoh_EarVRAZtU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>374168413412</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jakelin.moments.development</string>
+	<key>PROJECT_ID</key>
+	<string>moments-app-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>moments-app-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:374168413412:ios:483faf1a6a3f250da038f1</string>
+	<key>DATABASE_URL</key>
+	<string>https://moments-app-project.firebaseio.com</string>
+</dict>
+</plist>
