@@ -52,4 +52,22 @@ platform :ios do
   lane :sort_files do
     sh "../scripts/sort-Xcode-project-file.pl ../Moments/Moments.xcodeproj"
   end
+
+  desc 'Creates an archive of the Internal app for testing'
+  lane :archive_internal do
+    puts("Create an archive for Internal testing")
+    sync_code_signing(type: "appstore")
+    build_app(scheme: "Moments-Internal",
+            workspace: "Moments.xcworkspace",
+            xcargs: "-allowProvisioningUpdates")
+    upload_to_testflight
+  end
+
+  desc 'Creates an archive of the Production app with Appstore distribution'
+  lane :archive_appstore do
+    puts("Create an archive for AppStore submission")
+    build_app(scheme: "Moments-AppStore",
+            workspace: "Moments.xcworkspace",
+            xcargs: "-allowProvisioningUpdates")
+  end
 end

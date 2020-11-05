@@ -36,6 +36,11 @@ Lint and format code
 fastlane ios sort_files
 ```
 Sort Xcode project files
+### ios archive_internal
+```
+fastlane ios archive_internal
+```
+Creates an archive of the Internal app for testing
 ### ios archive_appstore
 ```
 fastlane ios archive_appstore
