@@ -1,0 +1,26 @@
+language: swift
+osx_image: xcode12.2
+env:
+  global:
+    - LC_CTYPE=en_US.UTF-8
+    - LANG=en_US.UTF-8
+    - WORKSPACE="Moments.xcworkspace"
+    - APP_SCHEME="Moments"
+  matrix:
+    - DESTINATION="platform=iOS Simulator,OS=14.1,name=iPhone 12 Pro Max" APP_SCHEME=${IOS_APP_SCHEME}
+before_install:
+  - bundle install
+  - bundle exec pod install
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  # Build App in Release
+  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release | xcpretty;
+
+  # Test App in Release
+  - xcodebuild clean -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
+
+after_success:
+   - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
