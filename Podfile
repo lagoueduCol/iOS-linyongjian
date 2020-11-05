@@ -52,6 +52,7 @@ end
 
 target 'MomentsTests' do
   core_pods
+  thirdparty_pods
   test_pods
 end
 
