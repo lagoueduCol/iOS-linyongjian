@@ -2,4 +2,4 @@
 #include "BaseTarget.xcconfig"
 
 PRODUCT_BUNDLE_NAME = $(inherited)
-PRODUCT_BUNDLE_IDENTIFIER = $(inherited)
+PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments

@@ -2,4 +2,4 @@
 #include "BaseTarget.xcconfig"
 
 PRODUCT_BUNDLE_NAME = $(inherited) β
-PRODUCT_BUNDLE_IDENTIFIER = $(inherited).internal
+PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments.internal
