@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAnalytics
 
-struct LikeActionTrackingEvent: ActionTrackingEvent {
+struct LikeActionTrackingEvent: ActionTrackingEventType {
     let momentID: String
     let userID: String
 }

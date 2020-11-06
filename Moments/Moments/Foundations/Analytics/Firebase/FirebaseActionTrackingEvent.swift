@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol FirebaseActionTrackingEvent: ActionTrackingEvent { }
+protocol FirebaseActionTrackingEvent: ActionTrackingEventType { }

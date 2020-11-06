@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ScreenviewsTrackingEventType: TrackingEvent {
+protocol ScreenviewsTrackingEventType: TrackingEventType {
     var screenName: String { get }
     var screenClass: String { get }
 }

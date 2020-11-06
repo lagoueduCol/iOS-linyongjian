@@ -8,6 +8,7 @@
 import Foundation
 
 protocol TrackingProvider {
-    func trackScreenviews(_ event: TrackingEvent)
-    func trackAction(_ event: TrackingEvent)
+    func trackScreenviews(_ event: TrackingEventType)
+    func trackEvent(_ event: TrackingEventType)
+    func trackAction(_ event: TrackingEventType)
 }

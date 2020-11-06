@@ -15,7 +15,7 @@
 		AE47B8BD25467BA0003DFED0 /* GetMomentsByUserIDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */; };
 		AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */; };
 		AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60125541DED00CBD66B /* TrackingProvider.swift */; };
-		AE4FB60725541E1100CBD66B /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60625541E1100CBD66B /* TrackingEvent.swift */; };
+		AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60625541E1100CBD66B /* TrackingEventType.swift */; };
 		AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */; };
 		AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */; };
 		AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */; };
@@ -68,6 +68,7 @@
 		AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */; };
 		AED4C79E253E77120001AAFC /* InternalMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */; };
 		AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */; };
+		AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACF8125550CE500F84562 /* TrackingEvent.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +104,7 @@
 		AE47B8BC25467BA0003DFED0 /* GetMomentsByUserIDSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSession.swift; sourceTree = "<group>"; };
 		AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingRepo.swift; sourceTree = "<group>"; };
 		AE4FB60125541DED00CBD66B /* TrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingProvider.swift; sourceTree = "<group>"; };
-		AE4FB60625541E1100CBD66B /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
+		AE4FB60625541E1100CBD66B /* TrackingEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEventType.swift; sourceTree = "<group>"; };
 		AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTrackingProvider.swift; sourceTree = "<group>"; };
 		AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEventType.swift; sourceTree = "<group>"; };
 		AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEvent.swift; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		AED4C78D253D82720001AAFC /* DesignKitDemoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoItemViewModel.swift; sourceTree = "<group>"; };
 		AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuRouter.swift; sourceTree = "<group>"; };
 		AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoViewController.swift; sourceTree = "<group>"; };
+		AEEACF8125550CE500F84562 /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -325,7 +327,8 @@
 				AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */,
 				AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */,
 				AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */,
-				AE4FB60625541E1100CBD66B /* TrackingEvent.swift */,
+				AEEACF8125550CE500F84562 /* TrackingEvent.swift */,
+				AE4FB60625541E1100CBD66B /* TrackingEventType.swift */,
 				AE4FB60125541DED00CBD66B /* TrackingProvider.swift */,
 				AE4FB5FC25541D3300CBD66B /* TrackingRepo.swift */,
 			);
@@ -914,7 +917,8 @@
 				AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
 				AEBEECA1254D581000D8140C /* TogglesDataSource.swift in Sources */,
-				AE4FB60725541E1100CBD66B /* TrackingEvent.swift in Sources */,
+				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
+				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
 				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,
 				AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */,
 				AE737A63253C32040025AA69 /* UIApplicationExtension.swift in Sources */,
