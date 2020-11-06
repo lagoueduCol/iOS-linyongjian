@@ -20,6 +20,10 @@ def core_pods
   pod 'Alamofire', '5.3.0'
 end
 
+def thirdparty_pods
+  pod 'Firebase/Analytics', '7.0.0'
+end
+
 def ui_pods
   pod 'SnapKit', '5.0.1'
   pod 'Kingfisher', '5.15.6'
@@ -41,12 +45,14 @@ end
 target 'Moments' do
   dev_pods
   core_pods
+  thirdparty_pods
   ui_pods
   internal_pods
 end
 
 target 'MomentsTests' do
   core_pods
+  thirdparty_pods
   test_pods
 end
 

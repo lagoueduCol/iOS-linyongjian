@@ -19,10 +19,12 @@ struct MomentListItemViewModel: ListItemViewModel {
 
     private let momentID: String
     private let momentsRepo: MomentsRepoType
+    private let trackingRepo: TrackingRepoType
 
-    init(moment: MomentsDetails.Moment, momentsRepo: MomentsRepoType = MomentsRepo.shared, now: Date = Date()) {
+    init(moment: MomentsDetails.Moment, momentsRepo: MomentsRepoType = MomentsRepo.shared, trackingRepo: TrackingRepoType = TrackingRepo.shared, now: Date = Date()) {
         momentID = moment.id
         self.momentsRepo = momentsRepo
+        self.trackingRepo = trackingRepo
         userAvatarURL = URL(string: moment.userDetails.avatar)
         userName = moment.userDetails.name
         title = moment.title
@@ -51,10 +53,12 @@ struct MomentListItemViewModel: ListItemViewModel {
     }
 
     func like(from userID: String) -> Observable<Void> {
-        momentsRepo.updateLike(isLiked: true, momentID: momentID, from: userID)
+        trackingRepo.trackAction(LikeActionTrackingEvent(momentID: momentID, userID: userID))
+        return momentsRepo.updateLike(isLiked: true, momentID: momentID, from: userID)
     }
 
     func unlike(from userID: String) -> Observable<Void> {
-        momentsRepo.updateLike(isLiked: false, momentID: momentID, from: userID)
+        trackingRepo.trackAction(UnlikeActionTrackingEvent(momentID: momentID, userID: userID))
+        return momentsRepo.updateLike(isLiked: false, momentID: momentID, from: userID)
     }
 }

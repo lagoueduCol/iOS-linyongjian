@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum Tracking {
+    /// Moments screen
+    internal static let momentsScreen = L10n.tr("Localizable", "Tracking.momentsScreen")
+  }
+
   internal enum Development {
     /// Default Configuration
     internal static let defaultConfiguration = L10n.tr("Localizable", "development.defaultConfiguration")

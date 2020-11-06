@@ -7,7 +7,7 @@ env:
     - WORKSPACE="Moments.xcworkspace"
     - APP_SCHEME="Moments"
   matrix:
-    - DESTINATION="platform=iOS Simulator,OS=14.1,name=iPhone 12 Pro Max" APP_SCHEME=${IOS_APP_SCHEME}
+    - DESTINATION="platform=iOS Simulator,OS=14.1,name=iPhone 12 Pro Max" APP_SCHEME=${APP_SCHEME}
 before_install:
   - bundle install
   - bundle exec pod install

@@ -3,3 +3,4 @@
 
 PRODUCT_BUNDLE_NAME = $(inherited) α
 PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments.development
+FIREBASE_CONFIG_FILENAME = GoogleService-Info-Development

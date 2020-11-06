@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        onLaunch()
+
         return true
     }
 
@@ -33,11 +36,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+private extension AppDelegate {
+    func onLaunch() {
+        FirebaseApp.configure()
+
+        // Can register multiple tracking providers here
+        [FirebaseTrackingProvider()].forEach {
+            TrackingRepo.shared.register(trackingProvider: $0)
+        }
+    }
+}
+
 #if DEBUG || INTERNAL
 extension UIWindow {
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         let router: AppRouting = AppRouter()
         if motion == .motionShake {
+            // swiftlint:disable no_hardcoded_strings
+            TrackingRepo.shared.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
             router.presentInternalMenu(from: rootViewController)
         }
     }
