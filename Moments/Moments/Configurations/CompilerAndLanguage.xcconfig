@@ -1,3 +1,4 @@
 // Apple LLVM 9.0 - Language - Modules
 CLANG_ENABLE_MODULES = YES
 SWIFT_VERSION = 5.0
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64

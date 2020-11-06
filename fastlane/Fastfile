@@ -56,7 +56,7 @@ platform :ios do
   desc 'Creates an archive of the Internal app for testing'
   lane :archive_internal do
     puts("Create an archive for Internal testing")
-    sync_code_signing(type: "appstore")
+    # sync_code_signing(type: "appstore")
     build_app(scheme: "Moments-Internal",
             workspace: "Moments.xcworkspace",
             xcargs: "-allowProvisioningUpdates")

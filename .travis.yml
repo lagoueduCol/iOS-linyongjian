@@ -13,14 +13,16 @@ before_install:
   - bundle exec pod install
 script:
   - set -o pipefail
-  - xcodebuild -version
-  - xcodebuild -showsdks
+  # - xcodebuild -version
+  # - xcodebuild -showsdks
+
+  - bundle exec fastlane sort_files
 
   # Build App in Release
   - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release | xcpretty;
 
-  # Test App in Release
-  - xcodebuild clean -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
+  # Test App
+  - bundle exec fastlane tests
 
 after_success:
    - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
