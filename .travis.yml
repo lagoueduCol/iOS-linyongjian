@@ -19,7 +19,7 @@ script:
   - bundle exec fastlane sort_files
 
   # Build App in Release
-  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release | xcpretty;
+  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
   # Test App
   - bundle exec fastlane tests
