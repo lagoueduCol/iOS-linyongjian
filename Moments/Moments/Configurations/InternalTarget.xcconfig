@@ -2,5 +2,5 @@
 #include "BaseTarget.xcconfig"
 
 PRODUCT_BUNDLE_NAME = $(inherited) β
-PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments.internal
+PRODUCT_BUNDLE_IDENTIFIER = com.ibanimatable.moments.internal
 FIREBASE_CONFIG_FILENAME = GoogleService-Info-Internal
