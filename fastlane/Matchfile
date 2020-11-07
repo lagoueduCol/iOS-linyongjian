@@ -4,9 +4,11 @@ storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-# app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
 # username("jakelinau@gmail.com") # Your Apple Developer Portal username 
-app_identifier("com.ibanimatable.moments", "com.ibanimatable.moments.internal", "com.ibanimatable.moments.development") # The bundle identifier of your app
+# # The bundle identifier of your app
+# app_identifier("com.ibanimatable.moments") # used for `bundle exec fastlane match appstore`
+# app_identifier("com.ibanimatable.moments.internal") # used for `bundle exec fastlane match adhoc`
+# team_id "6HLFCRTYQU"  # Developer Portal Team ID
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options

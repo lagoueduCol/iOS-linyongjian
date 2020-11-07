@@ -1107,6 +1107,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6HLFCRTYQU;
 				INFOPLIST_FILE = Moments/Info.plist;
@@ -1116,6 +1117,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "$(TARGETED_DEVICE_FAMILY)";
 			};
@@ -1127,7 +1129,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6HLFCRTYQU;
 				INFOPLIST_FILE = Moments/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(IPHONEOS_DEPLOYMENT_TARGET)";
@@ -1136,6 +1139,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.ibanimatable.moments.internal";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "$(TARGETED_DEVICE_FAMILY)";
 			};
@@ -1285,7 +1289,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6HLFCRTYQU;
 				INFOPLIST_FILE = Moments/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(IPHONEOS_DEPLOYMENT_TARGET)";
@@ -1294,6 +1299,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ibanimatable.moments";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "$(TARGETED_DEVICE_FAMILY)";
 			};
