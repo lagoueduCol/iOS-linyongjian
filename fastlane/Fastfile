@@ -21,17 +21,10 @@ platform :ios do
 #    # add actions here: https://docs.fastlane.tools/actions
 #  end
 
-  desc "Run unit tests"
-  lane :tests do
-    run_tests(
-      scheme: "Moments", 
-      output_directory: "./fastlane/dist", 
-      output_types: "html", 
-      buildlog_path: "./fastlane/dist")
-  end
-
+  # Development
   desc "Lint code"
   lane :lint_code do
+    puts("Lint code using SwfitLint")
     swiftlint(
       mode: :lint,
       executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
@@ -41,6 +34,7 @@ platform :ios do
 
   desc "Lint and format code"
   lane :format_code do
+    puts("Lint and format code using SwfitLint")
     swiftlint(
       mode: :autocorrect,
       executable: "./Pods/SwiftLint/swiftlint",  # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
@@ -50,34 +44,72 @@ platform :ios do
 
   desc "Sort Xcode project files"
   lane :sort_files do
+    puts("Sort the files for the Xcode project")
     sh "../scripts/sort-Xcode-project-file.pl ../Moments/Moments.xcodeproj"
   end
 
+  # Test
+  desc "Run unit tests"
+  lane :tests do
+    puts("Run the tests")
+    run_tests(
+      scheme: "Moments", 
+      output_directory: "./fastlane/dist", 
+      output_types: "html", 
+      buildlog_path: "./fastlane/dist")
+  end
+
+  # Profile
+  desc "Downlad certificates and profiles"
+  lane :download_profiles do
+    match(
+      readonly: true,
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments, com.ibanimatable.moments.internal",
+      team_id: "6HLFCRTYQU"
+    )
+  end
+
+  # Archive
   desc 'Creates an archive of the Internal app for testing'
   lane :archive_internal do
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: "Moments/Moments.xcodeproj",
+      code_sign_identity: "iPhone Distribution",
+      bundle_identifier: "com.ibanimatable.moments.internal",
+      profile_name: "match AdHoc com.ibanimatable.moments.internal")
+
     puts("Create an archive for Internal testing")
     # sync_code_signing(type: "appstore")
     gym(scheme: "Moments-Internal",
-            workspace: "Moments.xcworkspace",
-            export_method: "ad-hoc",
-            xcargs: "-allowProvisioningUpdates")
+      workspace: "Moments.xcworkspace",
+      export_method: "ad-hoc",
+      xcargs: "-allowProvisioningUpdates")
+
+    update_code_signing_settings(
+      use_automatic_signing: true,
+      path: "Moments/Moments.xcodeproj")
   end
 
   desc 'Creates an archive of the Production app with Appstore distribution'
   lane :archive_appstore do
-    disable_automatic_code_signing(
+    update_code_signing_settings(
+      use_automatic_signing: false,
       path: "Moments/Moments.xcodeproj",
       code_sign_identity: "iPhone Distribution",
-      team_id: "6HLFCRTYQU",
-      targets: ["Moments"],
       bundle_identifier: "com.ibanimatable.moments",
-      profile_name: "match AppStore com.ibanimatable.moments"
-    )
+      profile_name: "match AppStore com.ibanimatable.moments")
 
     puts("Create an archive for AppStore submission")
     gym(scheme: "Moments-AppStore",
-            workspace: "Moments.xcworkspace",
-            export_method: "app-store",
-            xcargs: "-allowProvisioningUpdates")
+      workspace: "Moments.xcworkspace",
+      export_method: "app-store",
+      xcargs: "-allowProvisioningUpdates")
+
+   update_code_signing_settings(
+      use_automatic_signing: true,
+        path: "Moments/Moments.xcodeproj")
   end
 end

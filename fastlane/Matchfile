@@ -1,8 +1,8 @@
-git_url("https://github.com/JakeLin/moments-codesign")
+# git_url("https://github.com/JakeLin/moments-codesign")
 
-storage_mode("git")
+# storage_mode("git")
 
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+# type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
 # username("jakelinau@gmail.com") # Your Apple Developer Portal username 
 # # The bundle identifier of your app
