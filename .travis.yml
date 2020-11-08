@@ -11,20 +11,31 @@ env:
 before_install:
   - bundle install
   - bundle exec pod install
-script:
-  - set -o pipefail
-  # - xcodebuild -version
-  # - xcodebuild -showsdks
+  
+jobs:
+  include:
+    - stage: "Setup"
+      name: "Setup"
+      script:
+        - set -o pipefail
+      # - xcodebuild -version
+      # - xcodebuild -showsdks
 
-  # Build App in Release
-  # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
+    - stage: "Build"
+      name: "Build AppStore app"
+      script:
+      # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
-  # Test App
-  # - bundle exec fastlane tests
-
-  # Archive Internal App
-  - bundle exec fastlane download_profiles
-  - bundle exec fastlane archive_internal
+    - stage: "Test"
+      name: "Test app"
+      script:
+      # - bundle exec fastlane tests
+  
+    - stage: "Deploy"
+      name: "Archive Internal app"
+      script:
+      - bundle exec fastlane download_profiles
+      - bundle exec fastlane archive_internal
 
 after_success:
    - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
