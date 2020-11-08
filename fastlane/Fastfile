@@ -57,17 +57,27 @@ platform :ios do
   lane :archive_internal do
     puts("Create an archive for Internal testing")
     # sync_code_signing(type: "appstore")
-    build_app(scheme: "Moments-Internal",
+    gym(scheme: "Moments-Internal",
             workspace: "Moments.xcworkspace",
+            export_method: "ad-hoc",
             xcargs: "-allowProvisioningUpdates")
-    upload_to_testflight
   end
 
   desc 'Creates an archive of the Production app with Appstore distribution'
   lane :archive_appstore do
+    disable_automatic_code_signing(
+      path: "Moments/Moments.xcodeproj",
+      code_sign_identity: "iPhone Distribution",
+      team_id: "6HLFCRTYQU",
+      targets: ["Moments"],
+      bundle_identifier: "com.ibanimatable.moments",
+      profile_name: "match AppStore com.ibanimatable.moments"
+    )
+
     puts("Create an archive for AppStore submission")
-    build_app(scheme: "Moments-AppStore",
+    gym(scheme: "Moments-AppStore",
             workspace: "Moments.xcworkspace",
+            export_method: "app-store",
             xcargs: "-allowProvisioningUpdates")
   end
 end
