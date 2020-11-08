@@ -18,6 +18,7 @@ jobs:
       name: "Setup"
       script:
         - set -o pipefail
+        - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
       # - xcodebuild -version
       # - xcodebuild -showsdks
 

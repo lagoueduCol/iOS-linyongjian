@@ -62,9 +62,21 @@ platform :ios do
   # Profile
   desc "Downlad certificates and profiles"
   lane :download_profiles do
+    tmp_keychain = "temporary_keychain"
+
+    create_keychain(
+      name: tmp_keychain,
+      password: tmp_keychain,
+      default_keychain: true,
+      timeout: 3600,
+      unlock: true,
+    )
+
     match(
       type: "appstore",
       readonly: true,
+      keychain_name: tmp_keychain,
+      keychain_password: tmp_keychain,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments",
@@ -74,6 +86,8 @@ platform :ios do
     match(
       type: "adhoc",
       readonly: true,
+      keychain_name: tmp_keychain,
+      keychain_password: tmp_keychain,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments.internal",
