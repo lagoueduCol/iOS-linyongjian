@@ -16,13 +16,14 @@ script:
   # - xcodebuild -version
   # - xcodebuild -showsdks
 
-  - bundle exec fastlane sort_files
-
   # Build App in Release
   - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
   # Test App
   - bundle exec fastlane tests
+
+  # Archive Internal App
+  - bundle exec fastlane archive_internal
 
 after_success:
    - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
