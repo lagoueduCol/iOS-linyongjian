@@ -63,10 +63,20 @@ platform :ios do
   desc "Downlad certificates and profiles"
   lane :download_profiles do
     match(
+      type: "appstore",
       readonly: true,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
-      app_identifier: "com.ibanimatable.moments, com.ibanimatable.moments.internal",
+      app_identifier: "com.ibanimatable.moments",
+      team_id: "6HLFCRTYQU"
+    )
+
+    match(
+      type: "adhoc",
+      readonly: true,
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments.internal",
       team_id: "6HLFCRTYQU"
     )
   end
