@@ -17,12 +17,13 @@ script:
   # - xcodebuild -showsdks
 
   # Build App in Release
-  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
+  # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
   # Test App
-  - bundle exec fastlane tests
+  # - bundle exec fastlane tests
 
   # Archive Internal App
+  - bundle exec fastlane download_profiles
   - bundle exec fastlane archive_internal
 
 after_success:
