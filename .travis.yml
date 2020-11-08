@@ -18,27 +18,27 @@ jobs:
       name: "Setup"
       script:
         - set -o pipefail
-        - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
       # - xcodebuild -version
       # - xcodebuild -showsdks
 
-    - stage: "Build"
-      name: "Build AppStore app"
-      script:
-        - ls # will remove  
+    # - stage: "Build"
+    #  name: "Build AppStore app"
+    #  script:
+    #    - ls # will remove  
       # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
-    - stage: "Test"
-      name: "Test app"
-      script:
-        - ls # will remove
+    #- stage: "Test"
+    #  name: "Test app"
+    #  script:
+    #    - ls # will remove
       # - bundle exec fastlane tests
   
-    - stage: "Deploy"
+    - stage: "Archive, sign and deploy app"
       name: "Archive Internal app"
       script:
-      - bundle exec fastlane download_profiles
-      - bundle exec fastlane archive_internal
+        - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
+        - bundle exec fastlane download_profiles
+        - bundle exec fastlane archive_internal
 
 after_success:
-   - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
+  - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
