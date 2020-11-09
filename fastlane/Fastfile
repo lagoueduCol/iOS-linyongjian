@@ -101,10 +101,8 @@ platform :ios do
       bundle_identifier: "com.ibanimatable.moments.internal",
       profile_name: "match AdHoc com.ibanimatable.moments.internal")
 
-    increment_version_number(
-      bump_type: "patch"
-    )
-  
+    increment_new_version_number
+
     puts("Create an archive for Internal testing")
     gym(scheme: "Moments-Internal",
       workspace: "Moments.xcworkspace",
@@ -125,9 +123,7 @@ platform :ios do
       bundle_identifier: "com.ibanimatable.moments",
       profile_name: "match AppStore com.ibanimatable.moments")
 
-    increment_version_number(
-      bump_type: "patch"
-    )
+    increment_new_version_number
 
     puts("Create an archive for AppStore submission")
     gym(scheme: "Moments-AppStore",
@@ -135,9 +131,9 @@ platform :ios do
       export_method: "app-store",
       xcargs: "-allowProvisioningUpdates")
 
-   update_code_signing_settings(
+    update_code_signing_settings(
       use_automatic_signing: true,
-        path: "Moments/Moments.xcodeproj")
+      path: "Moments/Moments.xcodeproj")
   end
 
   # Deploy
@@ -188,5 +184,17 @@ platform :ios do
     )
 
     api_key 
+  end
+
+  private_lane :increment_new_version_number do
+    version = get_version_number(
+      xcodeproj: "Moments/Moments.xcodeproj"
+    )
+    build_number = ENV["TRAVIS_BUILD_NUMBER"]  # Make sure setting this environment variable before call this lane.
+    new_version_number = version + '.' + build_number
+    increment_version_number(
+      xcodeproj: "Moments/Moments.xcodeproj",
+      version_number: new_version_number
+    )
   end
 end
