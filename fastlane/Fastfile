@@ -112,6 +112,8 @@ platform :ios do
     update_code_signing_settings(
       use_automatic_signing: true,
       path: "Moments/Moments.xcodeproj")
+    
+    puts("If you run this lane on your local machine, should not commit the changes for your project files and plist to Git")
   end
 
   desc 'Creates an archive of the Production app with Appstore distribution'
@@ -134,6 +136,8 @@ platform :ios do
     update_code_signing_settings(
       use_automatic_signing: true,
       path: "Moments/Moments.xcodeproj")
+    
+    puts("If you run this lane on your local machine, should not commit the changes for your project files and plist to Git")
   end
 
   # Deploy
@@ -191,10 +195,12 @@ platform :ios do
       xcodeproj: "Moments/Moments.xcodeproj"
     )
     build_number = ENV["TRAVIS_BUILD_NUMBER"]  # Make sure setting this environment variable before call this lane.
-    new_version_number = version + '.' + build_number
+    
+    # Remove the last one and append the build number
+    version[version.rindex('.')+1] = build_number
     increment_version_number(
       xcodeproj: "Moments/Moments.xcodeproj",
-      version_number: new_version_number
+      version_number: version
     )
   end
 end
