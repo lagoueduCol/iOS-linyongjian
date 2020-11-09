@@ -51,6 +51,11 @@ Creates an archive of the Internal app for testing
 fastlane ios archive_appstore
 ```
 Creates an archive of the Production app with Appstore distribution
+### ios deploy_internal
+```
+fastlane ios deploy_internal
+```
+Deploy the Internal app to TestFlight
 
 ----
 

@@ -62,7 +62,8 @@ platform :ios do
   # Profile
   desc "Downlad certificates and profiles"
   lane :download_profiles do
-    tmp_keychain = "temporary_keychain"
+    keychain_name = "Temporary Keychain"
+    keychain_password = SecureRandom.base64
 
     create_keychain(
       name: tmp_keychain,
@@ -75,8 +76,8 @@ platform :ios do
     match(
       type: "appstore",
       readonly: true,
-      keychain_name: tmp_keychain,
-      keychain_password: tmp_keychain,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments",
@@ -86,8 +87,8 @@ platform :ios do
     match(
       type: "adhoc",
       readonly: true,
-      keychain_name: tmp_keychain,
-      keychain_password: tmp_keychain,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments.internal",
@@ -135,5 +136,22 @@ platform :ios do
    update_code_signing_settings(
       use_automatic_signing: true,
         path: "Moments/Moments.xcodeproj")
+  end
+
+  # Deploy
+  desc 'Deploy the Internal app to TestFlight'
+  lane :deploy_internal do
+    key_content = ENV["APP_STORE_CONNECT_API_CONTENT"]  // Make sure setting it before call this lane.
+    api_key = app_store_connect_api_key(
+      key_id: "9228D47ZD2",
+      issuer_id: "69a6de7b-13fb-47e3-e053-5b8c7c11a4d1",
+      key_content: "-----BEGIN EC PRIVATE KEY-----\n" + key_content + "\n-----END EC PRIVATE KEY-----",
+      duration: 1200,
+      in_house: false
+    )
+
+    upload_to_testflight(
+      apple_id: "1539260603"
+    )
   end
 end

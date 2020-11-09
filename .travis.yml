@@ -14,31 +14,28 @@ before_install:
   
 jobs:
   include:
-    - stage: "Setup"
-      name: "Setup"
-      script:
-        - set -o pipefail
-      # - xcodebuild -version
-      # - xcodebuild -showsdks
-
     # - stage: "Build"
     #  name: "Build AppStore app"
     #  script:
+    #    - set -o pipefail
     #    - ls # will remove  
       # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
     #- stage: "Test"
     #  name: "Test app"
     #  script:
+    #    - set -o pipefail
     #    - ls # will remove
       # - bundle exec fastlane tests
   
     - stage: "Archive, sign and deploy app"
       name: "Archive Internal app"
       script:
+        - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
         - bundle exec fastlane download_profiles
         - bundle exec fastlane archive_internal
+        - bundle exec fastlane deploy_internal
 
 after_success:
   - sleep 5 # Workaround for https://github.com/travis-ci/travis-ci/issues/4725
