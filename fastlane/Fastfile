@@ -66,8 +66,8 @@ platform :ios do
     keychain_password = SecureRandom.base64
 
     create_keychain(
-      name: tmp_keychain,
-      password: tmp_keychain,
+      name: download_profiles,
+      password: keychain_password,
       default_keychain: true,
       timeout: 3600,
       unlock: true,
@@ -141,7 +141,28 @@ platform :ios do
   # Deploy
   desc 'Deploy the Internal app to TestFlight'
   lane :deploy_internal do
-    key_content = ENV["APP_STORE_CONNECT_API_CONTENT"]  # Make sure setting it before call this lane.
+    api_key = get_app_store_connect_api_key_for_internal
+    upload_to_testflight(
+      api_key: api_key,
+      app_identifier: "com.ibanimatable.moments.internal"
+    )
+  end
+
+  desc 'Deploy the Production app to App Store'
+  lane :deploy_appstore do
+    api_key = get_app_store_connect_api_key_for_appstore
+    upload_to_app_store(
+      api_key: api_key,
+      app_identifier: "com.ibanimatable.moments",
+      skip_metadata: true,
+      skip_screenshots: true,
+      precheck_include_in_app_purchases: false,
+    )
+  end
+
+  desc 'Get App Store Connect API key'
+  private_lane :get_app_store_connect_api_key_for_internal do
+    key_content = ENV["APP_STORE_CONNECT_API_CONTENT"]  # Make sure setting this environment variable before call this lane.
     api_key = app_store_connect_api_key(
       key_id: "9228D47ZD2",
       issuer_id: "69a6de7b-13fb-47e3-e053-5b8c7c11a4d1",
@@ -150,8 +171,20 @@ platform :ios do
       in_house: false
     )
 
-    upload_to_testflight(
-      apple_id: "1539260603"
+    api_key 
+  end
+
+  private_lane :get_app_store_connect_api_key_for_appstore do
+    # The key needs to have App Manager role, see https://github.com/fastlane/fastlane/issues/17066
+    key_content = ENV["APP_STORE_CONNECT_API_CONTENT_FOR_APPSTORE"]  # Make sure setting this environment variable before call this lane.
+    api_key = app_store_connect_api_key(
+      key_id: "D9B979RR69",
+      issuer_id: "69a6de7b-13fb-47e3-e053-5b8c7c11a4d1",
+      key_content: "-----BEGIN EC PRIVATE KEY-----\n" + key_content + "\n-----END EC PRIVATE KEY-----",
+      duration: 1200,
+      in_house: false
     )
+
+    api_key 
   end
 end
