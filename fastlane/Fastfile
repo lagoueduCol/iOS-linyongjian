@@ -66,22 +66,11 @@ platform :ios do
     keychain_password = SecureRandom.base64
 
     create_keychain(
-      name: download_profiles,
+      name: keychain_name,
       password: keychain_password,
       default_keychain: true,
       timeout: 3600,
       unlock: true,
-    )
-
-    match(
-      type: "appstore",
-      readonly: true,
-      keychain_name: keychain_name,
-      keychain_password: keychain_password,
-      storage_mode: "git",
-      git_url: "https://github.com/JakeLin/moments-codesign",
-      app_identifier: "com.ibanimatable.moments",
-      team_id: "6HLFCRTYQU"
     )
 
     match(
@@ -94,6 +83,17 @@ platform :ios do
       app_identifier: "com.ibanimatable.moments.internal",
       team_id: "6HLFCRTYQU"
     )
+
+    match(
+      type: "appstore",
+      readonly: true,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments",
+      team_id: "6HLFCRTYQU"
+    )    
   end
 
   # Archive
