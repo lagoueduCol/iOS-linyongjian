@@ -34,6 +34,7 @@ jobs:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
         - bundle exec fastlane download_profiles
+        - ./scripts/increment_build_number.sh
         - bundle exec fastlane archive_internal
         - bundle exec fastlane deploy_internal
     
@@ -43,6 +44,7 @@ jobs:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
         - bundle exec fastlane download_profiles
+        - ./scripts/increment_build_number.sh
         - bundle exec fastlane archive_appstore
         - bundle exec fastlane deploy_appstore
 

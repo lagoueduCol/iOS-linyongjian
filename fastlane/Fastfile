@@ -101,8 +101,6 @@ platform :ios do
       bundle_identifier: "com.ibanimatable.moments.internal",
       profile_name: "match AdHoc com.ibanimatable.moments.internal")
 
-    increment_new_version_number
-
     puts("Create an archive for Internal testing")
     gym(scheme: "Moments-Internal",
       workspace: "Moments.xcworkspace",
@@ -113,7 +111,7 @@ platform :ios do
       use_automatic_signing: true,
       path: "Moments/Moments.xcodeproj")
     
-    puts("If you run this lane on your local machine, should not commit the changes for your project files and plist to Git")
+    puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
   end
 
   desc 'Creates an archive of the Production app with Appstore distribution'
@@ -125,8 +123,6 @@ platform :ios do
       bundle_identifier: "com.ibanimatable.moments",
       profile_name: "match AppStore com.ibanimatable.moments")
 
-    increment_new_version_number
-
     puts("Create an archive for AppStore submission")
     gym(scheme: "Moments-AppStore",
       workspace: "Moments.xcworkspace",
@@ -137,7 +133,7 @@ platform :ios do
       use_automatic_signing: true,
       path: "Moments/Moments.xcodeproj")
     
-    puts("If you run this lane on your local machine, should not commit the changes for your project files and plist to Git")
+    puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
   end
 
   # Deploy
@@ -188,19 +184,5 @@ platform :ios do
     )
 
     api_key 
-  end
-
-  private_lane :increment_new_version_number do
-    version = get_version_number(
-      xcodeproj: "Moments/Moments.xcodeproj"
-    )
-    build_number = ENV["TRAVIS_BUILD_NUMBER"]  # Make sure setting this environment variable before call this lane.
-    
-    # Remove the last one and append the build number
-    version[version.rindex('.')+1] = build_number
-    increment_version_number(
-      xcodeproj: "Moments/Moments.xcodeproj",
-      version_number: version
-    )
   end
 end
