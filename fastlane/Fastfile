@@ -91,6 +91,28 @@ platform :ios do
     )
   end
 
+  desc "Create all new provisioning profiles managed by fastlane match"
+  lane :create_new_profiles do
+    api_key = get_app_store_connect_api_key
+    match(
+      type: "adhoc",
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments.internal",
+      team_id: "6HLFCRTYQU",
+      api_key: api_key
+    )
+
+    match(
+      type: "appstore",
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments",
+      team_id: "6HLFCRTYQU",
+      api_key: api_key
+    )
+  end
+
   desc "Add a new device to provisioning profile"
   lane :add_device do |options|
     name = options[:name]
@@ -177,7 +199,8 @@ platform :ios do
   lane :upload_symbols_to_crashlytics_internal do
     upload_symbols_to_crashlytics(
       dsym_path: "./Moments.app.dSYM.zip",
-      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-Internal.plist"
+      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-Internal.plist",
+      api_token: ENV["FIREBASE_API_TOKEN"]
     )
   end
 
@@ -185,7 +208,8 @@ platform :ios do
   lane :upload_symbols_to_crashlytics_appstore do
     upload_symbols_to_crashlytics(
       dsym_path: "./Moments.app.dSYM.zip",
-      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-AppStore.plist"
+      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-AppStore.plist",
+      api_token: ENV["FIREBASE_API_TOKEN"]
     )
   end
 

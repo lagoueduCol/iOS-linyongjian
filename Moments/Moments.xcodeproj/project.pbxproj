@@ -617,7 +617,7 @@
 				AE8A243125381E4F00DE782E /* Frameworks */,
 				AE8A243225381E4F00DE782E /* Resources */,
 				03EEE48EB506EB2722125A7E /* [CP] Embed Pods Frameworks */,
-				AE3EF140255A2831004B7FB0 /* Firebase Crashlytics - Upload dSYM files */,
+				AE3EF140255A2831004B7FB0 /* Firebase Crashlytics  */,
 			);
 			buildRules = (
 			);
@@ -793,7 +793,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE3EF140255A2831004B7FB0 /* Firebase Crashlytics - Upload dSYM files */ = {
+		AE3EF140255A2831004B7FB0 /* Firebase Crashlytics  */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -803,7 +803,7 @@
 			inputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
-			name = "Firebase Crashlytics - Upload dSYM files";
+			name = "Firebase Crashlytics ";
 			outputFileListPaths = (
 			);
 			outputPaths = (
