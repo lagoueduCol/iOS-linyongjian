@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>${PRODUCT_VERSION}</string>
+	<string>${PRODUCT_VERSION_BASE}</string>
 	<key>CFBundleVersion</key>
 	<string>${PRODUCT_VERSION}</string>
 	<key>LSRequiresIPhoneOS</key>

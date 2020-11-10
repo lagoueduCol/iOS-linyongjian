@@ -16,11 +16,6 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios tests
-```
-fastlane ios tests
-```
-Run unit tests
 ### ios lint_code
 ```
 fastlane ios lint_code
@@ -36,6 +31,16 @@ Lint and format code
 fastlane ios sort_files
 ```
 Sort Xcode project files
+### ios tests
+```
+fastlane ios tests
+```
+Run unit tests
+### ios download_profiles
+```
+fastlane ios download_profiles
+```
+Downlad certificates and profiles
 ### ios archive_internal
 ```
 fastlane ios archive_internal
@@ -46,6 +51,16 @@ Creates an archive of the Internal app for testing
 fastlane ios archive_appstore
 ```
 Creates an archive of the Production app with Appstore distribution
+### ios deploy_internal
+```
+fastlane ios deploy_internal
+```
+Deploy the Internal app to TestFlight
+### ios deploy_appstore
+```
+fastlane ios deploy_appstore
+```
+Deploy the Production app to App Store
 
 ----
 

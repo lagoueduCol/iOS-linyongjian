@@ -2,5 +2,5 @@
 #include "BaseTarget.xcconfig"
 
 PRODUCT_BUNDLE_NAME = $(inherited)
-PRODUCT_BUNDLE_IDENTIFIER = jakelin.moments
+PRODUCT_BUNDLE_IDENTIFIER = com.ibanimatable.moments
 FIREBASE_CONFIG_FILENAME = GoogleService-Info-AppStore
