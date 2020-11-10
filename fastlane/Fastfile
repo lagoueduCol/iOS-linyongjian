@@ -174,10 +174,6 @@ platform :ios do
   desc 'Deploy the Production app to TestFlight and App Store'
   lane :deploy_appstore do
     api_key = get_app_store_connect_api_key
-    upload_to_testflight(
-      api_key: api_key,
-      app_identifier: "com.ibanimatable.moments"
-    )
     upload_to_app_store(
       api_key: api_key,
       app_identifier: "com.ibanimatable.moments",
