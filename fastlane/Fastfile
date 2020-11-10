@@ -160,7 +160,7 @@ platform :ios do
         app: "1:374168413412:ios:912d89b30767d8e5a038f1",
         ipa_path: "Moments.ipa",
         groups: "internal-testers",
-        release_notes: "A new build", # Can customize it using Git history
+        release_notes: "A new build for the Internal App", # Can customize it using Git history
         firebase_cli_token: ENV["FIREBASE_API_TOKEN"]
     )
 
