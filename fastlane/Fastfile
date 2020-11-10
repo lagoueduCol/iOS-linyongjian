@@ -156,6 +156,14 @@ platform :ios do
   # Deploy
   desc 'Deploy the Internal app to TestFlight'
   lane :deploy_internal do
+    firebase_app_distribution(
+        app: "1:374168413412:ios:912d89b30767d8e5a038f1",
+        ipa_path: "Moments.ipa",
+        groups: "internal-testers",
+        release_notes: "A new build", # Can customize it using Git history
+        firebase_cli_token: ENV["FIREBASE_API_TOKEN"]
+    )
+
     api_key = get_app_store_connect_api_key
     upload_to_testflight(
       api_key: api_key,

@@ -60,7 +60,7 @@ Upload symbols to Crashlytics for Internal app
 ```
 fastlane ios upload_symbols_to_crashlytics_appstore
 ```
-Upload symbols to Crashlytics for Internal app
+Upload symbols to Crashlytics for Production app
 ### ios deploy_internal
 ```
 fastlane ios deploy_internal
