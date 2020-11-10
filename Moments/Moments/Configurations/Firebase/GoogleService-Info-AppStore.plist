@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>374168413412-pg9q2gfccanf2uorr61bdglshirukqa6.apps.googleusercontent.com</string>
+	<string>374168413412-org6qh9ivjo6qnn4tk2b3lr3d2ie09m4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.374168413412-pg9q2gfccanf2uorr61bdglshirukqa6</string>
+	<string>com.googleusercontent.apps.374168413412-org6qh9ivjo6qnn4tk2b3lr3d2ie09m4</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAC-ZpOnV2luh0JdacvODnoh_EarVRAZtU</string>
 	<key>GCM_SENDER_ID</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:374168413412:ios:28519ae3b2eab0b6a038f1</string>
+	<string>1:374168413412:ios:65c73876317e91c8a038f1</string>
 	<key>DATABASE_URL</key>
 	<string>https://moments-app-project.firebaseio.com</string>
 </dict>
