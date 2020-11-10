@@ -41,6 +41,11 @@ Run unit tests
 fastlane ios download_profiles
 ```
 Downlad certificates and profiles
+### ios add_device
+```
+fastlane ios add_device
+```
+Add a new device to provisioning profile
 ### ios archive_internal
 ```
 fastlane ios archive_internal
