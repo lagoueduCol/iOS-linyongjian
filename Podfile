@@ -22,6 +22,7 @@ end
 
 def thirdparty_pods
   pod 'Firebase/Analytics', '7.0.0'
+  pod 'Firebase/Crashlytics', '7.0.0'
 end
 
 def ui_pods
