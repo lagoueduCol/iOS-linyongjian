@@ -36,6 +36,7 @@ jobs:
         - bundle exec fastlane download_profiles
         - ./scripts/increment_build_number.sh
         - bundle exec fastlane archive_internal
+        - bundle exec fastlane upload_symbols_to_crashlytics_internal
         - bundle exec fastlane deploy_internal
     
     - stage: "Archive, sign and deploy production app"
@@ -46,6 +47,7 @@ jobs:
         - bundle exec fastlane download_profiles
         - ./scripts/increment_build_number.sh
         - bundle exec fastlane archive_appstore
+        - bundle exec fastlane upload_symbols_to_crashlytics_appstore
         - bundle exec fastlane deploy_appstore
 
 after_success:

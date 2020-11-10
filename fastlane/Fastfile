@@ -136,6 +136,23 @@ platform :ios do
     puts("If you run this lane on your local machine, should not commit the changes for your project file to Git")
   end
 
+  # Crash report symbols
+  desc 'Upload symbols to Crashlytics for Internal app'
+  lane :upload_symbols_to_crashlytics_internal do
+    upload_symbols_to_crashlytics(
+      dsym_path: "./Moments.app.dSYM.zip",
+      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-Internal.plist"
+    )
+  end
+
+  desc 'Upload symbols to Crashlytics for Production app'
+  lane :upload_symbols_to_crashlytics_appstore do
+    upload_symbols_to_crashlytics(
+      dsym_path: "./Moments.app.dSYM.zip",
+      gsp_path: "./Moments/Moments/Configurations/Firebase/GoogleService-Info-AppStore.plist"
+    )
+  end
+
   # Deploy
   desc 'Deploy the Internal app to TestFlight'
   lane :deploy_internal do
@@ -146,9 +163,13 @@ platform :ios do
     )
   end
 
-  desc 'Deploy the Production app to App Store'
+  desc 'Deploy the Production app to TestFlight and App Store'
   lane :deploy_appstore do
     api_key = get_app_store_connect_api_key
+    upload_to_testflight(
+      api_key: api_key,
+      app_identifier: "com.ibanimatable.moments"
+    )
     upload_to_app_store(
       api_key: api_key,
       app_identifier: "com.ibanimatable.moments",

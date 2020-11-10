@@ -51,6 +51,16 @@ Creates an archive of the Internal app for testing
 fastlane ios archive_appstore
 ```
 Creates an archive of the Production app with Appstore distribution
+### ios upload_symbols_to_crashlytics_internal
+```
+fastlane ios upload_symbols_to_crashlytics_internal
+```
+Upload symbols to Crashlytics for Internal app
+### ios upload_symbols_to_crashlytics_appstore
+```
+fastlane ios upload_symbols_to_crashlytics_appstore
+```
+Upload symbols to Crashlytics for Internal app
 ### ios deploy_internal
 ```
 fastlane ios deploy_internal
@@ -60,7 +70,7 @@ Deploy the Internal app to TestFlight
 ```
 fastlane ios deploy_appstore
 ```
-Deploy the Production app to App Store
+Deploy the Production app to TestFlight and App Store
 
 ----
 
