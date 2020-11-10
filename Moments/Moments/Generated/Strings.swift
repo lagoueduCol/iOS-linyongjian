@@ -38,6 +38,8 @@ internal enum L10n {
     internal static let cfBundleVersion = L10n.tr("Localizable", "internalMenu.CFBundleVersion")
     /// Colors
     internal static let colors = L10n.tr("Localizable", "internalMenu.colors")
+    /// Crash App
+    internal static let crashApp = L10n.tr("Localizable", "internalMenu.crashApp")
     /// DesignKit Demo
     internal static let designKitDemo = L10n.tr("Localizable", "internalMenu.designKitDemo")
     /// Favorite button
@@ -52,6 +54,8 @@ internal enum L10n {
     internal static let likeButtonForMomentEnabled = L10n.tr("Localizable", "internalMenu.likeButtonForMomentEnabled")
     /// Star favorite button
     internal static let starFavoriteButton = L10n.tr("Localizable", "internalMenu.starFavoriteButton")
+    /// Tools
+    internal static let tools = L10n.tr("Localizable", "internalMenu.tools")
     /// Typography
     internal static let typography = L10n.tr("Localizable", "internalMenu.typography")
     /// Version

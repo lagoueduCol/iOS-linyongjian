@@ -13,10 +13,13 @@
 "internalMenu.CFBundleVersion" = "CFBundleVersion";
 "internalMenu.designKitDemo" = "DesignKit Demo";
 "internalMenu.featureToggles" = "Feature Toggles";
+"internalMenu.tools" = "Tools";
+"internalMenu.crashApp" = "Crash App";
 
 "internalMenu.typography" = "Typography";
 "internalMenu.colors" = "Colors";
 "internalMenu.avatars" = "Avatars";
+
 "internalMenu.favoriteButton" = "Favorite button";
 "internalMenu.starFavoriteButton" = "Star favorite button";
 "internalMenu.heartFavoriteButton" = "Heart favorite button";
