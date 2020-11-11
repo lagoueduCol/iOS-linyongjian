@@ -22,7 +22,7 @@ class InternalMenuFeatureToggleItemViewModel: InternalMenuItemViewModel {
 
 // swiftlint:disable type_name
 final class InternalMenuLikeButtonToggleItemViewModel: InternalMenuFeatureToggleItemViewModel {
-    private let toggleDataStore: TogglesDataStoreType
+    private let togglesDataStore: TogglesDataStoreType
     private var isOn: Bool
 
     override var title: String {
@@ -33,12 +33,12 @@ final class InternalMenuLikeButtonToggleItemViewModel: InternalMenuFeatureToggle
        return isOn
     }
 
-    init(toggleDataStore: TogglesDataStoreType) {
-        self.toggleDataStore = toggleDataStore
-        isOn = toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled)
+    init(togglesDataStore: TogglesDataStoreType) {
+        self.togglesDataStore = togglesDataStore
+        isOn = togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled)
     }
 
     override func toggle(isOn: Bool) {
-        toggleDataStore.update(toggle: InternalToggle.isLikeButtonForMomentEnabled, value: isOn)
+        togglesDataStore.update(toggle: InternalToggle.isLikeButtonForMomentEnabled, value: isOn)
     }
 }

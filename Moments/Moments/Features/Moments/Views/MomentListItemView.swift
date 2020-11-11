@@ -67,17 +67,19 @@ final class MomentListItemView: BaseListItemView {
         $0.backgroundColor = UIColor.designKit.line
     }
 
-    private let toggleDataStore: TogglesDataStoreType
     private let userDataStore: UserDataStoreType
+    private let togglesDataStore: TogglesDataStoreType
+    private let remoteTogglesDataStore: TogglesDataStoreType
     private var viewModel: MomentListItemViewModel?
 
     override convenience init(frame: CGRect = .zero) {
-        self.init(frame: frame, toggleDataStore: InternalTogglesDataStore.shared)
+        self.init(frame: frame, userDataStore: UserDataStore.current)
     }
 
-    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, toggleDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
-        self.toggleDataStore = toggleDataStore
+    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared) {
         self.userDataStore = userDataStore
+        self.togglesDataStore = togglesDataStore
+        self.remoteTogglesDataStore = remoteTogglesDataStore
         super.init(frame: frame)
 
         setupUI()
@@ -102,7 +104,7 @@ final class MomentListItemView: BaseListItemView {
         momentImageView.kf.setImage(with: viewModel.photoURL)
         postDateDescriptionLabel.text = viewModel.postDateDescription
 
-        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+        if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.isSelected = viewModel.isLiked
 
             likesStakeView.arrangedSubviews.forEach {
@@ -125,6 +127,10 @@ final class MomentListItemView: BaseListItemView {
                     $0.width.equalTo(20)
                     $0.height.equalTo(20)
                 }
+
+                if remoteTogglesDataStore.isToggleOn(RemoteToggle.isRoundedAvatar) {
+                    avatar.asAvatar(cornerRadius: 10)
+                }
                 likesStakeView.addArrangedSubview(avatar)
             }
         }
@@ -142,7 +148,7 @@ private extension MomentListItemView {
             $0.spacing = Spacing.extraSmall
         }
 
-        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+        if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             verticalStackView.addArrangedSubview(likesStakeView)
         }
 
@@ -164,8 +170,13 @@ private extension MomentListItemView {
         }
 
         // Add `favoriteButton` if the toggle is ON
-        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+        if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             addSubview(favoriteButton)
+        }
+
+        // Round the avatar if the remote toggle is on
+        if remoteTogglesDataStore.isToggleOn(RemoteToggle.isRoundedAvatar) {
+            userAvatarImageView.asAvatar(cornerRadius: 20)
         }
     }
 
@@ -180,7 +191,7 @@ private extension MomentListItemView {
             $0.width.equalTo(240)
         }
 
-        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+        if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.snp.makeConstraints {
                 $0.bottom.equalToSuperview().offset(-Spacing.medium)
                 $0.trailing.equalToSuperview().offset(-Spacing.medium)
@@ -196,7 +207,7 @@ private extension MomentListItemView {
     }
 
     func setupBindings() {
-        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+        if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.rx.tap
                 .bind(onNext: { [weak self] in
                     guard let self = self else { return }

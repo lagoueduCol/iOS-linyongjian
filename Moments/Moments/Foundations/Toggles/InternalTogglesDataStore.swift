@@ -21,7 +21,7 @@ struct InternalTogglesDataStore: TogglesDataStoreType {
             ])
     }
 
-    static let shared = InternalTogglesDataStore(userDefaults: .standard)
+    static let shared: InternalTogglesDataStore = .init(userDefaults: .standard)
 
     func isToggleOn(_ toggle: ToggleType) -> Bool {
         guard let toggle = toggle as? InternalToggle else {

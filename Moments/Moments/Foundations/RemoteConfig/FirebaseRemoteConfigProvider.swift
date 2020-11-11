@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseRemoteConfig
 
-enum FirebaseRemoteConfigKey: String, RemoteConfigKey {
+enum FirebaseRemoteConfigKey: String, CaseIterable, RemoteConfigKey {
     case isRoundedAvatar
 }
 
@@ -16,8 +16,8 @@ struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
     let remoteConfig = RemoteConfig.remoteConfig()
 
     func setup() {
-        let defaultValues = [FirebaseRemoteConfigKey.isRoundedAvatar.rawValue: false as NSObject]
-        remoteConfig.setDefaults(defaultValues)
+        // swiftlint:disable no_hardcoded_strings
+        remoteConfig.setDefaults(fromPlist: "FirebaseRemoteConfigDefaults")
     }
 
     func fetch() {
@@ -29,7 +29,7 @@ struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
             return nil
         }
 
-        return remoteConfig.value(forKey: key.rawValue) as? String
+        return remoteConfig[key.rawValue].stringValue
     }
 
     func getInt(by key: RemoteConfigKey) -> Int? {
@@ -37,7 +37,7 @@ struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
             return nil
         }
 
-        return remoteConfig.value(forKey: key.rawValue) as? Int
+        return Int(truncating: remoteConfig[key.rawValue].numberValue)
     }
 
     func getBool(by key: RemoteConfigKey) -> Bool {
@@ -45,6 +45,6 @@ struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
             return false
         }
 
-        return remoteConfig.value(forKey: key.rawValue) as? Bool ?? false
+        return remoteConfig[key.rawValue].boolValue
     }
 }

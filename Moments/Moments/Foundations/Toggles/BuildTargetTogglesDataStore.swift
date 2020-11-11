@@ -12,7 +12,7 @@ enum BuildTargetToggle: String, ToggleType {
 }
 
 struct BuildTargetTogglesDataStore: TogglesDataStoreType {
-    static let shared = BuildTargetTogglesDataStore()
+    static let shared: BuildTargetTogglesDataStore = .init()
 
     let buildTarget: BuildTargetToggle
 
