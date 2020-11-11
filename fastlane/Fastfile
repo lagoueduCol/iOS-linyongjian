@@ -43,6 +43,12 @@ platform :ios do
     sh "../scripts/sort-Xcode-project-file.pl ../Moments/Moments.xcodeproj"
   end
 
+  desc "Prepare for a pull request"
+  lane :prepare_pr do
+    format_code
+    sort_files
+  end
+
   # Test
   desc "Run unit tests"
   lane :tests do
