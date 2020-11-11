@@ -44,6 +44,9 @@ private extension AppDelegate {
         [FirebaseTrackingProvider()].forEach {
             TrackingRepo.shared.register(trackingProvider: $0)
         }
+
+        // Can register different remote config provider here
+        RemoteConfigRepo.shared.register(remoteConfigProvider: FirebaseRemoteConfigProvider())
     }
 }
 
