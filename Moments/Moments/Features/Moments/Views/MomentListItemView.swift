@@ -72,10 +72,10 @@ final class MomentListItemView: BaseListItemView {
     private var viewModel: MomentListItemViewModel?
 
     override convenience init(frame: CGRect = .zero) {
-        self.init(frame: frame, toggleDataStore: TogglesDataStore.shared)
+        self.init(frame: frame, toggleDataStore: InternalTogglesDataStore.shared)
     }
 
-    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, toggleDataStore: TogglesDataStoreType = TogglesDataStore.shared) {
+    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, toggleDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
         self.toggleDataStore = toggleDataStore
         self.userDataStore = userDataStore
         super.init(frame: frame)
@@ -102,7 +102,7 @@ final class MomentListItemView: BaseListItemView {
         momentImageView.kf.setImage(with: viewModel.photoURL)
         postDateDescriptionLabel.text = viewModel.postDateDescription
 
-        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.isSelected = viewModel.isLiked
 
             likesStakeView.arrangedSubviews.forEach {
@@ -142,7 +142,7 @@ private extension MomentListItemView {
             $0.spacing = Spacing.extraSmall
         }
 
-        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             verticalStackView.addArrangedSubview(likesStakeView)
         }
 
@@ -164,7 +164,7 @@ private extension MomentListItemView {
         }
 
         // Add `favoriteButton` if the toggle is ON
-        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             addSubview(favoriteButton)
         }
     }
@@ -180,7 +180,7 @@ private extension MomentListItemView {
             $0.width.equalTo(240)
         }
 
-        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.snp.makeConstraints {
                 $0.bottom.equalToSuperview().offset(-Spacing.medium)
                 $0.trailing.equalToSuperview().offset(-Spacing.medium)
@@ -196,7 +196,7 @@ private extension MomentListItemView {
     }
 
     func setupBindings() {
-        if toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled) {
+        if toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.rx.tap
                 .bind(onNext: { [weak self] in
                     guard let self = self else { return }

@@ -22,9 +22,9 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         let parameters: Parameters
         let headers: HTTPHeaders = .init()
 
-        init(userID: String, toggleDataStore: TogglesDataStoreType = TogglesDataStore.shared) {
+        init(userID: String, toggleDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
             let variables: [AnyHashable: Encodable] = ["userID": userID,
-                                                       "withLikes": toggleDataStore.isToggleOn(.isLikeButtonForMomentEnabled)]
+                                                       "withLikes": toggleDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled)]
             parameters = ["query": Self.query,
                           "variables": variables]
         }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		100EF5C5168B01E6D7E8CBD9 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
+		AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF33B255BC8A0004B7FB0 /* TogglesDataStoreType.swift */; };
+		AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */; };
 		AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B7FD25455EDB003DFED0 /* Configuration.swift */; };
 		AE47B80425455FCF003DFED0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B80325455FCF003DFED0 /* API.swift */; };
 		AE47B8552545AD61003DFED0 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B8542545AD61003DFED0 /* APISession.swift */; };
@@ -57,7 +59,7 @@
 		AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */; };
 		AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC83254AE35800D8140C /* MomentListItemView.swift */; };
 		AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC94254B8B1600D8140C /* BaseTableViewController.swift */; };
-		AEBEECA1254D581000D8140C /* TogglesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEECA0254D581000D8140C /* TogglesDataSource.swift */; };
+		AEBEECA1254D581000D8140C /* InternalTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEECA0254D581000D8140C /* InternalTogglesDataStore.swift */; };
 		AEBEECC3254D789400D8140C /* InternalMenuFeatureToggleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEECC2254D789400D8140C /* InternalMenuFeatureToggleItemViewModel.swift */; };
 		AEBEECC8254D7C7800D8140C /* InternalMenuFeatureToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEECC7254D7C7800D8140C /* InternalMenuFeatureToggleCell.swift */; };
 		AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEED1A255046C900D8140C /* UserDataStore.swift */; };
@@ -98,6 +100,8 @@
 		4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9243B0C9A02DCFD124AB21A0 /* Pods-Moments.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.appstore.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.appstore.xcconfig"; sourceTree = "<group>"; };
 		AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuCrashAppItemViewModel.swift; sourceTree = "<group>"; };
+		AE3EF33B255BC8A0004B7FB0 /* TogglesDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglesDataStoreType.swift; sourceTree = "<group>"; };
+		AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTargetTogglesDataStore.swift; sourceTree = "<group>"; };
 		AE47B7F925455DD2003DFED0 /* BaseConfigurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfigurations.xcconfig; sourceTree = "<group>"; };
 		AE47B7FD25455EDB003DFED0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		AE47B80325455FCF003DFED0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemViewModel.swift; sourceTree = "<group>"; };
 		AEBEEC83254AE35800D8140C /* MomentListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentListItemView.swift; sourceTree = "<group>"; };
 		AEBEEC94254B8B1600D8140C /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		AEBEECA0254D581000D8140C /* TogglesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglesDataSource.swift; sourceTree = "<group>"; };
+		AEBEECA0254D581000D8140C /* InternalTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTogglesDataStore.swift; sourceTree = "<group>"; };
 		AEBEECC2254D789400D8140C /* InternalMenuFeatureToggleItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuFeatureToggleItemViewModel.swift; sourceTree = "<group>"; };
 		AEBEECC7254D7C7800D8140C /* InternalMenuFeatureToggleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuFeatureToggleCell.swift; sourceTree = "<group>"; };
 		AEBEED1A255046C900D8140C /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
@@ -586,8 +590,10 @@
 		AEBEEC9F254D580600D8140C /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */,
+				AEBEECA0254D581000D8140C /* InternalTogglesDataStore.swift */,
 				AEBEED3325517DF800D8140C /* PersistentDataStoreType.swift */,
-				AEBEECA0254D581000D8140C /* TogglesDataSource.swift */,
+				AE3EF33B255BC8A0004B7FB0 /* TogglesDataStoreType.swift */,
 				AEBEED1A255046C900D8140C /* UserDataStore.swift */,
 				AEBEED3825517E2400D8140C /* UserDefaultsPersistentDataStore.swift */,
 			);
@@ -904,6 +910,7 @@
 				AEA67AC02546FEC400D783CD /* BaseTableViewCell.swift in Sources */,
 				AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */,
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
+				AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */,
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
 				AED4C78E253D82720001AAFC /* DesignKitDemoItemViewModel.swift in Sources */,
 				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
@@ -924,6 +931,7 @@
 				AE7379402539DAAE0025AA69 /* InternalMenuSection.swift in Sources */,
 				AE7379332539D9880025AA69 /* InternalMenuViewController.swift in Sources */,
 				AE7379382539DA7F0025AA69 /* InternalMenuViewModel.swift in Sources */,
+				AEBEECA1254D581000D8140C /* InternalTogglesDataStore.swift in Sources */,
 				AE4FB65B255428F500CBD66B /* LikeActionTrackingEvent.swift in Sources */,
 				AEA67ABB2546FE9700D783CD /* ListItemCell.swift in Sources */,
 				AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */,
@@ -940,7 +948,7 @@
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
 				AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
-				AEBEECA1254D581000D8140C /* TogglesDataSource.swift in Sources */,
+				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
 				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,

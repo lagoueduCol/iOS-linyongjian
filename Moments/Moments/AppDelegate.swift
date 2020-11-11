@@ -47,15 +47,16 @@ private extension AppDelegate {
     }
 }
 
-#if DEBUG || INTERNAL
 extension UIWindow {
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        let router: AppRouting = AppRouter()
-        if motion == .motionShake {
-            // swiftlint:disable no_hardcoded_strings
-            TrackingRepo.shared.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
-            router.presentInternalMenu(from: rootViewController)
+        if BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.debug)
+            || BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.internal) {
+            let router: AppRouting = AppRouter()
+            if motion == .motionShake {
+                // swiftlint:disable no_hardcoded_strings
+                TrackingRepo.shared.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
+                router.presentInternalMenu(from: rootViewController)
+            }
         }
     }
 }
-#endif
