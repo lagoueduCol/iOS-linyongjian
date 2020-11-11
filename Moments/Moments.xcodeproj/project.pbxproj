@@ -242,6 +242,13 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		AE3EF34B255BCE10004B7FB0 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
 		AE47B80225455F46003DFED0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +370,7 @@
 		AE73790A2539D62C0025AA69 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				AE3EF34B255BCE10004B7FB0 /* RemoteConfig */,
 				AE4FB5FB25541D2500CBD66B /* Analytics */,
 				AEBEEC9F254D580600D8140C /* DataStore */,
 				AE737A61253C31FD0025AA69 /* Extensions */,
