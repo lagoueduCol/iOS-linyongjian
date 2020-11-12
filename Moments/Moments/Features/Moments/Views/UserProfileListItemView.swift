@@ -30,7 +30,14 @@ final class UserProfileListItemView: BaseListItemView {
         $0.numberOfLines = 1
     }
 
-    override init(frame: CGRect = .zero) {
+    private let remoteTogglesDataStore: TogglesDataStoreType
+
+    convenience override init(frame: CGRect = .zero) {
+        self.init(frame: frame, remoteTogglesDataStore: RemoteTogglesDataStore.shared)
+    }
+
+    init(frame: CGRect = .zero, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared) {
+        self.remoteTogglesDataStore = remoteTogglesDataStore
         super.init(frame: frame)
 
         setupUI()
@@ -59,6 +66,11 @@ private extension UserProfileListItemView {
 
         [backgroundImageView, avatarImageView, nameLabel].forEach {
             addSubview($0)
+        }
+
+        // Round the avatar if the remote toggle is on
+        if remoteTogglesDataStore.isToggleOn(RemoteToggle.isRoundedAvatar) {
+            avatarImageView.asAvatar(cornerRadius: 40)
         }
     }
 

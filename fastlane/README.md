@@ -31,6 +31,11 @@ Lint and format code
 fastlane ios sort_files
 ```
 Sort Xcode project files
+### ios prepare_pr
+```
+fastlane ios prepare_pr
+```
+Prepare for a pull request
 ### ios tests
 ```
 fastlane ios tests
@@ -41,6 +46,11 @@ Run unit tests
 fastlane ios download_profiles
 ```
 Downlad certificates and profiles
+### ios create_new_profiles
+```
+fastlane ios create_new_profiles
+```
+Create all new provisioning profiles managed by fastlane match
 ### ios add_device
 ```
 fastlane ios add_device
