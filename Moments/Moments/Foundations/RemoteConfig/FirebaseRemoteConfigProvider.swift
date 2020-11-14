@@ -10,6 +10,7 @@ import FirebaseRemoteConfig
 
 enum FirebaseRemoteConfigKey: String, CaseIterable, RemoteConfigKey {
     case isRoundedAvatar
+    case likeButtonStyle
 }
 
 struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
