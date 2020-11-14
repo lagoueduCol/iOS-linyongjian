@@ -77,3 +77,4 @@ struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
         return session.post().map { $0.data.updateMomentLike }
     }
 }
+// swiftlint:enable no_hardcoded_strings

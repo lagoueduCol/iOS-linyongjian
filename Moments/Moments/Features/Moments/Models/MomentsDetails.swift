@@ -44,5 +44,6 @@ struct MomentsDetails: Codable {
             case url = "URL"
             case photos = "PHOTOS"
         }
+        // swiftlint:enable no_hardcoded_strings
     }
 }

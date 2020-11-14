@@ -70,16 +70,18 @@ final class MomentListItemView: BaseListItemView {
     private let userDataStore: UserDataStoreType
     private let togglesDataStore: TogglesDataStoreType
     private let remoteTogglesDataStore: TogglesDataStoreType
+    private let abTestProvider: ABTestProvider
     private var viewModel: MomentListItemViewModel?
 
     override convenience init(frame: CGRect = .zero) {
         self.init(frame: frame, userDataStore: UserDataStore.current)
     }
 
-    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared) {
+    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared, abTestProvider: ABTestProvider = FirebaseABTestProvider.shared) {
         self.userDataStore = userDataStore
         self.togglesDataStore = togglesDataStore
         self.remoteTogglesDataStore = remoteTogglesDataStore
+        self.abTestProvider = abTestProvider
         super.init(frame: frame)
 
         setupUI()
@@ -171,6 +173,17 @@ private extension MomentListItemView {
 
         // Add `favoriteButton` if the toggle is ON
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+            // Set the like button style
+            switch abTestProvider.likeButtonStyle {
+            case .heart:
+                favoriteButton.asHeartFavoriteButton()
+            case .star:
+                favoriteButton.asStarFavoriteButton()
+            case .none:
+                // If the remote config is not set
+                favoriteButton.asHeartFavoriteButton()
+            }
+
             addSubview(favoriteButton)
         }
 
@@ -227,6 +240,7 @@ private extension MomentListItemView {
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 16, weight: .light, scale: .default)
         // swiftlint:disable no_hardcoded_strings
         let heartImage = UIImage(systemName: "heart", withConfiguration: symbolConfiguration)
+        // swiftlint:enable no_hardcoded_strings
         return configure(.init(image: heartImage)) {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.tintColor = UIColor.designKit.secondaryText

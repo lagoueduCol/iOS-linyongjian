@@ -76,3 +76,4 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         return session.post().map { $0.data.getMomentsDetailsByUserID }
     }
 }
+// swiftlint:enable no_hardcoded_strings

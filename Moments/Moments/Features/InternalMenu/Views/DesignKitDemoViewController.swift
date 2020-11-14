@@ -71,6 +71,7 @@ private extension DesignKitDemoViewController {
                      ("captionBold", UIFont.designKit.captionBold),
                      ("caption", UIFont.designKit.caption),
                      ("small", UIFont.designKit.small)]
+        // swiftlint:enable no_hardcoded_strings
 
         let title: UILabel = configure(.init()) {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +99,7 @@ private extension DesignKitDemoViewController {
     }
 
     func buildColors() -> UIView {
+        // swiftlint:disable no_hardcoded_strings
         let items = [("primary", UIColor.designKit.primary),
                      ("background", UIColor.designKit.background),
                      ("secondaryBackground", UIColor.designKit.secondaryBackground),
@@ -107,6 +109,7 @@ private extension DesignKitDemoViewController {
                      ("secondaryText", UIColor.designKit.secondaryText),
                      ("tertiaryText", UIColor.designKit.tertiaryText),
                      ("quaternaryText", UIColor.designKit.quaternaryText)]
+        // swiftlint:enable no_hardcoded_strings
 
         let title: UILabel = configure(.init()) {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -153,12 +156,14 @@ private extension DesignKitDemoViewController {
 
     func buildAvatars() -> UIView {
         // Got the URLs from https://uifaces.co/api-key
+        //swiftlint:disable no_hardcoded_strings
         let items = [URL(string: "https://images.generated.photos/SZ43KV-Oo26-wpPUM7zDLo19CpGFH0eBnjegQFtvaUc/rs:fit:512:512/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzA4/NTUzMzguanBn.jpg"),
                      URL(string: "https://randomuser.me/api/portraits/women/68.jpg"),
                      URL(string: "https://uifaces.co/our-content/donated/Si9Qv42B.jpg"),
                      URL(string: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzNjAzMTgzMV5BMl5BanBnXkFtZTcwNjU2NjA2NQ@@._V1_UY256_CR11,0,172,256_AL_.jpg"),
                      URL(string: "https://uifaces.co/our-content/donated/fID5-1BV.jpg")
                  ]
+        //swiftlint:enable no_hardcoded_strings
 
         let title: UILabel = configure(.init()) {
             $0.translatesAutoresizingMaskIntoConstraints = false

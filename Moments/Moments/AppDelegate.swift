@@ -47,6 +47,23 @@ private extension AppDelegate {
 
         // Can register different remote config provider here
         RemoteConfigRepo.shared.register(remoteConfigProvider: FirebaseRemoteConfigProvider())
+
+        if BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.debug) {
+            // There is still a bug in the Firebase Console, so the ID won't work until they fix it
+            // https://github.com/firebase/firebase-ios-sdk/issues/6892#issuecomment-721795650
+            Installations.installations().authTokenForcingRefresh(true) { token, error in
+                // swiftlint:disable no_hardcoded_strings
+                if let error = error {
+                    print("Error fetching token: \(error)")
+                    return
+                }
+                guard let token = token else { return }
+                Installations.installations().installationID { id, _ in
+                    print("Auth token: \(token.authToken)\nExpiration date: \(token.expirationDate)\nInstallation id: \(id ?? "invalid")")
+                }
+                // swiftlint:enable no_hardcoded_strings
+            }
+        }
     }
 }
 
@@ -58,6 +75,7 @@ extension UIWindow {
             if motion == .motionShake {
                 // swiftlint:disable no_hardcoded_strings
                 TrackingRepo.shared.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
+                // swiftlint:enable no_hardcoded_strings
                 router.presentInternalMenu(from: rootViewController)
             }
         }
