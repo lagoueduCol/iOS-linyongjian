@@ -14,11 +14,12 @@ struct LikeActionTrackingEvent: ActionTrackingEventType {
 }
 
 extension LikeActionTrackingEvent: FirebaseActionTrackingEvent {
-    // swiftlint:disable no_hardcoded_strings
     var parameters: [String : Any] {
+        // swiftlint:disable no_hardcoded_strings
         return [
             AnalyticsParameterItemID: "moment-id-\(momentID)-user-id-\(userID)",
             AnalyticsParameterItemName: "moment-like"
         ]
+        // swiftlint:enable no_hardcoded_strings
     }
 }

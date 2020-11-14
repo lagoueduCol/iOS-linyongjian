@@ -19,6 +19,7 @@ struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
     func setup() {
         // swiftlint:disable no_hardcoded_strings
         remoteConfig.setDefaults(fromPlist: "FirebaseRemoteConfigDefaults")
+        // swiftlint:enable no_hardcoded_strings
     }
 
     func fetch() {

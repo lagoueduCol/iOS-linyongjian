@@ -31,6 +31,7 @@ extension APISession {
             "x-app-version": UIApplication.appVersion,
             "x-os-version": UIDevice.current.systemVersion
         ]
+        // swiftlint:enable no_hardcoded_strings
 
         return headers
     }
