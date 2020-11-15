@@ -22,8 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        // Do not want to use private API `_removeSessionFromSessionSet` and just check conditionally check and replace with TestViewController
+
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MomentsListViewController()
+        if UIApplication.shared.isUnitTesting {
+        } else {
+            window?.rootViewController = MomentsListViewController()
+        }
         window?.makeKeyAndVisible()
     }
 

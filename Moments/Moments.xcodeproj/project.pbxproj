@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		100EF5C5168B01E6D7E8CBD9 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */; };
+		AE1D1CC42560B841006D82FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CC32560B841006D82FA /* main.swift */; };
+		AE1D1CD52560C97D006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
 		AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
@@ -43,7 +45,7 @@
 		AE7379622539E3530025AA69 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7379612539E3530025AA69 /* AppRouter.swift */; };
 		AE737979253ABC490025AA69 /* InternalMenuDescriptionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE737978253ABC490025AA69 /* InternalMenuDescriptionItemViewModel.swift */; };
 		AE737987253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE737986253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift */; };
-		AE737A63253C32040025AA69 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE737A62253C32040025AA69 /* UIApplicationExtension.swift */; };
+		AE737A63253C32040025AA69 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE737A62253C32040025AA69 /* UIApplicationExtensions.swift */; };
 		AE781DA725419F22001CFD77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE781DA425419F22001CFD77 /* LaunchScreen.storyboard */; };
 		AE781DBF2541A0C5001CFD77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE781DBD2541A0C5001CFD77 /* Localizable.strings */; };
 		AE81B4C825416EA200472755 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81B4C725416EA200472755 /* Strings.swift */; };
@@ -106,6 +108,8 @@
 		440EF30DA4BD52745F7D9A2C /* Pods-MomentsTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.appstore.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9243B0C9A02DCFD124AB21A0 /* Pods-Moments.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.appstore.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.appstore.xcconfig"; sourceTree = "<group>"; };
+		AE1D1CC32560B841006D82FA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		AE3727E3255FA80A004AD01E /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
 		AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTestProvider.swift; sourceTree = "<group>"; };
 		AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuCrashAppItemViewModel.swift; sourceTree = "<group>"; };
@@ -145,7 +149,7 @@
 		AE7379612539E3530025AA69 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		AE737978253ABC490025AA69 /* InternalMenuDescriptionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuDescriptionItemViewModel.swift; sourceTree = "<group>"; };
 		AE737986253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuDescriptionCell.swift; sourceTree = "<group>"; };
-		AE737A62253C32040025AA69 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		AE737A62253C32040025AA69 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		AE781DA525419F22001CFD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE781DC42541A0CB001CFD77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AE781E312543DA16001CFD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -504,7 +508,7 @@
 		AE737A61253C31FD0025AA69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AE737A62253C32040025AA69 /* UIApplicationExtension.swift */,
+				AE737A62253C32040025AA69 /* UIApplicationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -560,6 +564,7 @@
 				AE8A243725381E4F00DE782E /* AppDelegate.swift */,
 				AE8A244025381E5100DE782E /* Assets.xcassets */,
 				AE8A244525381E5100DE782E /* Info.plist */,
+				AE1D1CC32560B841006D82FA /* main.swift */,
 				AE8A243925381E4F00DE782E /* SceneDelegate.swift */,
 			);
 			path = Moments;
@@ -570,6 +575,7 @@
 			children = (
 				AE8A245025381E5100DE782E /* Info.plist */,
 				AE8A244E25381E5100DE782E /* MomentsTests.swift */,
+				AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */,
 			);
 			path = MomentsTests;
 			sourceTree = "<group>";
@@ -986,6 +992,7 @@
 				AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */,
 				AEA67AAB2546F14B00D783CD /* ListItemViewModel.swift in Sources */,
 				AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */,
+				AE1D1CC42560B841006D82FA /* main.swift in Sources */,
 				AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */,
 				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
@@ -1005,7 +1012,7 @@
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
 				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,
 				AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */,
-				AE737A63253C32040025AA69 /* UIApplicationExtension.swift in Sources */,
+				AE737A63253C32040025AA69 /* UIApplicationExtensions.swift in Sources */,
 				AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */,
 				AEBEED23255127B500D8140C /* UpdateMomentLikeSession.swift in Sources */,
 				AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */,
@@ -1020,6 +1027,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8A244F25381E5100DE782E /* MomentsTests.swift in Sources */,
+				AE1D1CD52560C97D006D82FA /* UnitTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
