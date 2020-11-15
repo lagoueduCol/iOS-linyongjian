@@ -27,6 +27,8 @@ internal enum L10n {
     internal static let fatalErrorSubclassToImplement = L10n.tr("Localizable", "development.fatalErrorSubclassToImplement")
     /// /graphql
     internal static let graphqlPath = L10n.tr("Localizable", "development.graphqlPath")
+    /// Running unit tests...
+    internal static let runningUnitTests = L10n.tr("Localizable", "development.runningUnitTests")
   }
 
   internal enum InternalMenu {

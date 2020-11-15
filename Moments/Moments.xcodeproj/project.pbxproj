@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		100EF5C5168B01E6D7E8CBD9 /* Pods_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935AB78F53E6F5173FC7C86 /* Pods_MomentsTests.framework */; };
 		AE1D1CC42560B841006D82FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CC32560B841006D82FA /* main.swift */; };
-		AE1D1CD52560C97D006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
+		AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
 		AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
@@ -260,6 +260,14 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		AE1D1CFD256162D4006D82FA /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		AE3727E2255FA7F4004AD01E /* ABTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +427,7 @@
 				AE47B80225455F46003DFED0 /* Networking */,
 				AE3EF34B255BCE10004B7FB0 /* RemoteConfig */,
 				AE73795A2539E3390025AA69 /* Routing */,
+				AE1D1CFD256162D4006D82FA /* Testing */,
 				AE3EF3B5255C12A2004B7FB0 /* Toggles */,
 				AE73790B2539D62C0025AA69 /* Utilities */,
 				AEA67AA42546EEF500D783CD /* ViewModels */,
@@ -575,7 +584,6 @@
 			children = (
 				AE8A245025381E5100DE782E /* Info.plist */,
 				AE8A244E25381E5100DE782E /* MomentsTests.swift */,
-				AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */,
 			);
 			path = MomentsTests;
 			sourceTree = "<group>";
@@ -1013,6 +1021,7 @@
 				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,
 				AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */,
 				AE737A63253C32040025AA69 /* UIApplicationExtensions.swift in Sources */,
+				AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */,
 				AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */,
 				AEBEED23255127B500D8140C /* UpdateMomentLikeSession.swift in Sources */,
 				AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */,
@@ -1027,7 +1036,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8A244F25381E5100DE782E /* MomentsTests.swift in Sources */,
-				AE1D1CD52560C97D006D82FA /* UnitTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

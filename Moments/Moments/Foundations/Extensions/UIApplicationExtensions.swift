@@ -24,9 +24,9 @@ extension UIApplication {
         // swiftlint:enable no_hardcoded_strings
     }
 
-    var isUnitTesting: Bool {
+    var isRunningUnitTests: Bool {
         // swiftlint:disable no_hardcoded_strings
-        return NSClassFromString("UnitTestViewController") != nil
+        return NSClassFromString("XCTestCase") != nil
         // swiftlint:enable no_hardcoded_strings
     }
 }
