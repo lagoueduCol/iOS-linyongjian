@@ -10,7 +10,6 @@ import Quick
 import Nimble
 import RxSwift
 import RxTest
-import Alamofire
 
 @testable import Moments
 

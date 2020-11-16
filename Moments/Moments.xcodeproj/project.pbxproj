@@ -83,6 +83,7 @@
 		AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACF8125550CE500F84562 /* TrackingEvent.swift */; };
 		AEEACFC32562933F00323827 /* EquatableViaDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFC22562933F00323827 /* EquatableViaDump.swift */; };
 		AEEACFCB25629FD900323827 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFCA25629FD900323827 /* MockError.swift */; };
+		AEEACFD32562A10500323827 /* LikeActionTrackingEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFD22562A10500323827 /* LikeActionTrackingEventTests.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +207,7 @@
 		AEEACF8125550CE500F84562 /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
 		AEEACFC22562933F00323827 /* EquatableViaDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableViaDump.swift; sourceTree = "<group>"; };
 		AEEACFCA25629FD900323827 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		AEEACFD22562A10500323827 /* LikeActionTrackingEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeActionTrackingEventTests.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		AE1D1D1025616800006D82FA /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				AEEACFD22562A10500323827 /* LikeActionTrackingEventTests.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1099,6 +1102,7 @@
 			files = (
 				AEEACFC32562933F00323827 /* EquatableViaDump.swift in Sources */,
 				AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */,
+				AEEACFD32562A10500323827 /* LikeActionTrackingEventTests.swift in Sources */,
 				AEEACFCB25629FD900323827 /* MockError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
