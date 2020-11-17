@@ -55,6 +55,7 @@
 		AE8A244125381E5100DE782E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8A244025381E5100DE782E /* Assets.xcassets */; };
 		AE8A245A25381E5100DE782E /* MomentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A245925381E5100DE782E /* MomentsUITests.swift */; };
 		AE94DB122563B88F00E907EF /* UpdateMomentLikeSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB112563B88F00E907EF /* UpdateMomentLikeSessionTests.swift */; };
+		AE94DB1A2563CA1100E907EF /* UserProfileListItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */; };
 		AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A942546C15600D783CD /* MomentsRepo.swift */; };
 		AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */; };
 		AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AA52546EEFC00D783CD /* ListViewModel.swift */; };
@@ -174,6 +175,7 @@
 		AE8A245925381E5100DE782E /* MomentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsUITests.swift; sourceTree = "<group>"; };
 		AE8A245B25381E5100DE782E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE94DB112563B88F00E907EF /* UpdateMomentLikeSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMomentLikeSessionTests.swift; sourceTree = "<group>"; };
+		AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileListItemViewModelTests.swift; sourceTree = "<group>"; };
 		AEA67A942546C15600D783CD /* MomentsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsRepo.swift; sourceTree = "<group>"; };
 		AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModel.swift; sourceTree = "<group>"; };
 		AEA67AA52546EEFC00D783CD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		AE1D1D0D25616800006D82FA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1124,6 +1127,7 @@
 				AEEACFF02562B18200323827 /* TestObserver.swift in Sources */,
 				AEEACFDB2562A4FA00323827 /* UnlikeActionTrackingEventTests.swift in Sources */,
 				AE94DB122563B88F00E907EF /* UpdateMomentLikeSessionTests.swift in Sources */,
+				AE94DB1A2563CA1100E907EF /* UserProfileListItemViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
