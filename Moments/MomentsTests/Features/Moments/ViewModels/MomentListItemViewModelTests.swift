@@ -21,11 +21,13 @@ private class MockMomentsRepo: MomentsRepoType {
         return Observable.just(())
     }
 
+    private(set) var updateLikeHasBeenCalled: Bool = false
     private(set) var passedIsLiked: Bool!
     private(set) var passedMomentID: String!
     private(set) var passedUserID: String!
 
     func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void> {
+        updateLikeHasBeenCalled = true
         passedIsLiked = isLiked
         passedMomentID = momentID
         passedUserID = userID
@@ -48,19 +50,21 @@ final class MomentListItemViewModelTests: QuickSpec {
             var mockMomentsRepo: MockMomentsRepo!
             var mockTrackingRepo: MockTrackingRepo!
             var mockNow: Date!
+            var mockRelativeDateTimeFormatter: MockRelativeDateTimeFormatter!
             var disposeBag: DisposeBag!
 
             beforeEach {
                 mockMomentsRepo = MockMomentsRepo()
                 mockTrackingRepo = MockTrackingRepo()
                 mockNow = MockNow.now
+                mockRelativeDateTimeFormatter = MockRelativeDateTimeFormatter()
                 disposeBag = DisposeBag()
             }
 
-            context("init(userDetails:)") {
+            context("init(moment:)") {
                 context("when all data provided") {
                     beforeEach {
-                        testSubject = MomentListItemViewModel(moment: TestFixture.moment, momentsRepo: mockMomentsRepo, trackingRepo: mockTrackingRepo, now: mockNow, relativeDateTimeFormatter: MockRelativeDateTimeFormatter())
+                        testSubject = MomentListItemViewModel(moment: TestFixture.moment, momentsRepo: mockMomentsRepo, trackingRepo: mockTrackingRepo, now: mockNow, relativeDateTimeFormatter: mockRelativeDateTimeFormatter)
                     }
 
                     it("should initialize the properties correctly") {
@@ -111,6 +115,7 @@ final class MomentListItemViewModelTests: QuickSpec {
                 }
 
                 it("should call `momentsRepo.updateLike` with correct parameters") {
+                    expect(mockMomentsRepo.updateLikeHasBeenCalled).to(beTrue())
                     expect(mockMomentsRepo.passedIsLiked).to(beTrue())
                     expect(mockMomentsRepo.passedMomentID).to(equal("0"))
                     expect(mockMomentsRepo.passedUserID).to(equal("1"))
@@ -129,6 +134,7 @@ final class MomentListItemViewModelTests: QuickSpec {
                 }
 
                 it("should call `momentsRepo.updateLike` with correct parameters") {
+                    expect(mockMomentsRepo.updateLikeHasBeenCalled).to(beTrue())
                     expect(mockMomentsRepo.passedIsLiked).to(beFalse())
                     expect(mockMomentsRepo.passedMomentID).to(equal("0"))
                     expect(mockMomentsRepo.passedUserID).to(equal("1"))

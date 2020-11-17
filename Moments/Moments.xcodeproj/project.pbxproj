@@ -60,6 +60,7 @@
 		AE94DB2F2563F35600E907EF /* MockNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB2E2563F35600E907EF /* MockNow.swift */; };
 		AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */; };
 		AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */; };
+		AE94DB3F2564010900E907EF /* MomentsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */; };
 		AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A942546C15600D783CD /* MomentsRepo.swift */; };
 		AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */; };
 		AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AA52546EEFC00D783CD /* ListViewModel.swift */; };
@@ -184,6 +185,7 @@
 		AE94DB2E2563F35600E907EF /* MockNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNow.swift; sourceTree = "<group>"; };
 		AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatterType.swift; sourceTree = "<group>"; };
 		AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackingRepo.swift; sourceTree = "<group>"; };
+		AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModelTests.swift; sourceTree = "<group>"; };
 		AEA67A942546C15600D783CD /* MomentsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsRepo.swift; sourceTree = "<group>"; };
 		AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModel.swift; sourceTree = "<group>"; };
 		AEA67AA52546EEFC00D783CD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -316,8 +318,9 @@
 		AE1D1D0D25616800006D82FA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */,
 				AE94DB212563F16300E907EF /* MomentListItemViewModelTests.swift */,
+				AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */,
+				AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -500,10 +503,10 @@
 		AE73790A2539D62C0025AA69 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
-				AE94DB332563F7EE00E907EF /* DateFormatter */,
 				AE3727E2255FA7F4004AD01E /* ABTest */,
 				AE4FB5FB25541D2500CBD66B /* Analytics */,
 				AEBEEC9F254D580600D8140C /* DataStore */,
+				AE94DB332563F7EE00E907EF /* DateFormatter */,
 				AE737A61253C31FD0025AA69 /* Extensions */,
 				AE47B80225455F46003DFED0 /* Networking */,
 				AE3EF34B255BCE10004B7FB0 /* RemoteConfig */,
@@ -762,10 +765,10 @@
 			children = (
 				AEEACFC22562933F00323827 /* EquatableViaDump.swift */,
 				AEEACFCA25629FD900323827 /* MockError.swift */,
-				AEEACFE72562AEB500323827 /* TestFixture.swift */,
-				AEEACFEF2562B18200323827 /* TestObserver.swift */,
 				AE94DB2E2563F35600E907EF /* MockNow.swift */,
 				AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */,
+				AEEACFE72562AEB500323827 /* TestFixture.swift */,
+				AEEACFEF2562B18200323827 /* TestObserver.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1089,7 +1092,6 @@
 				AE7379502539DE020025AA69 /* InternalMenuCell.swift in Sources */,
 				AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */,
 				AE737987253ABCFE0025AA69 /* InternalMenuDescriptionCell.swift in Sources */,
-				AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */,
 				AE737979253ABC490025AA69 /* InternalMenuDescriptionItemViewModel.swift in Sources */,
 				AEBEECC8254D7C7800D8140C /* InternalMenuFeatureToggleCell.swift in Sources */,
 				AEBEECC3254D789400D8140C /* InternalMenuFeatureToggleItemViewModel.swift in Sources */,
@@ -1112,6 +1114,7 @@
 				AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
+				AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */,
 				AE3EF37C255BFFAE004B7FB0 /* RemoteConfigProvider.swift in Sources */,
 				AE3EF386255C09BC004B7FB0 /* RemoteConfigRepo.swift in Sources */,
 				AE3EF3BA255C1336004B7FB0 /* RemoteTogglesDataStore.swift in Sources */,
@@ -1143,15 +1146,16 @@
 				AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */,
 				AEEACFD32562A10500323827 /* LikeActionTrackingEventTests.swift in Sources */,
 				AEEACFCB25629FD900323827 /* MockError.swift in Sources */,
+				AE94DB2F2563F35600E907EF /* MockNow.swift in Sources */,
+				AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */,
+				AE94DB222563F16300E907EF /* MomentListItemViewModelTests.swift in Sources */,
+				AE94DB3F2564010900E907EF /* MomentsListViewModelTests.swift in Sources */,
 				AEEACFE32562A56500323827 /* MomentsRepoTests.swift in Sources */,
 				AEEACFE82562AEB500323827 /* TestFixture.swift in Sources */,
-				AE94DB222563F16300E907EF /* MomentListItemViewModelTests.swift in Sources */,
 				AEEACFF02562B18200323827 /* TestObserver.swift in Sources */,
 				AEEACFDB2562A4FA00323827 /* UnlikeActionTrackingEventTests.swift in Sources */,
 				AE94DB122563B88F00E907EF /* UpdateMomentLikeSessionTests.swift in Sources */,
-				AE94DB2F2563F35600E907EF /* MockNow.swift in Sources */,
 				AE94DB1A2563CA1100E907EF /* UserProfileListItemViewModelTests.swift in Sources */,
-				AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
