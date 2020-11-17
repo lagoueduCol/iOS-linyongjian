@@ -17,7 +17,7 @@ import RxTest
 private class MockUserDefaultsPersistentDataStore: PersistentDataStoreType {
     private(set) var momentsDetails: BehaviorSubject<MomentsDetails?> = .init(value: nil)
 
-    var savedMomentsDetails: MomentsDetails?
+    private(set) var savedMomentsDetails: MomentsDetails?
 
     func save(momentsDetails: MomentsDetails) {
         savedMomentsDetails = momentsDetails
@@ -25,7 +25,7 @@ private class MockUserDefaultsPersistentDataStore: PersistentDataStoreType {
 }
 
 private class MockGetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
-    var getMomentsHasbeenCalled = false
+    private(set) var getMomentsHasbeenCalled = false
 
     func getMoments(userID: String) -> Observable<MomentsDetails> {
         getMomentsHasbeenCalled = true
@@ -35,10 +35,10 @@ private class MockGetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
 }
 
 private class MockUpdateMomentLikeSession: UpdateMomentLikeSessionType {
-    var updateLikeHasbeenCalled = false
-    var passedIsLiked: Bool = false
-    var passedMomentID: String = ""
-    var passedUserID: String = ""
+    private(set) var updateLikeHasbeenCalled = false
+    private(set) var passedIsLiked: Bool = false
+    private(set) var passedMomentID: String = ""
+    private(set) var passedUserID: String = ""
 
     func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails> {
         updateLikeHasbeenCalled = true
