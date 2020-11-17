@@ -21,7 +21,7 @@ struct MomentListItemViewModel: ListItemViewModel {
     private let momentsRepo: MomentsRepoType
     private let trackingRepo: TrackingRepoType
 
-    init(moment: MomentsDetails.Moment, momentsRepo: MomentsRepoType = MomentsRepo.shared, trackingRepo: TrackingRepoType = TrackingRepo.shared, now: Date = Date()) {
+    init(moment: MomentsDetails.Moment, momentsRepo: MomentsRepoType = MomentsRepo.shared, trackingRepo: TrackingRepoType = TrackingRepo.shared, now: Date = Date(), relativeDateTimeFormatter: RelativeDateTimeFormatterType = RelativeDateTimeFormatter()) {
         momentID = moment.id
         self.momentsRepo = momentsRepo
         self.trackingRepo = trackingRepo
@@ -37,9 +37,8 @@ struct MomentListItemViewModel: ListItemViewModel {
             photoURL = nil
         }
 
-        let formatter: RelativeDateTimeFormatter = configure(.init()) {
-            $0.unitsStyle = .full
-        }
+        var formatter = relativeDateTimeFormatter
+        formatter.unitsStyle = .full
         if let timeInterval = TimeInterval(moment.createdDate) {
             let createdDate = Date(timeIntervalSince1970: timeInterval)
             postDateDescription = formatter.localizedString(for: createdDate, relativeTo: now)

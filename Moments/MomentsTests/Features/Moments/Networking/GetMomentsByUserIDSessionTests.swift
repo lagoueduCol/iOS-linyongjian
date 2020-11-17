@@ -161,7 +161,7 @@ private struct TestData {
                 "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlk0dgrwcQ0FiTKdgR3atzstJ_wZC4gtPgOmUYBsLO2aa9ssXs"
               },
               "type": "PHOTOS",
-              "title": null,
+              "title": "the pic is awesome",
               "photos": [
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRisv-yQgXGrto6OxQxX62JyvyQGvRsQQ760g&usqp=CAU"
               ],
