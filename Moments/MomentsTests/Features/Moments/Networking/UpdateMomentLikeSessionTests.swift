@@ -30,7 +30,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
             }
 
             context("updateLike(:momentID:userID:") {
-                context("on response status code 200") {
+                context("when response status code 200") {
                     beforeEach {
                         mockResponseEvent = .next(100, TestData.successResponse)
                         updateLike(mockResponseEvent)
@@ -42,7 +42,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                     }
                 }
 
-                context("on response status code 200 with invalid data") {
+                context("when response status code 200 with invalid data") {
                     let invalidJSONError: APISessionError = .invalidJSON
 
                     beforeEach {
@@ -55,7 +55,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                     }
                 }
 
-                context("on response status code non-200") {
+                context("when response status code non-200") {
                     let networkError: APISessionError = .networkError(error: MockError(), statusCode: 500)
 
                     beforeEach {

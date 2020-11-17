@@ -30,7 +30,7 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         let parameters: Parameters
         let headers: HTTPHeaders = .init()
 
-        init(userID: String, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
+        init(userID: String, togglesDataStore: TogglesDataStoreType) {
             let variables: [AnyHashable: Encodable] = ["userID": userID,
                                                        "withLikes": togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled)]
             parameters = ["query": Self.query,
@@ -67,16 +67,18 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         """
     }
 
+    private let togglesDataStore: TogglesDataStoreType
     private let sessionHandler: (Session) -> Observable<Response>
 
-    init(sessionHandler: @escaping (Session) -> Observable<Response> = {
+    init(togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, sessionHandler: @escaping (Session) -> Observable<Response> = {
         $0.post($0.path, parameters: $0.parameters, headers: $0.headers)
     }) {
+        self.togglesDataStore = togglesDataStore
         self.sessionHandler = sessionHandler
     }
 
     func getMoments(userID: String) -> Observable<MomentsDetails> {
-        let session = Session(userID: userID)
+        let session = Session(userID: userID, togglesDataStore: togglesDataStore)
         return sessionHandler(session).map { $0.data.getMomentsDetailsByUserID }
     }
 }

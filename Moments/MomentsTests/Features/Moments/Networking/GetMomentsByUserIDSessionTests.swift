@@ -15,6 +15,20 @@ import RxTest
 
 extension MomentsDetails: EquatableViaDump { }
 
+private final class MockTogglesDataStore: TogglesDataStoreType {
+    let isToggleOn: Bool
+
+    init(isToggleOn: Bool) {
+        self.isToggleOn = isToggleOn
+    }
+
+    func isToggleOn(_ toggle: ToggleType) -> Bool {
+        return isToggleOn
+    }
+
+    func update(toggle: ToggleType, value: Bool) { }
+}
+
 final class GetMomentsByUserIDSessionTests: QuickSpec {
     override func spec() {
         describe("GetMomentsByUserIDSession") {
@@ -22,6 +36,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
             var testScheduler: TestScheduler!
             var testObserver: TestableObserver<MomentsDetails>!
             var mockResponseEvent: Recorded<Event<GetMomentsByUserIDSession.Response>>!
+            var mockInternalToggleDataStore: MockTogglesDataStore!
             var disposeBag: DisposeBag!
 
             beforeEach {
@@ -32,7 +47,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
             }
 
             context("getMoments(userID:)") {
-                context("on response status code 200") {
+                context("when response status code 200") {
                     beforeEach {
                         mockResponseEvent = .next(100, TestData.successResponse)
                         getMoments(mockResponseEvent)
@@ -44,7 +59,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
                     }
                 }
 
-                context("on response status code 200 with invalid data") {
+                context("when response status code 200 with invalid data") {
                     let invalidJSONError: APISessionError = .invalidJSON
 
                     beforeEach {
@@ -57,7 +72,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
                     }
                 }
 
-                context("on response status code non-200") {
+                context("when response status code non-200") {
                     let networkError: APISessionError = .networkError(error: MockError(), statusCode: 500)
 
                     beforeEach {
@@ -67,6 +82,46 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
 
                     it("should throw a network error") {
                         expect(testObserver.events).to(equal([.error(100, networkError)]))
+                    }
+                }
+            }
+
+            context("feature toggles") {
+                context("isLikeButtonForMomentEnabled") {
+                    context("when is on") {
+                        it("should set the query variables correctly") {
+                            mockInternalToggleDataStore = MockTogglesDataStore(isToggleOn: true)
+                            let testableObservable = testScheduler.createHotObservable([mockResponseEvent])
+                            testSubject = GetMomentsByUserIDSession(togglesDataStore: mockInternalToggleDataStore) { session in
+                                let variables = session.parameters["variables"] as! [String: Any?]
+
+                                expect(variables["userID"] as? String).to(equal("1"))
+                                expect(variables["withLikes"] as? Bool).to(beTrue())
+
+                                return testableObservable.asObservable()
+                            }
+
+                            testSubject.getMoments(userID: "1").subscribe(testObserver).disposed(by: disposeBag)
+                            testScheduler.start()
+                        }
+                    }
+
+                    context("when is off") {
+                        it("should set the query variables correctly") {
+                            mockInternalToggleDataStore = MockTogglesDataStore(isToggleOn: false)
+                            let testableObservable = testScheduler.createHotObservable([mockResponseEvent])
+                            testSubject = GetMomentsByUserIDSession(togglesDataStore: mockInternalToggleDataStore) { session in
+                                let variables = session.parameters["variables"] as! [String: Any?]
+
+                                expect(variables["userID"] as? String).to(equal("1"))
+                                expect(variables["withLikes"] as? Bool).to(beFalse())
+
+                                return testableObservable.asObservable()
+                            }
+
+                            testSubject.getMoments(userID: "1").subscribe(testObserver).disposed(by: disposeBag)
+                            testScheduler.start()
+                        }
                     }
                 }
             }
