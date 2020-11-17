@@ -15,30 +15,26 @@ protocol GetMomentsByUserIDSessionType {
 
 // swiftlint:disable no_hardcoded_strings
 struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
-    private struct Session: APISession {
+    struct Response: Codable {
+        let data: Data
+
+        struct Data: Codable {
+            let getMomentsDetailsByUserID: MomentsDetails
+        }
+    }
+
+    struct Session: APISession {
         typealias ReponseType = Response
 
         let path = L10n.Development.graphqlPath
         let parameters: Parameters
         let headers: HTTPHeaders = .init()
 
-        init(userID: String, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
+        init(userID: String, togglesDataStore: TogglesDataStoreType) {
             let variables: [AnyHashable: Encodable] = ["userID": userID,
                                                        "withLikes": togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled)]
             parameters = ["query": Self.query,
                           "variables": variables]
-        }
-
-        struct Response: Codable {
-            let data: Data
-
-            struct Data: Codable {
-                let getMomentsDetailsByUserID: MomentsDetails
-            }
-        }
-
-        fileprivate func post() -> Observable<Response> {
-            return post(path, parameters: parameters, headers: headers)
         }
 
         private static let query = """
@@ -71,9 +67,19 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
         """
     }
 
+    private let togglesDataStore: TogglesDataStoreType
+    private let sessionHandler: (Session) -> Observable<Response>
+
+    init(togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, sessionHandler: @escaping (Session) -> Observable<Response> = {
+        $0.post($0.path, parameters: $0.parameters, headers: $0.headers)
+    }) {
+        self.togglesDataStore = togglesDataStore
+        self.sessionHandler = sessionHandler
+    }
+
     func getMoments(userID: String) -> Observable<MomentsDetails> {
-        let session = Session(userID: userID)
-        return session.post().map { $0.data.getMomentsDetailsByUserID }
+        let session = Session(userID: userID, togglesDataStore: togglesDataStore)
+        return sessionHandler(session).map { $0.data.getMomentsDetailsByUserID }
     }
 }
 // swiftlint:enable no_hardcoded_strings

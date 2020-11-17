@@ -1,5 +1,5 @@
 //
-//  UIApplicationExtension.swift
+//  UIApplicationExtensions.swift
 //  Moments
 //
 //  Created by Jake Lin on 18/10/20.
@@ -21,6 +21,12 @@ extension UIApplication {
     static var appVersion: String {
         // swiftlint:disable no_hardcoded_strings
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+        // swiftlint:enable no_hardcoded_strings
+    }
+
+    var isRunningUnitTests: Bool {
+        // swiftlint:disable no_hardcoded_strings
+        return NSClassFromString("XCTestCase") != nil
         // swiftlint:enable no_hardcoded_strings
     }
 }

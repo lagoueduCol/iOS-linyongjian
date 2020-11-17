@@ -20,29 +20,29 @@ struct MomentsRepo: MomentsRepoType {
     private let disposeBag: DisposeBag = .init()
 
     private let persistentDataStore: PersistentDataStoreType
-    private let getMomentsByUserIDSessionBuilder: () -> GetMomentsByUserIDSessionType
-    private let updateMomentLikeSessionBuilder: () -> UpdateMomentLikeSessionType
+    private let getMomentsByUserIDSession: GetMomentsByUserIDSessionType
+    private let updateMomentLikeSession: UpdateMomentLikeSessionType
 
     static let shared: MomentsRepo = {
         return MomentsRepo(
             persistentDataStore: UserDefaultsPersistentDataStore.shared,
-            getMomentsByUserIDSessionBuilder: { GetMomentsByUserIDSession() },
-            updateMomentLikeSessionBuilder: { UpdateMomentLikeSession() }
+            getMomentsByUserIDSession: GetMomentsByUserIDSession(),
+            updateMomentLikeSession: UpdateMomentLikeSession()
         )
     }()
 
-    private init(persistentDataStore: PersistentDataStoreType,
-                 getMomentsByUserIDSessionBuilder: @escaping () -> GetMomentsByUserIDSessionType,
-                 updateMomentLikeSessionBuilder: @escaping () -> UpdateMomentLikeSessionType) {
+    init(persistentDataStore: PersistentDataStoreType,
+                 getMomentsByUserIDSession: GetMomentsByUserIDSessionType,
+                 updateMomentLikeSession: UpdateMomentLikeSessionType) {
         self.persistentDataStore = persistentDataStore
-        self.getMomentsByUserIDSessionBuilder = getMomentsByUserIDSessionBuilder
-        self.updateMomentLikeSessionBuilder = updateMomentLikeSessionBuilder
+        self.getMomentsByUserIDSession = getMomentsByUserIDSession
+        self.updateMomentLikeSession = updateMomentLikeSession
 
-        persistentDataStore.momentsDetails.compactMap { $0 }.subscribe(momentsDetails).disposed(by: disposeBag)
+        persistentDataStore.momentsDetails.debug().compactMap { $0 }.subscribe(momentsDetails).disposed(by: disposeBag)
     }
 
     func getMoments(userID: String) -> Observable<Void> {
-        return getMomentsByUserIDSessionBuilder()
+        return getMomentsByUserIDSession
             .getMoments(userID: userID)
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }
@@ -50,7 +50,7 @@ struct MomentsRepo: MomentsRepoType {
     }
 
     func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void> {
-        return updateMomentLikeSessionBuilder()
+        return updateMomentLikeSession
             .updateLike(isLiked, momentID: momentID, userID: userID)
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }

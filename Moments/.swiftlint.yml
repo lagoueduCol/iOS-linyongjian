@@ -36,8 +36,11 @@ whitelist_rules:
   - flatmap_over_map_reduce
   - for_where
   - force_cast
-  - force_try
-  - force_unwrapping
+    excluded:"/Moments/MomentsTests"
+  - force_try 
+    excluded:"/Moments/MomentsTests"
+  - force_unwrapping 
+    excluded:"/Moments/MomentsTests"
   - function_default_parameter_at_end
   - generic_type_name
   - identical_operands
@@ -129,6 +132,7 @@ excluded:
 
 custom_rules:
   no_hardcoded_strings:
+    excluded: "/Moments/MomentsTests"
     regex: "([A-Za-z]+)"
     match_kinds: string
     message: "Please do not hardcode strings and add them to the appropriate `Localizable.strings` file; a build script compiles all strings into strongly typed resources available through `Generated/Strings.swift`, e.g. `L10n.accessCamera"

@@ -21,12 +21,11 @@ jobs:
     #    - ls # will remove  
       # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
 
-    #- stage: "Test"
-    #  name: "Test app"
-    #  script:
-    #    - set -o pipefail
-    #    - ls # will remove
-      # - bundle exec fastlane tests
+    - stage: "Test"
+      name: "Test app"
+      script:
+        - set -o pipefail
+        - bundle exec fastlane tests
   
     - stage: "Archive, sign and deploy internal app"
       name: "Archive Internal app"

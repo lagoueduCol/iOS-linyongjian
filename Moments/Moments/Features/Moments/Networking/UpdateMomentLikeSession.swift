@@ -15,7 +15,15 @@ protocol UpdateMomentLikeSessionType {
 
 // swiftlint:disable no_hardcoded_strings
 struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
-    private struct Session: APISession {
+    struct Response: Codable {
+        let data: Data
+
+        struct Data: Codable {
+            let updateMomentLike: MomentsDetails
+        }
+    }
+
+    struct Session: APISession {
         typealias ReponseType = Response
 
         let path = L10n.Development.graphqlPath
@@ -28,18 +36,6 @@ struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
                                                        "isLiked": isLiked]
             parameters = ["query": Self.query,
                           "variables": variables]
-        }
-
-        struct Response: Codable {
-            let data: Data
-
-            struct Data: Codable {
-                let updateMomentLike: MomentsDetails
-            }
-        }
-
-        fileprivate func post() -> Observable<Response> {
-            return post(path, parameters: parameters, headers: headers)
         }
 
         private static let query = """
@@ -72,9 +68,17 @@ struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
         """
     }
 
+    private let sessionHandler: (Session) -> Observable<Response>
+
+    init(sessionHandler: @escaping (Session) -> Observable<Response> = {
+        $0.post($0.path, parameters: $0.parameters, headers: $0.headers)
+    }) {
+        self.sessionHandler = sessionHandler
+    }
+
     func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails> {
         let session = Session(momentID: momentID, userID: userID, isLiked: isLiked)
-        return session.post().map { $0.data.updateMomentLike }
+        return sessionHandler(session).map { $0.data.updateMomentLike }
     }
 }
 // swiftlint:enable no_hardcoded_strings
