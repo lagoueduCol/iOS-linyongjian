@@ -7,8 +7,6 @@ env:
     - WORKSPACE="Moments.xcworkspace"
     - APP_SCHEME="Moments"
     - CI_BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
-  matrix:
-    - DESTINATION="platform=iOS Simulator,OS=14.2,name=iPhone 12 Pro Max" APP_SCHEME=${APP_SCHEME}
 before_install:
   - bundle install
   - bundle exec pod install
@@ -19,7 +17,7 @@ jobs:
       name: "Build Development app"
       script:
         - set -o pipefail
-        - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Development | xcpretty;
+        - bundle exec fastlane build_dev_app
 
     - stage: "Test"
       name: "Test app"
@@ -41,7 +39,7 @@ jobs:
         
     - stage: "Archive, sign and deploy production app"
       name: "Archive Production app"
-      if: branch = main # usually if: branch = release
+      if: branch = main # usually use `if: branch = release`
       script:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc

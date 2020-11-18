@@ -49,6 +49,15 @@ platform :ios do
     sort_files
   end
 
+  desc "Build development app"
+  lane :build_dev_app do
+    puts("Build development app")
+    gym(scheme: "Moments",
+      workspace: "Moments.xcworkspace",
+      configuration: "Debug",
+      xcargs: "-allowProvisioningUpdates")
+  end
+
   # Test
   desc "Run unit tests"
   lane :tests do
