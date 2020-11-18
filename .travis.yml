@@ -14,12 +14,11 @@ before_install:
   
 jobs:
   include:
-    # - stage: "Build"
-    #  name: "Build AppStore app"
-    #  script:
-    #    - set -o pipefail
-    #    - ls # will remove  
-      # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
+    - stage: "Build"
+      name: "Build Development app"
+      script:
+        - set -o pipefail
+        - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Development | xcpretty;
 
     - stage: "Test"
       name: "Test app"
