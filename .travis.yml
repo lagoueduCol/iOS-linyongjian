@@ -6,6 +6,7 @@ env:
     - LANG=en_US.UTF-8
     - WORKSPACE="Moments.xcworkspace"
     - APP_SCHEME="Moments"
+    - CI_BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
   matrix:
     - DESTINATION="platform=iOS Simulator,OS=14.2,name=iPhone 12 Pro Max" APP_SCHEME=${APP_SCHEME}
 before_install:
