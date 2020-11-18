@@ -1,6 +1,6 @@
 # moments-ios
 
-[![Build Status](https://app.bitrise.io/app/9b664f5df446c761/status.svg?token=x27EBdjhOhOE3MQ__Nx3EQ&branch=main)](https://app.bitrise.io/app/9b664f5df446c761)
+[![Build Status](https://travis-ci.com/lagoueduCol/iOS-linyongjian.svg?branch=main)](https://travis-ci.com/lagoueduCol/iOS-linyongjian)
 [![Language](https://img.shields.io/badge/language-Swift%205.3-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/github/license/lagoueduCol/moments-ios.svg?style=flat)](https://github.com/lagoueduCol/moments-ios/blob/main/LICENSE)
 
