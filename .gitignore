@@ -239,3 +239,6 @@ fastlane/test_output
 fastlane/FastlaneRunner
 
 fastlane/dist
+
+# Keys
+local.keys
