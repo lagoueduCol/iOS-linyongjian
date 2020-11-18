@@ -14,10 +14,12 @@ before_install:
 jobs:
   include:
     - stage: "Build"
-      name: "Build Development app"
+      name: "Build internal app"
       script:
         - set -o pipefail
-        - bundle exec fastlane build_dev_app
+        - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
+        - bundle exec fastlane download_profiles
+        - bundle exec fastlane archive_internal
 
     - stage: "Test"
       name: "Test app"
