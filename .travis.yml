@@ -28,6 +28,7 @@ jobs:
   
     - stage: "Archive, sign and deploy internal app"
       name: "Archive Internal app"
+      if: branch = main
       script:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
@@ -36,9 +37,10 @@ jobs:
         - bundle exec fastlane archive_internal
         - bundle exec fastlane upload_symbols_to_crashlytics_internal
         - bundle exec fastlane deploy_internal
-    
+        
     - stage: "Archive, sign and deploy production app"
       name: "Archive Production app"
+      if: branch = main # usually if: branch = release
       script:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
