@@ -11,7 +11,11 @@
 		AE1D1CC42560B841006D82FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CC32560B841006D82FA /* main.swift */; };
 		AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
 		AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */; };
-		AE2154CB256667C700CE71C2 /* SwiftUIMomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */; };
+		AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */; };
+		AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */; };
+		AE2154EB2566985900CE71C2 /* SwiftUIMomentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */; };
+		AE2154FA256699BE00CE71C2 /* MomentsListObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */; };
+		AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
 		AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
@@ -131,7 +135,11 @@
 		AE1D1CC32560B841006D82FA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSessionTests.swift; sourceTree = "<group>"; };
-		AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsView.swift; sourceTree = "<group>"; };
+		AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentListItemView.swift; sourceTree = "<group>"; };
+		AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIUserProfileListItemView.swift; sourceTree = "<group>"; };
+		AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsListView.swift; sourceTree = "<group>"; };
+		AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListObservableObject.swift; sourceTree = "<group>"; };
+		AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsListItemView.swift; sourceTree = "<group>"; };
 		AE3727E3255FA80A004AD01E /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
 		AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTestProvider.swift; sourceTree = "<group>"; };
 		AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuCrashAppItemViewModel.swift; sourceTree = "<group>"; };
@@ -366,9 +374,29 @@
 		AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */,
+				AE2154F2256698AC00CE71C2 /* ObservedObject */,
+				AE2154E52566985900CE71C2 /* Views */,
 			);
 			path = "Moments-SwiftUI";
+			sourceTree = "<group>";
+		};
+		AE2154E52566985900CE71C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */,
+				AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */,
+				AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */,
+				AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE2154F2256698AC00CE71C2 /* ObservedObject */ = {
+			isa = PBXGroup;
+			children = (
+				AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */,
+			);
+			path = ObservedObject;
 			sourceTree = "<group>";
 		};
 		AE3727E2255FA7F4004AD01E /* ABTest */ = {
@@ -1148,6 +1176,7 @@
 				AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */,
 				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
+				AE2154FA256699BE00CE71C2 /* MomentsListObservableObject.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
 				AEA67B74254905D800D783CD /* MomentsTimelineViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsTimelineViewModel.swift in Sources */,
@@ -1159,7 +1188,10 @@
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
-				AE2154CB256667C700CE71C2 /* SwiftUIMomentsView.swift in Sources */,
+				AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */,
+				AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */,
+				AE2154EB2566985900CE71C2 /* SwiftUIMomentsListView.swift in Sources */,
+				AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */,
 				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
