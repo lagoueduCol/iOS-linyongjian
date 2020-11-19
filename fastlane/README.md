@@ -36,6 +36,11 @@ Sort Xcode project files
 fastlane ios prepare_pr
 ```
 Prepare for a pull request
+### ios build_dev_app
+```
+fastlane ios build_dev_app
+```
+Build development app
 ### ios tests
 ```
 fastlane ios tests

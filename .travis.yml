@@ -1,25 +1,25 @@
 language: swift
-osx_image: xcode12
+osx_image: xcode12.2
 env:
   global:
     - LC_CTYPE=en_US.UTF-8
     - LANG=en_US.UTF-8
     - WORKSPACE="Moments.xcworkspace"
     - APP_SCHEME="Moments"
-  matrix:
-    - DESTINATION="platform=iOS Simulator,OS=14.2,name=iPhone 12 Pro Max" APP_SCHEME=${APP_SCHEME}
+    - CI_BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
 before_install:
   - bundle install
   - bundle exec pod install
   
 jobs:
   include:
-    # - stage: "Build"
-    #  name: "Build AppStore app"
-    #  script:
-    #    - set -o pipefail
-    #    - ls # will remove  
-      # - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration AppStore | xcpretty;
+    - stage: "Build"
+      name: "Build internal app"
+      script:
+        - set -o pipefail
+        - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
+        - bundle exec fastlane download_profiles
+        - bundle exec fastlane archive_internal
 
     - stage: "Test"
       name: "Test app"
@@ -29,6 +29,7 @@ jobs:
   
     - stage: "Archive, sign and deploy internal app"
       name: "Archive Internal app"
+      if: branch = main
       script:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
@@ -37,9 +38,10 @@ jobs:
         - bundle exec fastlane archive_internal
         - bundle exec fastlane upload_symbols_to_crashlytics_internal
         - bundle exec fastlane deploy_internal
-    
+        
     - stage: "Archive, sign and deploy production app"
       name: "Archive Production app"
+      if: branch = main # usually use `if: branch = release`
       script:
         - set -o pipefail
         - echo "machine github.com login $GITHUB_API_TOKEN" >> ~/.netrc
