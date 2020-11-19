@@ -25,6 +25,7 @@
 "internalMenu.heartFavoriteButton" = "Heart favorite button";
 
 "internalMenu.likeButtonForMomentEnabled" = "Like Button Enable";
+"internalMenu.swiftUIEnabled" = "Swift UI Enable";
 
 // Moments List
 "momentsList.errorMessage" = "Something went wrong, please try again later";
