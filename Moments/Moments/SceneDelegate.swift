@@ -5,6 +5,7 @@
 //  Created by Jake Lin on 15/10/20.
 //
 
+import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -29,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = UnitTestViewController()
         } else {
             if InternalTogglesDataStore.shared.isToggleOn(InternalToggle.isSwiftUIEnabled) {
-
+                window?.rootViewController = UIHostingController(rootView: SwiftUIMomentsView())
             } else {
                 window?.rootViewController = MomentsTimelineViewController()
             }
