@@ -11,6 +11,7 @@
 		AE1D1CC42560B841006D82FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CC32560B841006D82FA /* main.swift */; };
 		AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
 		AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */; };
+		AE2154CB256667C700CE71C2 /* SwiftUIMomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
 		AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
@@ -130,6 +131,7 @@
 		AE1D1CC32560B841006D82FA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSessionTests.swift; sourceTree = "<group>"; };
+		AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsView.swift; sourceTree = "<group>"; };
 		AE3727E3255FA80A004AD01E /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
 		AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTestProvider.swift; sourceTree = "<group>"; };
 		AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuCrashAppItemViewModel.swift; sourceTree = "<group>"; };
@@ -361,6 +363,14 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
+		AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				AE2154CA256667C700CE71C2 /* SwiftUIMomentsView.swift */,
+			);
+			path = "Moments-SwiftUI";
+			sourceTree = "<group>";
+		};
 		AE3727E2255FA7F4004AD01E /* ABTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +553,7 @@
 			children = (
 				AE73792F2539D9880025AA69 /* InternalMenu */,
 				AE47B89C25467410003DFED0 /* Moments */,
+				AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */,
 			);
 			name = Features;
 			path = Moments/Features;
@@ -1148,6 +1159,7 @@
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
+				AE2154CB256667C700CE71C2 /* SwiftUIMomentsView.swift in Sources */,
 				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
