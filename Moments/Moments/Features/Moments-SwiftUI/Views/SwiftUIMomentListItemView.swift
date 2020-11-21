@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RxSwift
 import struct Kingfisher.KFImage
 import DesignKit
 
@@ -16,6 +17,11 @@ private struct IdentifiableURL: Identifiable {
 
 struct SwiftUIMomentListItemView: View {
     let viewModel: MomentListItemViewModel
+
+    @State var isLiked: Bool
+    @EnvironmentObject var userDataStore: UserDataStoreObservableObject
+
+    private let disposeBag: DisposeBag = .init()
 
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.medium) {
@@ -64,6 +70,16 @@ struct SwiftUIMomentListItemView: View {
                         }
                     }
                 }
+
+                Toggle("", isOn: $isLiked)
+                    .onChange(of: isLiked, perform: { isOn in
+                        guard isLiked == isOn else { return }
+                        if isOn {
+                            viewModel.like(from: userDataStore.currentUser.userID).subscribe().disposed(by: disposeBag)
+                        } else {
+                            viewModel.unlike(from: userDataStore.currentUser.userID).subscribe().disposed(by: disposeBag)
+                        }
+                    })
             }
             Spacer()
         }

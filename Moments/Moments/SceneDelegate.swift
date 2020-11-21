@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = UnitTestViewController()
         } else {
             if InternalTogglesDataStore.shared.isToggleOn(InternalToggle.isSwiftUIEnabled) {
-                window?.rootViewController = UIHostingController(rootView: SwiftUIMomentsListView())
+                window?.rootViewController = UIHostingController(rootView: SwiftUIMomentsListView().environmentObject(UserDataStoreObservableObject()))
             } else {
                 window?.rootViewController = MomentsTimelineViewController()
             }
