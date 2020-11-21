@@ -105,6 +105,7 @@
 		AEEACFE82562AEB500323827 /* TestFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFE72562AEB500323827 /* TestFixture.swift */; };
 		AEEACFF02562B18200323827 /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFEF2562B18200323827 /* TestObserver.swift */; };
 		AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */; };
+		AEF2D720256906F3006307EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2D71F256906F3006307EF /* BlurView.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -250,6 +251,7 @@
 		AEEACFE72562AEB500323827 /* TestFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixture.swift; sourceTree = "<group>"; };
 		AEEACFEF2562B18200323827 /* TestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
 		AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingUltils.swift; sourceTree = "<group>"; };
+		AEF2D71F256906F3006307EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		AE2154E52566985900CE71C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEF2D71F256906F3006307EF /* BlurView.swift */,
 				AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */,
 				AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */,
 				AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */,
@@ -1140,6 +1143,7 @@
 				AEA67AC02546FEC400D783CD /* BaseTableViewCell.swift in Sources */,
 				AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */,
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
+				AEF2D720256906F3006307EF /* BlurView.swift in Sources */,
 				AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */,
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
 				AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */,
