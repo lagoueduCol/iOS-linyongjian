@@ -10,9 +10,11 @@ import SwiftUI
 struct SwiftUIMomentsListItemView: View {
     let viewModel: ListItemViewModel
 
+    @Binding var isDragging: Bool
+
     var body: some View {
         if let viewModel = viewModel as? UserProfileListItemViewModel {
-            SwiftUIUserProfileListItemView(viewModel: viewModel)
+            SwiftUIUserProfileListItemView(viewModel: viewModel, isDragging: $isDragging)
         } else if let viewModel = viewModel as? MomentListItemViewModel {
             SwiftUIMomentListItemView(viewModel: viewModel)
         }
