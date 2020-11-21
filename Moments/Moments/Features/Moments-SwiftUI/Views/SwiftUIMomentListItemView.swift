@@ -9,16 +9,21 @@ import SwiftUI
 import struct Kingfisher.KFImage
 import DesignKit
 
+private struct IdentifiableURL: Identifiable {
+    let url: URL
+    var id = UUID()
+}
+
 struct SwiftUIMomentListItemView: View {
     let viewModel: MomentListItemViewModel
 
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.medium) {
             KFImage(viewModel.userAvatarURL)
-                    .resizable()
-                    .clipShape(Circle())
-                    .frame(width: 44, height: 44)
-                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                .resizable()
+                .clipShape(Circle())
+                .frame(width: 44, height: 44)
+                .shadow(color: Color.primary.opacity(0.15), radius: 5, x: 0, y: 2)
                 .padding(.leading, Spacing.medium)
 
             VStack(alignment: .leading) {
@@ -42,6 +47,22 @@ struct SwiftUIMomentListItemView: View {
                     Text(postDateDescription)
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
+                }
+
+                if let likes = viewModel.likes, !likes.isEmpty {
+                    HStack {
+                        //swiftlint:disable no_hardcoded_strings
+                        Image(systemName: "heart")
+                            .foregroundColor(.secondary)
+                        //swiftlint:enable no_hardcoded_strings
+                        ForEach(likes.map { IdentifiableURL(url: $0) }) {
+                            KFImage($0.url)
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .clipShape(Circle())
+                                .shadow(color: Color.primary.opacity(0.15), radius: 3, x: 0, y: 2)
+                        }
+                    }
                 }
             }
             Spacer()
