@@ -12,6 +12,7 @@ struct SwiftUIMomentListItemView: View {
 
     var body: some View {
         Text(viewModel.userName)
+            .frame(height: 120)
     }
 }
 

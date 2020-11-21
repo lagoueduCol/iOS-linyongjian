@@ -104,6 +104,8 @@ PODS:
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
+  - Kingfisher/SwiftUI (5.15.6):
+    - Kingfisher/Core
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -139,6 +141,7 @@ DEPENDENCIES:
   - Firebase/Performance (= 7.0.0)
   - Firebase/RemoteConfig (= 7.0.0)
   - Kingfisher (= 5.15.6)
+  - Kingfisher/SwiftUI (= 5.15.6)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
   - RxBlocking (= 5.1.1)
