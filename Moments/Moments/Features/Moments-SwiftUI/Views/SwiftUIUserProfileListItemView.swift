@@ -20,13 +20,13 @@ struct SwiftUIUserProfileListItemView: View {
             HStack {
                 Spacer()
                 Text(viewModel.name)
-                    .font(.headline)
+                    .font(.title2)
                     .foregroundColor(.white)
                     .padding(.trailing, 10)
                 KFImage(viewModel.avatarURL)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 80, height: 80, alignment: .top)
+                    .frame(width: 80, height: 80, alignment: .center)
                     .clipShape(Circle())
             }
             .padding(.trailing, 10)
@@ -46,16 +46,18 @@ struct SwiftUIUserProfileListItemView: View {
                     .blendMode(.overlay)
             }
         )
-        .background(KFImage(viewModel.backgroundImageURL)
-        .offset(x: viewState.width / 25, y: viewState.height / 25))
-        .background(Color(#colorLiteral(red: 0.4117647059, green: 0.4705882353, blue: 0.9725490196, alpha: 1)))
+        .background(
+            KFImage(viewModel.backgroundImageURL)
+                .resizable()
+                .offset(x: viewState.width / 25, y: viewState.height / 25)
+        )
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .scaleEffect(isDragging ? 0.9 : 1)
         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
         .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
         .gesture(
             DragGesture().onChanged({ value in
-                // Seems there is bug `onChanged` will be called after `onEnded`, will fix later
+                // Seems there is bug: `onChanged` will be called after `onEnded`, will fix later
                 self.isDragging = true
                 self.viewState = value.translation
             }).onEnded({ _ in
