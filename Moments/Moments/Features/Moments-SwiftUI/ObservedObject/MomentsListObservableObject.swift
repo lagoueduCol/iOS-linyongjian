@@ -10,7 +10,7 @@ import Combine
 import RxSwift
 
 struct IdentifiableListItemViewModel: Identifiable {
-    var id = UUID()
+    let id = UUID()
     var viewModel: ListItemViewModel
 }
 
