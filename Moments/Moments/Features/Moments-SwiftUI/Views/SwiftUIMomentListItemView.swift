@@ -15,55 +15,29 @@ private struct IdentifiableURL: Identifiable {
     var id = UUID()
 }
 
-extension Color {
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-
-    static let darkStart = Color(red: 50 / 255, green: 60 / 255, blue: 65 / 255)
-    static let darkEnd = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
-
-    static let lightStart = Color(red: 60 / 255, green: 160 / 255, blue: 240 / 255)
-    static let lightEnd = Color(red: 30 / 255, green: 80 / 255, blue: 120 / 255)
-}
-
 struct LikeToggleBackground<S: Shape>: View {
     var isHighlighted: Bool
     var shape: S
 
+    //swiftlint:disable no_hardcoded_strings
     var body: some View {
         ZStack {
             if isHighlighted {
                 shape
-                    .fill(LinearGradient(Color.lightEnd, Color.lightStart))
-                    .overlay(shape.stroke(LinearGradient(Color.lightStart, Color.lightEnd), lineWidth: 2))
-                    .shadow(color: Color.darkStart, radius: 5, x: 5, y: 5)
-                    .shadow(color: Color.darkEnd, radius: 5, x: -5, y: -5)
-//                    .fill(Color.offWhite)
-//                    .overlay(
-//                        Circle()
-//                            .stroke(Color.gray, lineWidth: 4)
-//                            .blur(radius: 4)
-//                            .offset(x: 2, y: 2)
-//                            .mask(Circle().fill(LinearGradient(Color.black, Color.clear)))
-//                    )
-//                    .overlay(
-//                        Circle()
-//                            .stroke(Color.white, lineWidth: 8)
-//                            .blur(radius: 4)
-//                            .offset(x: -2, y: -2)
-//                            .mask(Circle().fill(LinearGradient(Color.clear, Color.black)))
-//                    )
+                    .fill(LinearGradient(Color("likeButtonFillEnd"), Color("likeButtonFillStart")))
+                    .overlay(shape.stroke(LinearGradient(Color("likeButtonFillStart"), Color("likeButtonFillEnd")), lineWidth: 2))
+                    .shadow(color: Color("likeButtonStart"), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color("likeButtonEnd"), radius: 5, x: -5, y: -5)
             } else {
                 shape
-                    .fill(LinearGradient(Color.darkStart, Color.darkEnd))
-                    .overlay(shape.stroke(LinearGradient(Color.lightStart, Color.lightEnd), lineWidth: 2))
-                    .shadow(color: Color.darkStart, radius: 5, x: 5, y: 5)
-                    .shadow(color: Color.darkEnd, radius: 5, x: -5, y: -5)
-//                    .fill(Color.offWhite)
-//                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-//                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                    .fill(LinearGradient(Color("likeButtonFillStart"), Color("likeButtonFillEnd")))
+                    .overlay(shape.stroke(LinearGradient(Color("likeButtonFillStart"), Color("likeButtonFillEnd")), lineWidth: 2))
+                    .shadow(color: Color("likeButtonStart"), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color("likeButtonEnd"), radius: 5, x: -5, y: -5)
             }
         }
     }
+    //swiftlint:enable no_hardcoded_strings
 }
 
 struct LikeToggleStyle: ToggleStyle {
@@ -72,7 +46,7 @@ struct LikeToggleStyle: ToggleStyle {
             configuration.isOn.toggle()
         }, label: {
             configuration.label
-                .padding(8)
+                .padding(Spacing.extraSmall)
                 .contentShape(Circle())
         })
         .background(
@@ -144,7 +118,7 @@ struct SwiftUIMomentListItemView: View {
             Toggle(isOn: $isLiked) {
                 //swiftlint:disable no_hardcoded_strings
                 Image(systemName: "heart.fill")
-                    .foregroundColor(isLiked == true ? .red : .white)
+                    .foregroundColor(isLiked == true ? Color("likeButtonSelected") : Color("likeButtonNotSelected"))
                     .animation(.easeIn)
                 //swiftlint:enable no_hardcoded_strings
             }

@@ -24,7 +24,7 @@ struct SwiftUIMomentsListView: View {
             }
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         //swiftlint:disable no_hardcoded_strings
-        .background(Color("background2"))
+        .background(Color("background"))
         //swiftlint:enable no_hardcoded_strings
         .ignoresSafeArea(.all)
     }
