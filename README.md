@@ -6,12 +6,12 @@
 
 ## Environment setup
 
-Please download Xcode from Mac AppStore and follow this doc [Environment setup](https://github.com/JakeLin/moments-ios/wiki/Environment-setup) to setup the environment.
+Please download Xcode Version 12.2 (12B45b) from [Apple Developer Website](https://developer.apple.com/download/more/) and install rbenv, if you haven't installed rbenv before, please follow [Environment setup](https://github.com/JakeLin/moments-ios/wiki/Environment-setup) to install.
 
-After that, run the following commands:
+After that, run the following commands to install all required components and set up the development environment:
 
 ```shell
-$ bundle exec pod install
+$ ./scripts/setup.sh 
 $ open Moments.xcworkspace 
 ```
 
