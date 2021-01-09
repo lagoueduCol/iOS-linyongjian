@@ -26,7 +26,7 @@ protocol APISession {
 extension APISession {
     var defaultHeaders: HTTPHeaders {
         // swiftlint:disable no_hardcoded_strings
-        let headers: HTTPHeaders =  [
+        let headers: HTTPHeaders = [
             "x-app-platform": "iOS",
             "x-app-version": UIApplication.appVersion,
             "x-os-version": UIDevice.current.systemVersion
