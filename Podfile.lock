@@ -129,7 +129,7 @@ PODS:
     - RxSwift (~> 5)
   - SnapKit (5.0.1)
   - SwiftGen (6.4.0)
-  - SwiftLint (0.41.0)
+  - SwiftLint (0.42.0)
 
 DEPENDENCIES:
   - Alamofire (= 5.3.0)
@@ -149,7 +149,7 @@ DEPENDENCIES:
   - RxTest (= 5.1.1)
   - SnapKit (= 5.0.1)
   - SwiftGen (= 6.4.0)
-  - SwiftLint (= 0.41.0)
+  - SwiftLint (= 0.42.0)
 
 SPEC REPOS:
   trunk:
@@ -221,8 +221,8 @@ SPEC CHECKSUMS:
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
-  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 658775187760b4d4b60ccae66ab2f05e376647c0
+PODFILE CHECKSUM: fba3684ee289286d0d415188646618577132eed8
 
 COCOAPODS: 1.10.0
