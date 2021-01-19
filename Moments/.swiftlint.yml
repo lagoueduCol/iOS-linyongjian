@@ -128,6 +128,8 @@ excluded:
   - Pods
   - "./MomentsTests"
   - "./MomentsUITests"
+  - "./Moments/MomentsTests"
+  - "./Moments/MomentsUITests"
 
 custom_rules:
   no_hardcoded_strings:
