@@ -32,7 +32,7 @@ class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleI
     override func update(_ item: InternalMenuFeatureToggleItemViewModel) {
         self.item = item
         textLabel?.text = item.title
-        switchControl.isOn = item.on
+        switchControl.isOn = item.isOn
     }
 }
 

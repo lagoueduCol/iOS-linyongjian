@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum BuildTargetToggle: String, ToggleType {
+enum BuildTargetToggle: ToggleType {
     case debug, `internal`, production
 }
 
 struct BuildTargetTogglesDataStore: TogglesDataStoreType {
     static let shared: BuildTargetTogglesDataStore = .init()
 
-    let buildTarget: BuildTargetToggle
+    private let buildTarget: BuildTargetToggle
 
     private init() {
         #if DEBUG

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
+final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
     private let router: InternalMenuRouting
 
     init(router: InternalMenuRouting) {

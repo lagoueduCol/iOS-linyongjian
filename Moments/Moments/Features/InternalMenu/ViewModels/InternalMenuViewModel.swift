@@ -13,7 +13,7 @@ protocol InternalMenuViewModelType {
     var sections: Observable<[InternalMenuSection]> { get }
 }
 
-class InternalMenuViewModel: InternalMenuViewModelType {
+struct InternalMenuViewModel: InternalMenuViewModelType {
     let title = L10n.InternalMenu.area51
     let sections: Observable<[InternalMenuSection]>
 
@@ -27,7 +27,7 @@ class InternalMenuViewModel: InternalMenuViewModelType {
 
         let designKitSection = InternalMenuSection(
             title: L10n.InternalMenu.designKitDemo,
-            items: [DesignKitDemoItemViewModel(router: router)])
+            items: [InternalMenuDesignKitDemoItemViewModel(router: router)])
 
         let featureTogglesSection = InternalMenuSection(
             title: L10n.InternalMenu.featureToggles,

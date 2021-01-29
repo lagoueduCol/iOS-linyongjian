@@ -8,9 +8,7 @@
 struct InternalMenuDescriptionItemViewModel: InternalMenuItemViewModel {
     let title: String
 
-    var type: InternalMenuItemType {
-        return .description
-    }
+    var type: InternalMenuItemType { .description }
 
     func select() {}
 }
