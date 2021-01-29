@@ -9,16 +9,10 @@ import UIKit
 import DesignKit
 
 class InternalMenuActionTriggerItemViewModel: InternalMenuItemViewModel {
-    var type: InternalMenuItemType {
-        return .actionTrigger
-    }
+    var type: InternalMenuItemType { .actionTrigger }
 
-    var title: String { return "" }
-    var titleColor: UIColor { return UIColor.designKit.primaryText }
-    var textAlignment: NSTextAlignment { return .left }
-    var detailAttributedText: NSAttributedString? { return nil }
-    var icon: UIImage? { return nil }
-    var iconTint: UIColor? { return nil }
+    var title: String { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
 
-    func select() {}
+    // swiftlint:disable unavailable_function
+    func select() { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
 }
