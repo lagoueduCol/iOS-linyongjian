@@ -18,3 +18,7 @@ protocol InternalMenuItemViewModel {
 
     func select()
 }
+
+extension InternalMenuItemViewModel {
+    func select() { }
+}
