@@ -7,8 +7,12 @@
 
 import UIKit
 
-class InternalMenuDescriptionCell : InternalMenuCell<InternalMenuDescriptionItemViewModel> {
-    override func update(_ item: InternalMenuDescriptionItemViewModel) {
+class InternalMenuDescriptionCell: UITableViewCell, InternalMenuCellType {
+    func update(with item: InternalMenuItemViewModel) {
+        guard let item = item as? InternalMenuDescriptionItemViewModel else {
+            return
+        }
+
         selectionStyle = .none
         textLabel?.text = item.title
     }
