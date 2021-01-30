@@ -7,13 +7,24 @@
 
 import Foundation
 
-class InternalMenuFeatureToggleItemViewModel: InternalMenuItemViewModel {
+struct InternalMenuFeatureToggleItemViewModel: InternalMenuItemViewModel {
+    private let toggle: ToggleType
+    private let togglesDataStore: TogglesDataStoreType
+
+    init(title: String, toggle: ToggleType, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared) {
+        self.title = title
+        self.toggle = toggle
+        self.togglesDataStore = togglesDataStore
+    }
+
     var type: InternalMenuItemType { .featureToggle }
+    let title: String
 
-    var title: String { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
-    var isOn: Bool { false }
+    var isOn: Bool {
+       return togglesDataStore.isToggleOn(toggle)
+    }
 
-    // swiftlint:disable unavailable_function
-    func toggle(isOn: Bool) { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
-    func select() { }
+    func toggle(isOn: Bool) {
+        togglesDataStore.update(toggle: toggle, value: isOn)
+    }
 }

@@ -31,7 +31,9 @@ struct InternalMenuViewModel: InternalMenuViewModelType {
 
         let featureTogglesSection = InternalMenuSection(
             title: L10n.InternalMenu.featureToggles,
-            items: [InternalMenuLikeButtonToggleItemViewModel(togglesDataStore: InternalTogglesDataStore.shared)])
+            items: [
+                InternalMenuFeatureToggleItemViewModel(title: L10n.InternalMenu.likeButtonForMomentEnabled, toggle: InternalToggle.isLikeButtonForMomentEnabled)
+            ])
 
         let toolsSection = InternalMenuSection(
             title: L10n.InternalMenu.tools,
