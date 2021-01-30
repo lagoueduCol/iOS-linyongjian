@@ -57,7 +57,7 @@ private extension InternalMenuViewController {
         let dataSource = RxTableViewSectionedReloadDataSource<InternalMenuSection>(
             configureCell: { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: item.type.rawValue, for: indexPath)
-                if let cell = cell as? InternalMenuItemViewing {
+                if let cell = cell as? InternalMenuCellType {
                     cell.update(with: item)
                 }
                 return cell

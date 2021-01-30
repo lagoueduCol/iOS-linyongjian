@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 
-class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleItemViewModel> {
+class InternalMenuFeatureToggleCell: UITableViewCell, InternalMenuCellType {
     private let switchControl: UISwitch = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -29,7 +29,11 @@ class InternalMenuFeatureToggleCell: InternalMenuCell<InternalMenuFeatureToggleI
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
 
-    override func update(_ item: InternalMenuFeatureToggleItemViewModel) {
+    func update(with item: InternalMenuItemViewModel) {
+        guard let item = item as? InternalMenuFeatureToggleItemViewModel else {
+            return
+        }
+
         self.item = item
         textLabel?.text = item.title
         switchControl.isOn = item.isOn
