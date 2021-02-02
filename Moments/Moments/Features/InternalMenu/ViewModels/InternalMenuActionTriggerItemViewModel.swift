@@ -9,7 +9,7 @@ import UIKit
 import DesignKit
 
 class InternalMenuActionTriggerItemViewModel: InternalMenuItemViewModel {
-    var type: InternalMenuItemType { .actionTrigger }
+    let type: InternalMenuItemType  = .actionTrigger
 
     var title: String { fatalError(L10n.Development.fatalErrorSubclassToImplement) }
 
