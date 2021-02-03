@@ -44,10 +44,19 @@ private extension AppDelegate {
             TrackingRepo.shared.register(trackingProvider: $0)
         }
 
-        // Can register different remote config provider here
-        RemoteConfigRepo.shared.register(remoteConfigProvider: FirebaseRemoteConfigProvider())
+        // Register routing here
+        let router: AppRouting = AppRouter.shared
+        // swiftlint:disable no_hardcoded_strings
+        router.register(path: "InternalMenu", navigator: InternalMenuNavigator())
+        router.register(path: "DesignKit", navigator: DesignKitDemoNavigator())
+        // swiftlint:enable no_hardcoded_strings
 
-        if BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.debug) {
+        // Can register different remote config provider here
+        let remoateConfigRepo: RemoteConfigRepoType = RemoteConfigRepo.shared
+        remoateConfigRepo.register(remoteConfigProvider: FirebaseRemoteConfigProvider())
+
+        let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
+        if togglesDataStore.isToggleOn(BuildTargetToggle.debug) {
             // There is still a bug in the Firebase Console, so the ID won't work until they fix it
             // https://github.com/firebase/firebase-ios-sdk/issues/6892#issuecomment-721795650
             Installations.installations().authTokenForcingRefresh(true) { token, error in
@@ -68,14 +77,16 @@ private extension AppDelegate {
 
 extension UIWindow {
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.debug)
-            || BuildTargetTogglesDataStore.shared.isToggleOn(BuildTargetToggle.internal) {
-            let router: AppRouting = AppRouter()
+        let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
+        if togglesDataStore.isToggleOn(BuildTargetToggle.debug)
+            || togglesDataStore.isToggleOn(BuildTargetToggle.internal) {
+            let router: AppRouting = AppRouter.shared
             if motion == .motionShake {
+                let trackingRepo: TrackingRepoType = TrackingRepo.shared
                 // swiftlint:disable no_hardcoded_strings
-                TrackingRepo.shared.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
+                trackingRepo.trackEvent(TrackingEvent(name: "shake", parameters: ["userID": UserDataStore.current.userID, "datetime": Date()]))
+                router.route(to: URL(string: "\(UniversalLinks.baseURL)InternalMenu"), from: rootViewController, using: .present)
                 // swiftlint:enable no_hardcoded_strings
-                router.presentInternalMenu(from: rootViewController)
             }
         }
     }

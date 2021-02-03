@@ -7,19 +7,21 @@
 
 import UIKit
 
-protocol AppRouting {
-    func presentInternalMenu(from viewController: UIViewController?)
-}
+class AppRouter: AppRouting {
+    static let shared: AppRouter = .init()
 
-struct AppRouter: AppRouting {
-    func presentInternalMenu(from viewController: UIViewController?) {
-        guard let fromViewController = viewController else { return }
+    private var navigators: [String: Navigating] = [:]
 
-        let viewController = InternalMenuViewController()
-        let router = InternalMenuRouter(fromContronller: viewController)
-        let viewModel = InternalMenuViewModel(router: router)
-        viewController.viewModel = viewModel
-        let navigationController = UINavigationController(rootViewController: viewController)
-        fromViewController.present(navigationController, animated: true)
+    private init() { }
+
+    func register(path: String, navigator: Navigating) {
+        navigators[path.lowercased()] = navigator
+    }
+
+    func route(to url: URL?, from routingSource: RoutingSource?, using transitionType: TransitionType = .present) {
+        guard let url = url, let sourceViewController = routingSource as? UIViewController ?? UIApplication.shared.rootViewController else { return }
+
+        let path = url.lastPathComponent.lowercased()
+        navigators[path]?.navigate(from: sourceViewController, using: transitionType)
     }
 }
