@@ -22,7 +22,7 @@ final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerIte
 
     override func select() {
         // swiftlint:disable no_hardcoded_strings
-        router.route(to: URL(string: "\(UniversalLinks.baseURL)DesignKit"), from: routingSourceRetriever(), using: .show)
+        router.route(to: URL(string: "\(UniversalLinks.baseURL)DesignKit?productName=DesignKit&version=1.0.1"), from: routingSourceRetriever(), using: .show)
         // swiftlint:enable no_hardcoded_strings
     }
 }

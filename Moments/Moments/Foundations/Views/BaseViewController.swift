@@ -24,7 +24,7 @@ class BaseViewController: UIViewController {
 
     // swiftlint:disable no_hardcoded_strings
     @available(*, unavailable, message: "We don't support init view controller from a nib.")
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
     // swiftlint:enable no_hardcoded_strings

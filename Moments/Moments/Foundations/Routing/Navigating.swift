@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol Navigating {
-    func navigate(from viewController: UIViewController, using transitionType: TransitionType)
+    func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String: String])
 }
 
 extension Navigating {

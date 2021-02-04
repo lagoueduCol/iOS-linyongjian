@@ -8,7 +8,7 @@
 import UIKit
 
 struct InternalMenuNavigator: Navigating {
-    func navigate(from viewController: UIViewController, using transitionType: TransitionType) {
+    func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String : String]) {
         let destinationViewController = InternalMenuViewController()
         let router: AppRouting = AppRouter.shared
         let routingSourceRetriever = { [weak destinationViewController] in

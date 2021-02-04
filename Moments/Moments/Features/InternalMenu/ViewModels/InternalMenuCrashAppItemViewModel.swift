@@ -12,9 +12,9 @@ final class InternalMenuCrashAppItemViewModel: InternalMenuActionTriggerItemView
         return L10n.InternalMenu.crashApp
     }
 
-    //swiftlint:disable unavailable_function
+    // swiftlint:disable unavailable_function
     override func select() {
-        //swiftlint:disable fatal_error_message
+        // swiftlint:disable fatal_error_message
         fatalError()
     }
 }
