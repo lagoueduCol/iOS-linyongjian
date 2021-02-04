@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    // MARK: Handle Universal Links here if not opt into Scenes
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        // Get URL components from the incoming user activity.
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL else {
+            return false
+        }
+
+        let router: AppRouting = AppRouter.shared
+        router.route(to: incomingURL, from: nil, using: .present)
+        return true
+    }
+
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication,
