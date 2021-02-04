@@ -16,7 +16,7 @@ extension Navigating {
     func navigate(to destinationViewController: UIViewController, from sourceViewController: UIViewController, using transitionType: TransitionType) {
         switch transitionType {
         case .show:
-            sourceViewController.show(destinationViewController, sender: sourceViewController)
+            sourceViewController.show(destinationViewController, sender: nil)
         case .present:
             sourceViewController.present(destinationViewController, animated: true)
         }

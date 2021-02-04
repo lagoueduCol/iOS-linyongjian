@@ -10,4 +10,6 @@ import UIKit
 
 protocol RoutingSource: class { }
 
+typealias RoutingSourceRetriever = () -> RoutingSource?
+
 extension UIViewController: RoutingSource { }

@@ -17,10 +17,10 @@ struct InternalMenuViewModel: InternalMenuViewModelType {
     let title = L10n.InternalMenu.area51
     let sections: Observable<[InternalMenuSection]>
 
-    private var routingSource: RoutingSource?
+    private let routingSourceRetriever: RoutingSourceRetriever
 
-    init(router: AppRouting, routingSource: RoutingSource) {
-        self.routingSource = routingSource
+    init(router: AppRouting, routingSourceRetriever: @escaping RoutingSourceRetriever) {
+        self.routingSourceRetriever = routingSourceRetriever
 
         let appVersion = "\(L10n.InternalMenu.version) \((Bundle.main.object(forInfoDictionaryKey: L10n.InternalMenu.cfBundleVersion) as? String) ?? "1.0")"
 
@@ -31,7 +31,7 @@ struct InternalMenuViewModel: InternalMenuViewModelType {
 
         let designKitSection = InternalMenuSection(
             title: L10n.InternalMenu.designKitDemo,
-            items: [InternalMenuDesignKitDemoItemViewModel(router: router, routingSource: routingSource)])
+            items: [InternalMenuDesignKitDemoItemViewModel(router: router, routingSourceRetriever: routingSourceRetriever)])
 
         let featureTogglesSection = InternalMenuSection(
             title: L10n.InternalMenu.featureToggles,

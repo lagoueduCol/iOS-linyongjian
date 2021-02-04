@@ -9,15 +9,11 @@ import Foundation
 
 final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
     private let router: AppRouting
-    private weak var routingSource: RoutingSource?
+    private let routingSourceRetriever: RoutingSourceRetriever
 
-    init(router: AppRouting, routingSource: RoutingSource) {
+    init(router: AppRouting, routingSourceRetriever: @escaping RoutingSourceRetriever) {
         self.router = router
-        self.routingSource = routingSource
-    }
-
-    deinit {
-        routingSource = nil
+        self.routingSourceRetriever = routingSourceRetriever
     }
 
     override var title: String {
@@ -26,7 +22,7 @@ final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerIte
 
     override func select() {
         // swiftlint:disable no_hardcoded_strings
-        router.route(to: URL(string: "\(UniversalLinks.baseURL)DesignKit"), from: routingSource, using: .show)
+        router.route(to: URL(string: "\(UniversalLinks.baseURL)DesignKit"), from: routingSourceRetriever(), using: .show)
         // swiftlint:enable no_hardcoded_strings
     }
 }
