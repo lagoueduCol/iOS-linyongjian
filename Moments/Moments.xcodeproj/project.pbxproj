@@ -61,6 +61,12 @@
 		AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */; };
 		AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */; };
 		AE94DB3F2564010900E907EF /* MomentsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */; };
+		AE9E028525CAC32B005E04C5 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E028425CAC32B005E04C5 /* AppRouting.swift */; };
+		AE9E028D25CAC387005E04C5 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E028C25CAC387005E04C5 /* TransitionType.swift */; };
+		AE9E029225CACE4F005E04C5 /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E029125CACE4F005E04C5 /* Navigating.swift */; };
+		AE9E029A25CAD1CE005E04C5 /* UniversalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E029925CAD1CE005E04C5 /* UniversalLinks.swift */; };
+		AE9E02EC25CAD9CD005E04C5 /* RoutingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E02EB25CAD9CD005E04C5 /* RoutingSource.swift */; };
+		AE9E02F425CADD2B005E04C5 /* DesignKitDemoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E02F325CADD2B005E04C5 /* DesignKitDemoNavigator.swift */; };
 		AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A942546C15600D783CD /* MomentsRepo.swift */; };
 		AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */; };
 		AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AA52546EEFC00D783CD /* ListViewModel.swift */; };
@@ -85,7 +91,7 @@
 		AED4C784253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C783253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift */; };
 		AED4C789253D805E0001AAFC /* InternalMenuActionTriggerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */; };
 		AED4C78E253D82720001AAFC /* InternalMenuDesignKitDemoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C78D253D82720001AAFC /* InternalMenuDesignKitDemoItemViewModel.swift */; };
-		AED4C79E253E77120001AAFC /* InternalMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */; };
+		AED4C79E253E77120001AAFC /* InternalMenuNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C79D253E77120001AAFC /* InternalMenuNavigator.swift */; };
 		AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */; };
 		AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACF8125550CE500F84562 /* TrackingEvent.swift */; };
 		AEEACFC32562933F00323827 /* EquatableViaDump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFC22562933F00323827 /* EquatableViaDump.swift */; };
@@ -186,6 +192,12 @@
 		AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatterType.swift; sourceTree = "<group>"; };
 		AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackingRepo.swift; sourceTree = "<group>"; };
 		AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModelTests.swift; sourceTree = "<group>"; };
+		AE9E028425CAC32B005E04C5 /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		AE9E028C25CAC387005E04C5 /* TransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
+		AE9E029125CACE4F005E04C5 /* Navigating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigating.swift; sourceTree = "<group>"; };
+		AE9E029925CAD1CE005E04C5 /* UniversalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinks.swift; sourceTree = "<group>"; };
+		AE9E02EB25CAD9CD005E04C5 /* RoutingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingSource.swift; sourceTree = SOURCE_ROOT; };
+		AE9E02F325CADD2B005E04C5 /* DesignKitDemoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoNavigator.swift; sourceTree = "<group>"; };
 		AEA67A942546C15600D783CD /* MomentsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsRepo.swift; sourceTree = "<group>"; };
 		AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModel.swift; sourceTree = "<group>"; };
 		AEA67AA52546EEFC00D783CD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -220,7 +232,7 @@
 		AED4C783253D7FF40001AAFC /* InternalMenuActionTriggerItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuActionTriggerItemViewModel.swift; sourceTree = "<group>"; };
 		AED4C788253D805E0001AAFC /* InternalMenuActionTriggerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuActionTriggerCell.swift; sourceTree = "<group>"; };
 		AED4C78D253D82720001AAFC /* InternalMenuDesignKitDemoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuDesignKitDemoItemViewModel.swift; sourceTree = "<group>"; };
-		AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuRouter.swift; sourceTree = "<group>"; };
+		AED4C79D253E77120001AAFC /* InternalMenuNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuNavigator.swift; sourceTree = "<group>"; };
 		AED4C7B5253EBBCE0001AAFC /* DesignKitDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoViewController.swift; sourceTree = "<group>"; };
 		AEEACF8125550CE500F84562 /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
 		AEEACFC22562933F00323827 /* EquatableViaDump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableViaDump.swift; sourceTree = "<group>"; };
@@ -542,7 +554,7 @@
 		AE73792F2539D9880025AA69 /* InternalMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AED4C79C253E76F90001AAFC /* Routes */,
+				AED4C79C253E76F90001AAFC /* Routing */,
 				AE7379302539D9880025AA69 /* ViewModels */,
 				AE7379312539D9880025AA69 /* Views */,
 			);
@@ -594,6 +606,11 @@
 			isa = PBXGroup;
 			children = (
 				AE7379612539E3530025AA69 /* AppRouter.swift */,
+				AE9E028425CAC32B005E04C5 /* AppRouting.swift */,
+				AE9E029125CACE4F005E04C5 /* Navigating.swift */,
+				AE9E02EB25CAD9CD005E04C5 /* RoutingSource.swift */,
+				AE9E028C25CAC387005E04C5 /* TransitionType.swift */,
+				AE9E029925CAD1CE005E04C5 /* UniversalLinks.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -752,12 +769,13 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
-		AED4C79C253E76F90001AAFC /* Routes */ = {
+		AED4C79C253E76F90001AAFC /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				AED4C79D253E77120001AAFC /* InternalMenuRouter.swift */,
+				AE9E02F325CADD2B005E04C5 /* DesignKitDemoNavigator.swift */,
+				AED4C79D253E77120001AAFC /* InternalMenuNavigator.swift */,
 			);
-			path = Routes;
+			path = Routing;
 			sourceTree = "<group>";
 		};
 		AEEACFBE2562932300323827 /* Utilities */ = {
@@ -1073,12 +1091,14 @@
 				AE47B8552545AD61003DFED0 /* APISession.swift in Sources */,
 				AE8A243825381E4F00DE782E /* AppDelegate.swift in Sources */,
 				AE7379622539E3530025AA69 /* AppRouter.swift in Sources */,
+				AE9E028525CAC32B005E04C5 /* AppRouting.swift in Sources */,
 				AEA67AEE254790B500D783CD /* BaseListItemView.swift in Sources */,
 				AEA67AC02546FEC400D783CD /* BaseTableViewCell.swift in Sources */,
 				AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */,
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
 				AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */,
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
+				AE9E02F425CADD2B005E04C5 /* DesignKitDemoNavigator.swift in Sources */,
 				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
 				AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */,
 				AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */,
@@ -1096,7 +1116,7 @@
 				AEBEECC8254D7C7800D8140C /* InternalMenuFeatureToggleCell.swift in Sources */,
 				AEBEECC3254D789400D8140C /* InternalMenuFeatureToggleItemViewModel.swift in Sources */,
 				AE7379452539DB6C0025AA69 /* InternalMenuItemViewModel.swift in Sources */,
-				AED4C79E253E77120001AAFC /* InternalMenuRouter.swift in Sources */,
+				AED4C79E253E77120001AAFC /* InternalMenuNavigator.swift in Sources */,
 				AE7379402539DAAE0025AA69 /* InternalMenuSection.swift in Sources */,
 				AE7379332539D9880025AA69 /* InternalMenuViewController.swift in Sources */,
 				AE7379382539DA7F0025AA69 /* InternalMenuViewModel.swift in Sources */,
@@ -1113,11 +1133,13 @@
 				AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
+				AE9E029225CACE4F005E04C5 /* Navigating.swift in Sources */,
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
 				AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */,
 				AE3EF37C255BFFAE004B7FB0 /* RemoteConfigProvider.swift in Sources */,
 				AE3EF386255C09BC004B7FB0 /* RemoteConfigRepo.swift in Sources */,
 				AE3EF3BA255C1336004B7FB0 /* RemoteTogglesDataStore.swift in Sources */,
+				AE9E02EC25CAD9CD005E04C5 /* RoutingSource.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
 				AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */,
@@ -1127,8 +1149,10 @@
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
 				AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */,
 				AE4FB5FD25541D3300CBD66B /* TrackingRepo.swift in Sources */,
+				AE9E028D25CAC387005E04C5 /* TransitionType.swift in Sources */,
 				AE737A63253C32040025AA69 /* UIApplicationExtensions.swift in Sources */,
 				AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */,
+				AE9E029A25CAD1CE005E04C5 /* UniversalLinks.swift in Sources */,
 				AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */,
 				AEBEED23255127B500D8140C /* UpdateMomentLikeSession.swift in Sources */,
 				AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */,

@@ -8,10 +8,12 @@
 import Foundation
 
 final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerItemViewModel {
-    private let router: InternalMenuRouting
+    private let router: AppRouting
+    private let routingSourceRetriever: RoutingSourceRetriever
 
-    init(router: InternalMenuRouting) {
+    init(router: AppRouting, routingSourceRetriever: @escaping RoutingSourceRetriever) {
         self.router = router
+        self.routingSourceRetriever = routingSourceRetriever
     }
 
     override var title: String {
@@ -19,6 +21,8 @@ final class InternalMenuDesignKitDemoItemViewModel: InternalMenuActionTriggerIte
     }
 
     override func select() {
-        router.showDesignKit()
+        // swiftlint:disable no_hardcoded_strings
+        router.route(to: URL(string: "\(UniversalLinks.baseURL)DesignKit?productName=DesignKit&version=1.0.1"), from: routingSourceRetriever(), using: .show)
+        // swiftlint:enable no_hardcoded_strings
     }
 }

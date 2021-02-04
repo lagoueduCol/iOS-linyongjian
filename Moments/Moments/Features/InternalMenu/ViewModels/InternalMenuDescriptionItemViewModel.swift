@@ -6,7 +6,6 @@
 //
 
 struct InternalMenuDescriptionItemViewModel: InternalMenuItemViewModel {
+    let type: InternalMenuItemType = .description
     let title: String
-
-    var type: InternalMenuItemType { .description }
 }

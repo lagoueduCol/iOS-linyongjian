@@ -9,10 +9,22 @@ import UIKit
 import Kingfisher
 import DesignKit
 
-final class DesignKitDemoViewController: UIViewController {
+final class DesignKitDemoViewController: BaseViewController {
+    private let productName: String
+    private let versionNumber: String
+
+    init(productName: String, versionNumber: String) {
+        self.productName = productName
+        self.versionNumber = versionNumber
+        super.init()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // swiftlint:disable no_hardcoded_strings
+        print("Passing parameters via routing module - productName = \(productName), versionNumber = \(versionNumber)")
+        // swiftlint:enable no_hardcoded_strings
         setupUI()
     }
 }
@@ -156,14 +168,14 @@ private extension DesignKitDemoViewController {
 
     func buildAvatars() -> UIView {
         // Got the URLs from https://uifaces.co/api-key
-        //swiftlint:disable no_hardcoded_strings
+        // swiftlint:disable no_hardcoded_strings
         let items = [URL(string: "https://images.generated.photos/SZ43KV-Oo26-wpPUM7zDLo19CpGFH0eBnjegQFtvaUc/rs:fit:512:512/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzA4/NTUzMzguanBn.jpg"),
                      URL(string: "https://randomuser.me/api/portraits/women/68.jpg"),
                      URL(string: "https://uifaces.co/our-content/donated/Si9Qv42B.jpg"),
                      URL(string: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzNjAzMTgzMV5BMl5BanBnXkFtZTcwNjU2NjA2NQ@@._V1_UY256_CR11,0,172,256_AL_.jpg"),
                      URL(string: "https://uifaces.co/our-content/donated/fID5-1BV.jpg")
                  ]
-        //swiftlint:enable no_hardcoded_strings
+        // swiftlint:enable no_hardcoded_strings
 
         let title: UILabel = configure(.init()) {
             $0.translatesAutoresizingMaskIntoConstraints = false

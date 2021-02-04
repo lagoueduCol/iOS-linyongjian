@@ -17,7 +17,7 @@ struct InternalMenuFeatureToggleItemViewModel: InternalMenuItemViewModel {
         self.togglesDataStore = togglesDataStore
     }
 
-    var type: InternalMenuItemType { .featureToggle }
+    let type: InternalMenuItemType = .featureToggle
     let title: String
 
     var isOn: Bool {

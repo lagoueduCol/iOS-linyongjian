@@ -31,6 +31,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = MomentsListViewController()
         }
         window?.makeKeyAndVisible()
+
+        // Handle Universal Links here if already opt into Scenes
+        if let userActivity = connectionOptions.userActivities.first,
+            userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL {
+            let router: AppRouting = AppRouter.shared
+            router.route(to: incomingURL, from: nil, using: .present)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
