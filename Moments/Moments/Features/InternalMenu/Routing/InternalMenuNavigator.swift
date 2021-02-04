@@ -9,6 +9,11 @@ import UIKit
 
 struct InternalMenuNavigator: Navigating {
     func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String : String]) {
+        let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
+        guard togglesDataStore.isToggleOn(BuildTargetToggle.debug) || togglesDataStore.isToggleOn(BuildTargetToggle.internal) else {
+            return
+        }
+
         let destinationViewController = InternalMenuViewController()
         let router: AppRouting = AppRouter.shared
         let routingSourceRetriever = { [weak destinationViewController] in

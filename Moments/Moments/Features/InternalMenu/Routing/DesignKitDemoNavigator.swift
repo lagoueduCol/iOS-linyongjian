@@ -10,6 +10,11 @@ import UIKit
 
 struct DesignKitDemoNavigator: Navigating {
     func navigate(from viewController: UIViewController, using transitionType: TransitionType, parameters: [String: String]) {
+        let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
+        guard togglesDataStore.isToggleOn(BuildTargetToggle.debug) || togglesDataStore.isToggleOn(BuildTargetToggle.internal) else {
+            return
+        }
+
         // swiftlint:disable no_hardcoded_strings
         guard let productName = parameters["productname"], let versionNumber = parameters["version"] else {
             return
