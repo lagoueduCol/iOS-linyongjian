@@ -10,7 +10,7 @@ import RxDataSources
 import SnapKit
 
 final class InternalMenuViewController: BaseViewController {
-    var viewModel: InternalMenuViewModelType!
+    private var viewModel: InternalMenuViewModelType!
 
     private lazy var tableView: UITableView = configure(UITableView(frame: CGRect.zero, style: .grouped)) {
         $0.rowHeight = UITableView.automaticDimension
@@ -19,6 +19,15 @@ final class InternalMenuViewController: BaseViewController {
         $0.register(InternalMenuDescriptionCell.self, forCellReuseIdentifier: InternalMenuItemType.description.rawValue)
         $0.register(InternalMenuActionTriggerCell.self, forCellReuseIdentifier: InternalMenuItemType.actionTrigger.rawValue)
         $0.register(InternalMenuFeatureToggleCell.self, forCellReuseIdentifier: InternalMenuItemType.featureToggle.rawValue)
+    }
+
+    init(router: AppRouting = AppRouter.shared) {
+        super.init()
+
+        // Remember to weak self to avoid retain cycle
+        viewModel = InternalMenuViewModel(router: router, routingSourceProvider: { [weak self] in
+            return self
+        })
     }
 
     override func viewDidLoad() {

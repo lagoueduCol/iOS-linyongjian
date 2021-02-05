@@ -14,14 +14,7 @@ struct InternalMenuNavigator: Navigating {
             return
         }
 
-        let destinationViewController = InternalMenuViewController()
-        let router: AppRouting = AppRouter.shared
-        let routingSourceRetriever = { [weak destinationViewController] in
-            destinationViewController } // Remember to weak the `viewController` to avoid retain cycle
-        let viewModel = InternalMenuViewModel(router: router, routingSourceRetriever: routingSourceRetriever)
-        destinationViewController.viewModel = viewModel
-
-        let navigationController = UINavigationController(rootViewController: destinationViewController)
+        let navigationController = UINavigationController(rootViewController: InternalMenuViewController())
         navigate(to: navigationController, from: viewController, using: transitionType)
     }
 }
