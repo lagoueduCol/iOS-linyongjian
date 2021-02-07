@@ -17,11 +17,7 @@ struct InternalMenuViewModel: InternalMenuViewModelType {
     let title = L10n.InternalMenu.area51
     let sections: Observable<[InternalMenuSection]>
 
-    private let routingSourceProvider: RoutingSourceProvider
-
     init(router: AppRouting, routingSourceProvider: @escaping RoutingSourceProvider) {
-        self.routingSourceProvider = routingSourceProvider
-
         let appVersion = "\(L10n.InternalMenu.version) \((Bundle.main.object(forInfoDictionaryKey: L10n.InternalMenu.cfBundleVersion) as? String) ?? "1.0")"
 
         let infoSection = InternalMenuSection(
