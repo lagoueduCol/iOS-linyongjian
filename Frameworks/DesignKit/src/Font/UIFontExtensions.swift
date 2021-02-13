@@ -12,72 +12,63 @@ public extension UIFont {
 
     struct DesignKitTypography {
         public var display1: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 42, weight: .semibold), following: .largeTitle).font
+            scaled(baseFont: .systemFont(ofSize: 42, weight: .semibold), forTextStyle: .largeTitle, maximumFactor: 1.5)
         }
 
         public var display2: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 36, weight: .semibold), following: .largeTitle).font
+            scaled(baseFont: .systemFont(ofSize: 36, weight: .semibold), forTextStyle: .largeTitle, maximumFactor: 1.5)
         }
 
         public var title1: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 24, weight: .semibold), following: .title1).font
+            scaled(baseFont: .systemFont(ofSize: 24, weight: .semibold), forTextStyle: .title1)
         }
 
         public var title2: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 20, weight: .semibold), following: .title2).font
+            scaled(baseFont: .systemFont(ofSize: 20, weight: .semibold), forTextStyle: .title2)
         }
 
         public var title3: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 18, weight: .semibold), following: .title3).font
+            scaled(baseFont: .systemFont(ofSize: 18, weight: .semibold), forTextStyle: .title3)
         }
 
         public var title4: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 14, weight: .regular), following: .headline).font
+            scaled(baseFont: .systemFont(ofSize: 14, weight: .regular), forTextStyle: .headline)
         }
 
         public var title5: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 12, weight: .regular), following: .subheadline).font
+            scaled(baseFont: .systemFont(ofSize: 12, weight: .regular), forTextStyle: .subheadline)
         }
 
         public var bodyBold: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 16, weight: .semibold), following: .body).font
+            scaled(baseFont: .systemFont(ofSize: 16, weight: .semibold), forTextStyle: .body)
         }
 
         public var body: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 16, weight: .light), following: .body).font
+            scaled(baseFont: .systemFont(ofSize: 16, weight: .light), forTextStyle: .body)
         }
 
         public var captionBold: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 14, weight: .semibold), following: .caption1).font
+            scaled(baseFont: .systemFont(ofSize: 14, weight: .semibold), forTextStyle: .caption1)
         }
 
         public var caption: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 14, weight: .light), following: .caption1).font
+            scaled(baseFont: .systemFont(ofSize: 14, weight: .light), forTextStyle: .caption1)
         }
 
         public var small: UIFont {
-            FontScaler(constrained: .systemFont(ofSize: 12, weight: .light), following: .footnote).font
+            scaled(baseFont: .systemFont(ofSize: 12, weight: .light), forTextStyle: .footnote)
         }
     }
 }
 
-public extension UILabel {
-    func setDynamicFont(_ dynamicFont: UIFont) {
-        adjustsFontForContentSizeCategory = true
-        font = dynamicFont
-    }
-}
+private extension UIFont.DesignKitTypography {
+    func scaled(baseFont: UIFont, forTextStyle textStyle: UIFont.TextStyle = .body, maximumFactor: CGFloat? = nil) -> UIFont {
+        let fontMetrics = UIFontMetrics(forTextStyle: textStyle)
 
-public extension UITextView {
-    func setDynamicFont(_ dynamicFont: UIFont) {
-        adjustsFontForContentSizeCategory = true
-        font = dynamicFont
-    }
-}
-
-public extension UIButton {
-    func setDynamicFont(_ dynamicFont: UIFont) {
-        titleLabel?.adjustsFontForContentSizeCategory = true
-        titleLabel?.font = dynamicFont
+        if let maximumFactor = maximumFactor {
+            let maximumPointSize = baseFont.pointSize * maximumFactor
+            return fontMetrics.scaledFont(for: baseFont, maximumPointSize: maximumPointSize)
+        }
+        return fontMetrics.scaledFont(for: baseFont)
     }
 }

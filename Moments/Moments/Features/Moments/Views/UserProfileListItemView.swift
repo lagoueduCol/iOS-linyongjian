@@ -25,7 +25,7 @@ final class UserProfileListItemView: BaseListItemView {
 
     private let nameLabel: UILabel = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setDynamicFont(UIFont.designKit.title3)
+        $0.font = UIFont.designKit.title3
         $0.textColor = .white
         $0.numberOfLines = 1
     }

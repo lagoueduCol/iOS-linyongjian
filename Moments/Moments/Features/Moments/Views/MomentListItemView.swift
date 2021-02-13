@@ -20,7 +20,7 @@ final class MomentListItemView: BaseListItemView {
     private let userNameLabel: UILabel = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.background
-        $0.setDynamicFont(UIFont.designKit.captionBold)
+        $0.font = UIFont.designKit.title3
         $0.textColor = UIColor.designKit.primaryText
         $0.numberOfLines = 1
     }
@@ -28,7 +28,7 @@ final class MomentListItemView: BaseListItemView {
     private let titleLabel: UILabel = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.background
-        $0.setDynamicFont(UIFont.designKit.body)
+        $0.font = UIFont.designKit.body
         $0.textColor = UIColor.designKit.secondaryText
         $0.numberOfLines = 1
     }
@@ -43,7 +43,7 @@ final class MomentListItemView: BaseListItemView {
     private let postDateDescriptionLabel: UILabel = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.designKit.background
-        $0.setDynamicFont(UIFont.designKit.small)
+        $0.font = UIFont.designKit.small
         $0.textColor = UIColor.designKit.tertiaryText
         $0.numberOfLines = 1
     }

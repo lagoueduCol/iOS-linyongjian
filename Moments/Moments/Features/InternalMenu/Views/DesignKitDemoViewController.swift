@@ -101,7 +101,8 @@ private extension DesignKitDemoViewController {
             let label: UILabel = configure(.init()) {
                 $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.text = item.0
-                $0.setDynamicFont(item.1)
+                $0.adjustsFontForContentSizeCategory = true
+                $0.font = item.1
             }
 
             stackView.addArrangedSubview(label)
