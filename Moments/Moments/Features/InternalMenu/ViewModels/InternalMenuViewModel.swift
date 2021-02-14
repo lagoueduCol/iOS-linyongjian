@@ -27,7 +27,8 @@ struct InternalMenuViewModel: InternalMenuViewModelType {
 
         let designKitSection = InternalMenuSection(
             title: L10n.InternalMenu.designKitDemo,
-            items: [InternalMenuDesignKitDemoItemViewModel(router: router, routingSourceProvider: routingSourceProvider)])
+            items: [InternalMenuDesignKitDemoItemViewModel(router: router, routingSourceProvider: routingSourceProvider),
+                    InternalMenuTextStylesDemoItemViewModel(router: router, routingSourceProvider: routingSourceProvider)])
 
         let featureTogglesSection = InternalMenuSection(
             title: L10n.InternalMenu.featureToggles,

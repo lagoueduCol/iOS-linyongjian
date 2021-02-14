@@ -64,6 +64,7 @@ private extension AppDelegate {
         // swiftlint:disable no_hardcoded_strings
         router.register(path: "InternalMenu", navigator: InternalMenuNavigator())
         router.register(path: "DesignKit", navigator: DesignKitDemoNavigator())
+        router.register(path: "TextStyles", navigator: TextStylesDemoNavigator())
         // swiftlint:enable no_hardcoded_strings
 
         // Can register different remote config provider here

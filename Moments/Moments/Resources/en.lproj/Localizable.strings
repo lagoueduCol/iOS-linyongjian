@@ -26,6 +26,9 @@
 
 "internalMenu.likeButtonForMomentEnabled" = "Like Button Enable";
 
+"internalMenu.textStylesDemo" = "iOS Text Styles Demo";
+"internalMenu.textStyles" = "iOS Text Styles";
+
 // Moments List
 "momentsList.errorMessage" = "Something went wrong, please try again later";
 

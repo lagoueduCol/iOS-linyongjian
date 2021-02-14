@@ -26,6 +26,9 @@
 
 "internalMenu.likeButtonForMomentEnabled" = "开启点赞按钮";
 
+"internalMenu.textStylesDemo" = "iOS 字体风格范例";
+"internalMenu.textStyles" = "iOS 字体风格";
+
 // Moments List
 "momentsList.errorMessage" = "出错啦，请稍后再试";
 

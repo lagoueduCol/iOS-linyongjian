@@ -39,8 +39,8 @@ private extension DesignKitDemoViewController {
 
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin)
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
@@ -61,10 +61,10 @@ private extension DesignKitDemoViewController {
         scrollView.addSubview(rootStackView)
 
         rootStackView.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.top)
-            $0.bottom.equalTo(scrollView.snp.bottom)
-            $0.leading.equalTo(scrollView.snp.leading)
-            $0.trailing.equalTo(scrollView.snp.trailing)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.width.equalTo(scrollView.snp.width)
         }
     }
