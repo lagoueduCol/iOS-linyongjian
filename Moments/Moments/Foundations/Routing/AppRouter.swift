@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppRouter: AppRouting {
+final class AppRouter: AppRouting {
     static let shared: AppRouter = .init()
 
     private var navigators: [String: Navigating] = [:]
