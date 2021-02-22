@@ -16,17 +16,25 @@ struct MomentsListViewModel: ListViewModel {
     private let disposeBag: DisposeBag = .init()
     private let userID: String
     private let momentsRepo: MomentsRepoType
+    private let trackingRepo: TrackingRepoType
 
     init(userID: String,
-         momentsRepo: MomentsRepoType) {
+         momentsRepo: MomentsRepoType = MomentsRepo.shared,
+         trackingRepo: TrackingRepoType = TrackingRepo.shared) {
         self.userID = userID
         self.momentsRepo = momentsRepo
+        self.trackingRepo = trackingRepo
 
         setupBindings()
     }
 
     func executeQuery() -> Observable<Void> {
         return momentsRepo.getMoments(userID: userID)
+    }
+
+    func trackScreenviews() {
+        // The screen name should match the same screen on Android
+        trackingRepo.trackScreenviews(ScreenviewsTrackingEvent(screenName: L10n.Tracking.momentsScreen, screenClass: String(describing: self)))
     }
 }
 

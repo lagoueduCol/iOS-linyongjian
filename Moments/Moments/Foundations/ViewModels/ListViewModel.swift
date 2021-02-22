@@ -15,6 +15,7 @@ protocol ListViewModel {
     var hasError: BehaviorSubject<Bool> { get }
 
     func loadItems() -> Observable<Void>
+    func trackScreenviews()
 
     // Need the conformed class to implements
     func executeQuery() -> Observable<Void>

@@ -13,18 +13,13 @@ import RxDataSources
 import DesignKit
 
 final class MomentsListViewController: BaseTableViewController {
-    let trackingRepo: TrackingRepoType
-
-    init(trackingRepo: TrackingRepoType = TrackingRepo.shared) {
-        self.trackingRepo = trackingRepo
+    override init() {
         super.init()
-        viewModel = MomentsListViewModel(userID: UserDataStore.current.userID, momentsRepo: MomentsRepo.shared)
+        viewModel = MomentsListViewModel(userID: UserDataStore.current.userID)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        // The screen name should match the same screen on Android
-        trackingRepo.trackScreenviews(ScreenviewsTrackingEvent(screenName: L10n.Tracking.momentsScreen, screenClass: String(describing: self)))
+        viewModel.trackScreenviews()
     }
 }

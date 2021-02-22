@@ -14,7 +14,7 @@ protocol TrackingRepoType {
     func trackAction(_ event: TrackingEventType)
 }
 
-class TrackingRepo: TrackingRepoType {
+final class TrackingRepo: TrackingRepoType {
     static let shared: TrackingRepo = .init()
 
     private var providers = [TrackingProvider]()
