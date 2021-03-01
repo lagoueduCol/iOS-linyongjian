@@ -5,6 +5,7 @@
 ruby_version=`cat .ruby-version`
 if [[ ! -d "$HOME/.rbenv/versions/$ruby_version" ]]; then
   rbenv install $ruby_version;
+  rbenv init
 fi
 
 # Install bunlder
