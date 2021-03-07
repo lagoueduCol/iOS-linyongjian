@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Playgrounds"
+      name = "Playgrounds">
+      <FileRef
+         location = "group:RxSwiftPlayground.playground">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Moments/Moments.xcodeproj">
    </FileRef>
