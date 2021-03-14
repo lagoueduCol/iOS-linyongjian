@@ -71,7 +71,7 @@ struct GetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
     private let sessionHandler: (Session) -> Observable<Response>
 
     init(togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, sessionHandler: @escaping (Session) -> Observable<Response> = {
-        $0.post($0.path, parameters: $0.parameters, headers: $0.headers)
+        $0.post($0.path, headers: $0.headers, parameters: $0.parameters)
     }) {
         self.togglesDataStore = togglesDataStore
         self.sessionHandler = sessionHandler

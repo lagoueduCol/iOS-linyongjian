@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
-public enum APISessionError: Error {
+enum APISessionError: Error {
     case networkError(error: Error, statusCode: Int)
     case invalidJSON
     case noData
@@ -18,9 +18,7 @@ public enum APISessionError: Error {
 protocol APISession {
     associatedtype ReponseType: Codable
 
-    var defaultHeaders: HTTPHeaders { get }
-
-    func post(_ path: String, parameters: Parameters?, headers: HTTPHeaders) -> Observable<ReponseType>
+    func post(_ path: String, headers: HTTPHeaders, parameters: Parameters?) -> Observable<ReponseType>
 }
 
 extension APISession {
@@ -40,19 +38,19 @@ extension APISession {
         return API.baseURL
     }
 
-    func post(_ path: String, parameters: Parameters? = nil, headers: HTTPHeaders = [:]) -> Observable<ReponseType> {
-        return request(path, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+    func post(_ path: String, headers: HTTPHeaders = [:], parameters: Parameters? = nil) -> Observable<ReponseType> {
+        return request(path, method: .post, headers: headers, parameters: parameters, encoding: JSONEncoding.default)
     }
 }
 
 private extension APISession {
-    func request(_ path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, headers: HTTPHeaders) -> Observable<ReponseType> {
+    func request(_ path: String, method: HTTPMethod, headers: HTTPHeaders, parameters: Parameters?, encoding: ParameterEncoding) -> Observable<ReponseType> {
         let url = baseUrl.appendingPathComponent(path)
         let allHeaders = HTTPHeaders(defaultHeaders.dictionary.merging(headers.dictionary) { $1 })
 
         return Observable.create { observer -> Disposable in
             let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: allHeaders, interceptor: nil, requestModifier: nil)
-                .validate(statusCode: 200..<300)
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success:
