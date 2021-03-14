@@ -40,7 +40,7 @@ private class MockUpdateMomentLikeSession: UpdateMomentLikeSessionType {
     private(set) var passedMomentID: String = ""
     private(set) var passedUserID: String = ""
 
-    func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails> {
+    func updateLike(_ isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<MomentsDetails> {
         updateLikeHasbeenCalled = true
         passedIsLiked = isLiked
         passedMomentID = momentID
@@ -89,12 +89,12 @@ final class MomentsRepoTests: QuickSpec {
                 }
             }
 
-            context("updateLike(isLiked:momentID:from:)") {
+            context("updateLike(isLiked:momentID:fromUserID:)") {
                 var testObserver: TestObserver<Void>!
 
                 beforeEach {
                     testObserver = TestObserver<Void>()
-                    testSubject.updateLike(isLiked: true, momentID: "0", from: "1").subscribe(testObserver).disposed(by: disposeBag)
+                    testSubject.updateLike(isLiked: true, momentID: "0", fromUserID: "1").subscribe(testObserver).disposed(by: disposeBag)
                 }
 
                 it("should eventually complete") {

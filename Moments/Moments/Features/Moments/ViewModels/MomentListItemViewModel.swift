@@ -53,11 +53,11 @@ struct MomentListItemViewModel: ListItemViewModel {
 
     func like(from userID: String) -> Observable<Void> {
         trackingRepo.trackAction(LikeActionTrackingEvent(momentID: momentID, userID: userID))
-        return momentsRepo.updateLike(isLiked: true, momentID: momentID, from: userID)
+        return momentsRepo.updateLike(isLiked: true, momentID: momentID, fromUserID: userID)
     }
 
     func unlike(from userID: String) -> Observable<Void> {
         trackingRepo.trackAction(UnlikeActionTrackingEvent(momentID: momentID, userID: userID))
-        return momentsRepo.updateLike(isLiked: false, momentID: momentID, from: userID)
+        return momentsRepo.updateLike(isLiked: false, momentID: momentID, fromUserID: userID)
     }
 }

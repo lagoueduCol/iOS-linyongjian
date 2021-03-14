@@ -26,7 +26,7 @@ private class MockMomentsRepo: MomentsRepoType {
     private(set) var passedMomentID: String!
     private(set) var passedUserID: String!
 
-    func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void> {
+    func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void> {
         updateLikeHasBeenCalled = true
         passedIsLiked = isLiked
         passedMomentID = momentID

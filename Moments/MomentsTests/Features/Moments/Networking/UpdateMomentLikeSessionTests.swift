@@ -72,7 +72,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
             func updateLike(_ mockEvent: Recorded<Event<UpdateMomentLikeSession.Response>>) {
                 let testableObservable = testScheduler.createHotObservable([mockEvent])
                 testSubject = UpdateMomentLikeSession { _ in testableObservable.asObservable() }
-                testSubject.updateLike(true, momentID: "0", userID: "1").subscribe(testObserver).disposed(by: disposeBag)
+                testSubject.updateLike(true, momentID: "0", fromUserID: "1").subscribe(testObserver).disposed(by: disposeBag)
                 testScheduler.start()
             }
         }

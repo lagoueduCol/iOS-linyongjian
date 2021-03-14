@@ -12,7 +12,7 @@ protocol MomentsRepoType {
     var momentsDetails: BehaviorSubject<MomentsDetails?> { get }
 
     func getMoments(userID: String) -> Observable<Void>
-    func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void>
+    func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void>
 }
 
 struct MomentsRepo: MomentsRepoType {
@@ -49,9 +49,9 @@ struct MomentsRepo: MomentsRepoType {
             .catchErrorJustReturn(())
     }
 
-    func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void> {
+    func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void> {
         return updateMomentLikeSession
-            .updateLike(isLiked, momentID: momentID, userID: userID)
+            .updateLike(isLiked, momentID: momentID, fromUserID: userID)
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }
             .catchErrorJustReturn(())

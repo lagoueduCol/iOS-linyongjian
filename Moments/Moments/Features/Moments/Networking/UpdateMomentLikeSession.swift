@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 protocol UpdateMomentLikeSessionType {
-    func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails>
+    func updateLike(_ isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<MomentsDetails>
 }
 
 // swiftlint:disable no_hardcoded_strings
@@ -76,7 +76,7 @@ struct UpdateMomentLikeSession: UpdateMomentLikeSessionType {
         self.sessionHandler = sessionHandler
     }
 
-    func updateLike(_ isLiked: Bool, momentID: String, userID: String) -> Observable<MomentsDetails> {
+    func updateLike(_ isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<MomentsDetails> {
         let session = Session(momentID: momentID, userID: userID, isLiked: isLiked)
         return sessionHandler(session).map { $0.data.updateMomentLike }
     }

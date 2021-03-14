@@ -26,7 +26,7 @@ private class MockMomentsRepo: MomentsRepoType {
         return Observable.just(())
     }
 
-    func updateLike(isLiked: Bool, momentID: String, from userID: String) -> Observable<Void> {
+    func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void> {
         return Observable.just(())
     }
 }
