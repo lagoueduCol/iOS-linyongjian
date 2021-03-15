@@ -1,12 +1,15 @@
+//
+//  DebuggingUltils.swift
+//  Moments
+//
+//  Created by Jake Lin on 15/3/21.
+//
+
 import Foundation
 import RxSwift
 
-public func demo(of description: String, action: () -> Void) {
-    print("\n——— Demo of:", description, "———")
-    action()
-}
-
-public func getThreadName() -> String {
+// swiftlint:disable no_hardcoded_strings
+func getThreadName() -> String {
     if Thread.current.isMainThread {
         return "Main Thread"
     } else if let name = Thread.current.name {
@@ -19,7 +22,7 @@ public func getThreadName() -> String {
     }
 }
 
-public extension ObservableType {
+extension ObservableType {
     func dumpObservable() -> Observable<Element> {
         return self.do(onNext: { element in
             print("[Observable] \(element) emitted on \(getThreadName())")
@@ -32,3 +35,5 @@ public extension ObservableType {
         })
     }
 }
+
+// swiftlint:enable no_hardcoded_strings

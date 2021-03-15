@@ -101,6 +101,7 @@
 		AEEACFE32562A56500323827 /* MomentsRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFE22562A56500323827 /* MomentsRepoTests.swift */; };
 		AEEACFE82562AEB500323827 /* TestFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFE72562AEB500323827 /* TestFixture.swift */; };
 		AEEACFF02562B18200323827 /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFEF2562B18200323827 /* TestObserver.swift */; };
+		AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -242,6 +243,7 @@
 		AEEACFE22562A56500323827 /* MomentsRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsRepoTests.swift; sourceTree = "<group>"; };
 		AEEACFE72562AEB500323827 /* TestFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixture.swift; sourceTree = "<group>"; };
 		AEEACFEF2562B18200323827 /* TestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
+		AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingUltils.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 		AE73790A2539D62C0025AA69 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				AEECB10825FF263600FE1A3B /* Debugging */,
 				AE3727E2255FA7F4004AD01E /* ABTest */,
 				AE4FB5FB25541D2500CBD66B /* Analytics */,
 				AEBEEC9F254D580600D8140C /* DataStore */,
@@ -789,6 +792,14 @@
 				AEEACFEF2562B18200323827 /* TestObserver.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AEECB10825FF263600FE1A3B /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */,
+			);
+			path = Debugging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1102,6 +1113,7 @@
 				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
 				AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */,
 				AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */,
+				AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */,
 				AE3EF381255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */,
 				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
