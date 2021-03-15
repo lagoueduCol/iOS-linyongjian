@@ -107,6 +107,7 @@ private extension BaseTableViewController {
     func loadItems() {
         self.viewModel.hasError.onNext(false)
         viewModel.loadItems()
+            .observeOn(MainScheduler.instance)
             .do(onDispose: { [weak self] in
                 self?.activityIndicatorView.rx.isAnimating.onNext(false)
                 self?.tableView.refreshControl?.endRefreshing()

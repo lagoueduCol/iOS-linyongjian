@@ -49,9 +49,13 @@ private extension APISession {
         let allHeaders = HTTPHeaders(defaultHeaders.dictionary.merging(headers.dictionary) { $1 })
 
         return Observable.create { observer -> Disposable in
+            // swiftlint:disable no_hardcoded_strings
+            let queue = DispatchQueue(label: "moments.app.api", qos: .background, attributes: .concurrent)
+            // swiftlint:enable no_hardcoded_strings
+
             let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: allHeaders, interceptor: nil, requestModifier: nil)
                 .validate()
-                .responseJSON { response in
+                .responseJSON(queue: queue) { response in
                     switch response.result {
                     case .success:
                         guard let data = response.data else {

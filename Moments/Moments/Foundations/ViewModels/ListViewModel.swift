@@ -17,7 +17,7 @@ protocol ListViewModel {
     func loadItems() -> Observable<Void>
     func trackScreenviews()
 
-    // Need the conformed class to implements
+    // Need the conformed class to implement
     func executeQuery() -> Observable<Void>
 }
 
