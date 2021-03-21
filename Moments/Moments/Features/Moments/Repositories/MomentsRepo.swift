@@ -9,14 +9,14 @@ import Foundation
 import RxSwift
 
 protocol MomentsRepoType {
-    var momentsDetails: BehaviorSubject<MomentsDetails?> { get }
+    var momentsDetails: ReplaySubject<MomentsDetails> { get }
 
     func getMoments(userID: String) -> Observable<Void>
     func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void>
 }
 
 struct MomentsRepo: MomentsRepoType {
-    private(set) var momentsDetails: BehaviorSubject<MomentsDetails?> = .init(value: nil)
+    private(set) var momentsDetails: ReplaySubject<MomentsDetails> = .create(bufferSize: 1)
     private let disposeBag: DisposeBag = .init()
 
     private let persistentDataStore: PersistentDataStoreType
@@ -38,7 +38,10 @@ struct MomentsRepo: MomentsRepoType {
         self.getMomentsByUserIDSession = getMomentsByUserIDSession
         self.updateMomentLikeSession = updateMomentLikeSession
 
-        persistentDataStore.momentsDetails.debug().compactMap { $0 }.subscribe(momentsDetails).disposed(by: disposeBag)
+        persistentDataStore
+            .momentsDetails
+            .subscribe(momentsDetails)
+            .disposed(by: disposeBag)
     }
 
     func getMoments(userID: String) -> Observable<Void> {
