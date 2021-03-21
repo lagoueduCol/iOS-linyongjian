@@ -15,7 +15,7 @@ import RxTest
 @testable import Moments
 
 private class MockUserDefaultsPersistentDataStore: PersistentDataStoreType {
-    private(set) var momentsDetails: BehaviorSubject<MomentsDetails?> = .init(value: nil)
+    private(set) var momentsDetails: ReplaySubject<MomentsDetails> = .create(bufferSize: 1)
 
     private(set) var savedMomentsDetails: MomentsDetails?
 
@@ -114,15 +114,15 @@ final class MomentsRepoTests: QuickSpec {
             }
 
             context("momentsDetails") {
-                var testObserver: TestObserver<MomentsDetails?>!
+                var testObserver: TestObserver<MomentsDetails>!
 
                 beforeEach {
-                    testObserver = TestObserver<MomentsDetails?>()
+                    testObserver = TestObserver<MomentsDetails>()
                     testSubject.momentsDetails.subscribe(testObserver).disposed(by: disposeBag)
                 }
 
                 it("should be `nil` by default") {
-                    expect(testObserver.lastElement as? MomentsDetails).to(beNil())
+                    expect(testObserver.lastElement).to(beNil())
                 }
 
                 context("when persistentDataStore has new data") {
@@ -131,7 +131,7 @@ final class MomentsRepoTests: QuickSpec {
                     }
 
                     it("should notify a next event with the new data") {
-                        expect(testObserver.lastElement as? MomentsDetails).toEventually(equal(TestFixture.momentsDetails))
+                        expect(testObserver.lastElement).toEventually(equal(TestFixture.momentsDetails))
                     }
                 }
             }

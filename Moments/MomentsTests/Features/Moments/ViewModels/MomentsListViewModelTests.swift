@@ -15,7 +15,7 @@ import RxTest
 @testable import Moments
 
 private class MockMomentsRepo: MomentsRepoType {
-    var momentsDetails: BehaviorSubject<MomentsDetails?> = .init(value: nil)
+    var momentsDetails: ReplaySubject<MomentsDetails> = .create(bufferSize: 1)
 
     private(set) var getMomentsHasBeenCalled: Bool = false
     private(set) var passedUserID: String!
