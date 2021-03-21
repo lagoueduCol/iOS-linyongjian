@@ -38,10 +38,7 @@ struct MomentsRepo: MomentsRepoType {
         self.getMomentsByUserIDSession = getMomentsByUserIDSession
         self.updateMomentLikeSession = updateMomentLikeSession
 
-        persistentDataStore
-            .momentsDetails
-            .subscribe(momentsDetails)
-            .disposed(by: disposeBag)
+        setupBindings()
     }
 
     func getMoments(userID: String) -> Observable<Void> {
@@ -58,5 +55,14 @@ struct MomentsRepo: MomentsRepoType {
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }
             .catchErrorJustReturn(())
+    }
+}
+
+private extension MomentsRepo {
+    func setupBindings() {
+        persistentDataStore
+            .momentsDetails
+            .subscribe(momentsDetails)
+            .disposed(by: disposeBag)
     }
 }
