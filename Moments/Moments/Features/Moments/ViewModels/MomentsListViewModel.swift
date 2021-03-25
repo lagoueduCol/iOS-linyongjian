@@ -41,19 +41,15 @@ struct MomentsListViewModel: ListViewModel {
 private extension MomentsListViewModel {
     func setupBindings() {
         momentsRepo.momentsDetails
+            .map {
+                [UserProfileListItemViewModel(userDetails: $0.userDetails)]
+                    + $0.moments.map { MomentListItemViewModel(moment: $0) }
+            }
             .subscribe(onNext: {
-                transform(momentsDetails: $0)
+                listItems.onNext([SectionModel(model: "", items: $0)])
             }, onError: { _ in
                 hasError.onNext(true)
             })
             .disposed(by: disposeBag)
-    }
-
-    func transform(momentsDetails: MomentsDetails) {
-        let items: [ListItemViewModel] = [
-            UserProfileListItemViewModel(userDetails: momentsDetails.userDetails)
-        ] + momentsDetails.moments.map { MomentListItemViewModel(moment: $0) }
-
-        listItems.onNext([SectionModel(model: "", items: items)])
     }
 }
