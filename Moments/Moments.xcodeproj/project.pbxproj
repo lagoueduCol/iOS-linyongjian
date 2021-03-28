@@ -60,7 +60,7 @@
 		AE94DB2F2563F35600E907EF /* MockNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB2E2563F35600E907EF /* MockNow.swift */; };
 		AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */; };
 		AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */; };
-		AE94DB3F2564010900E907EF /* MomentsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */; };
+		AE94DB3F2564010900E907EF /* MomentsTimelineViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94DB3E2564010900E907EF /* MomentsTimelineViewModelTests.swift */; };
 		AE9E028525CAC32B005E04C5 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E028425CAC32B005E04C5 /* AppRouting.swift */; };
 		AE9E028D25CAC387005E04C5 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E028C25CAC387005E04C5 /* TransitionType.swift */; };
 		AE9E029225CACE4F005E04C5 /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E029125CACE4F005E04C5 /* Navigating.swift */; };
@@ -68,7 +68,7 @@
 		AE9E02EC25CAD9CD005E04C5 /* RoutingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E02EB25CAD9CD005E04C5 /* RoutingSource.swift */; };
 		AE9E02F425CADD2B005E04C5 /* DesignKitDemoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E02F325CADD2B005E04C5 /* DesignKitDemoNavigator.swift */; };
 		AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A942546C15600D783CD /* MomentsRepo.swift */; };
-		AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */; };
+		AEA67A9D2546EE5700D783CD /* MomentsTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67A9C2546EE5700D783CD /* MomentsTimelineViewModel.swift */; };
 		AEA67AA62546EEFC00D783CD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AA52546EEFC00D783CD /* ListViewModel.swift */; };
 		AEA67AAB2546F14B00D783CD /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AAA2546F14B00D783CD /* ListItemViewModel.swift */; };
 		AEA67AB32546FBA300D783CD /* UserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AB22546FBA300D783CD /* UserProfileListItemViewModel.swift */; };
@@ -192,7 +192,7 @@
 		AE94DB2E2563F35600E907EF /* MockNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNow.swift; sourceTree = "<group>"; };
 		AE94DB342563F80900E907EF /* RelativeDateTimeFormatterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatterType.swift; sourceTree = "<group>"; };
 		AE94DB392563FBB700E907EF /* MockTrackingRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackingRepo.swift; sourceTree = "<group>"; };
-		AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModelTests.swift; sourceTree = "<group>"; };
+		AE94DB3E2564010900E907EF /* MomentsTimelineViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewModelTests.swift; sourceTree = "<group>"; };
 		AE9E028425CAC32B005E04C5 /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
 		AE9E028C25CAC387005E04C5 /* TransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
 		AE9E029125CACE4F005E04C5 /* Navigating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigating.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		AE9E02EB25CAD9CD005E04C5 /* RoutingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingSource.swift; sourceTree = SOURCE_ROOT; };
 		AE9E02F325CADD2B005E04C5 /* DesignKitDemoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitDemoNavigator.swift; sourceTree = "<group>"; };
 		AEA67A942546C15600D783CD /* MomentsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsRepo.swift; sourceTree = "<group>"; };
-		AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewModel.swift; sourceTree = "<group>"; };
+		AEA67A9C2546EE5700D783CD /* MomentsTimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewModel.swift; sourceTree = "<group>"; };
 		AEA67AA52546EEFC00D783CD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		AEA67AAA2546F14B00D783CD /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
 		AEA67AB22546FBA300D783CD /* UserProfileListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileListItemViewModel.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				AE94DB212563F16300E907EF /* MomentListItemViewModelTests.swift */,
-				AE94DB3E2564010900E907EF /* MomentsListViewModelTests.swift */,
+				AE94DB3E2564010900E907EF /* MomentsTimelineViewModelTests.swift */,
 				AE94DB192563CA1100E907EF /* UserProfileListItemViewModelTests.swift */,
 			);
 			path = ViewModels;
@@ -422,7 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */,
-				AEA67A9C2546EE5700D783CD /* MomentsListViewModel.swift */,
+				AEA67A9C2546EE5700D783CD /* MomentsTimelineViewModel.swift */,
 				AEA67AB22546FBA300D783CD /* UserProfileListItemViewModel.swift */,
 			);
 			path = ViewModels;
@@ -517,11 +517,11 @@
 		AE73790A2539D62C0025AA69 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
-				AEECB10825FF263600FE1A3B /* Debugging */,
 				AE3727E2255FA7F4004AD01E /* ABTest */,
 				AE4FB5FB25541D2500CBD66B /* Analytics */,
 				AEBEEC9F254D580600D8140C /* DataStore */,
 				AE94DB332563F7EE00E907EF /* DateFormatter */,
+				AEECB10825FF263600FE1A3B /* Debugging */,
 				AE737A61253C31FD0025AA69 /* Extensions */,
 				AE47B80225455F46003DFED0 /* Networking */,
 				AE3EF34B255BCE10004B7FB0 /* RemoteConfig */,
@@ -1109,11 +1109,11 @@
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
 				AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */,
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
+				AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */,
 				AE9E02F425CADD2B005E04C5 /* DesignKitDemoNavigator.swift in Sources */,
 				AED4C7B6253EBBCE0001AAFC /* DesignKitDemoViewController.swift in Sources */,
 				AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */,
 				AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */,
-				AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */,
 				AE3EF381255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift in Sources */,
 				AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */,
 				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
@@ -1143,8 +1143,8 @@
 				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
 				AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */,
-				AEA67A9D2546EE5700D783CD /* MomentsListViewModel.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
+				AEA67A9D2546EE5700D783CD /* MomentsTimelineViewModel.swift in Sources */,
 				AE9E029225CACE4F005E04C5 /* Navigating.swift in Sources */,
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
 				AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */,
@@ -1185,8 +1185,8 @@
 				AE94DB2F2563F35600E907EF /* MockNow.swift in Sources */,
 				AE94DB3A2563FBB700E907EF /* MockTrackingRepo.swift in Sources */,
 				AE94DB222563F16300E907EF /* MomentListItemViewModelTests.swift in Sources */,
-				AE94DB3F2564010900E907EF /* MomentsListViewModelTests.swift in Sources */,
 				AEEACFE32562A56500323827 /* MomentsRepoTests.swift in Sources */,
+				AE94DB3F2564010900E907EF /* MomentsTimelineViewModelTests.swift in Sources */,
 				AEEACFE82562AEB500323827 /* TestFixture.swift in Sources */,
 				AEEACFF02562B18200323827 /* TestObserver.swift in Sources */,
 				AEEACFDB2562A4FA00323827 /* UnlikeActionTrackingEventTests.swift in Sources */,

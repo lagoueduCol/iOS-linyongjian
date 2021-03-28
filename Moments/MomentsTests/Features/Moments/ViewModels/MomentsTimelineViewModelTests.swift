@@ -1,5 +1,5 @@
 //
-//  MomentsListViewModelTests.swift
+//  MomentsTimelineViewModelTests.swift
 //  MomentsTests
 //
 //  Created by Jake Lin on 18/11/20.
@@ -31,22 +31,22 @@ private class MockMomentsRepo: MomentsRepoType {
     }
 }
 
-final class MomentsListViewModelTests: QuickSpec {
+final class MomentsTimelineViewModelTests: QuickSpec {
     override func spec() {
-        describe("MomentsListViewModel") {
-            var testSubject: MomentsListViewModel!
+        describe("MomentsTimelineViewModel") {
+            var testSubject: MomentsTimelineViewModel!
             var mockMomentsRepo: MockMomentsRepo!
             var disposeBag: DisposeBag!
 
             beforeEach {
                 mockMomentsRepo = MockMomentsRepo()
                 disposeBag = DisposeBag()
-                testSubject = MomentsListViewModel(userID: "1", momentsRepo: mockMomentsRepo)
+                testSubject = MomentsTimelineViewModel(userID: "1", momentsRepo: mockMomentsRepo)
             }
 
-            context("executeQuery") {
+            context("loadItems") {
                 beforeEach {
-                    testSubject.executeQuery().subscribe().disposed(by: disposeBag)
+                    testSubject.loadItems().subscribe().disposed(by: disposeBag)
                 }
 
                 it("call `momentsRepo.getMoments` with the correct parameters") {

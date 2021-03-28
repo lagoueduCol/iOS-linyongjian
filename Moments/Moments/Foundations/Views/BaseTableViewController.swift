@@ -105,7 +105,7 @@ private extension BaseTableViewController {
     }
 
     func loadItems() {
-        self.viewModel.hasError.onNext(false)
+        viewModel.hasError.onNext(false)
         viewModel.loadItems()
             .observeOn(MainScheduler.instance)
             .do(onDispose: { [weak self] in

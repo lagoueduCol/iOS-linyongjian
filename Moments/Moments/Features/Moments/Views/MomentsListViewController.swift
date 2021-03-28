@@ -1,5 +1,5 @@
 //
-//  MomentsListViewController.swift
+//  MomentsTimelineViewController.swift
 //  Moments
 //
 //  Created by Jake Lin on 28/10/20.
@@ -12,10 +12,10 @@ import RxCocoa
 import RxDataSources
 import DesignKit
 
-final class MomentsListViewController: BaseTableViewController {
+final class MomentsTimelineViewController: BaseTableViewController {
     override init() {
         super.init()
-        viewModel = MomentsListViewModel(userID: UserDataStore.current.userID)
+        viewModel = MomentsTimelineViewModel(userID: UserDataStore.current.userID)
     }
 
     override func viewDidAppear(_ animated: Bool) {

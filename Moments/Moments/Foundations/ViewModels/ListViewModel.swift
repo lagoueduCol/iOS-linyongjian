@@ -14,21 +14,16 @@ protocol ListViewModel {
     var hasContent: Observable<Bool> { get }
     var hasError: BehaviorSubject<Bool> { get }
 
-    func loadItems() -> Observable<Void>
     func trackScreenviews()
 
     // Need the conformed class to implement
-    func executeQuery() -> Observable<Void>
+    func loadItems() -> Observable<Void>
 }
 
 extension ListViewModel {
     var hasContent: Observable<Bool> {
-        return listItems.map {
-            $0.flatMap { $0.items }.isEmpty == false
-        }.distinctUntilChanged()
-    }
-
-    func loadItems() -> Observable<Void> {
-        return  executeQuery()
+        return listItems
+            .map { $0.isEmpty }
+            .distinctUntilChanged()
     }
 }

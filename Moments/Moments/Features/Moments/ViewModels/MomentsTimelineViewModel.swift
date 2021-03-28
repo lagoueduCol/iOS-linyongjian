@@ -1,5 +1,5 @@
 //
-//  MomentsListViewModel.swift
+//  MomentsTimelineViewModel.swift
 //  Moments
 //
 //  Created by Jake Lin on 26/10/20.
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxDataSources
 
-struct MomentsListViewModel: ListViewModel {
+struct MomentsTimelineViewModel: ListViewModel {
     private(set) var listItems: BehaviorSubject<[SectionModel<String, ListItemViewModel>]> = .init(value: [])
     private(set) var hasError: BehaviorSubject<Bool> = .init(value: false)
 
@@ -28,7 +28,7 @@ struct MomentsListViewModel: ListViewModel {
         setupBindings()
     }
 
-    func executeQuery() -> Observable<Void> {
+    func loadItems() -> Observable<Void> {
         return momentsRepo.getMoments(userID: userID)
     }
 
@@ -38,7 +38,7 @@ struct MomentsListViewModel: ListViewModel {
     }
 }
 
-private extension MomentsListViewModel {
+private extension MomentsTimelineViewModel {
     func setupBindings() {
         momentsRepo.momentsDetails
             .map {
