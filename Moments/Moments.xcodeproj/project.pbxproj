@@ -77,7 +77,7 @@
 		AEA67ACA2547015300D783CD /* UserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AC92547015300D783CD /* UserProfileListItemView.swift */; };
 		AEA67AD22547857F00D783CD /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AD12547857F00D783CD /* ListItemView.swift */; };
 		AEA67AEE254790B500D783CD /* BaseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67AED254790B500D783CD /* BaseListItemView.swift */; };
-		AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67B73254905D800D783CD /* MomentsListViewController.swift */; };
+		AEA67B74254905D800D783CD /* MomentsTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA67B73254905D800D783CD /* MomentsTimelineViewController.swift */; };
 		AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC7E254ADDE400D8140C /* MomentListItemViewModel.swift */; };
 		AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC83254AE35800D8140C /* MomentListItemView.swift */; };
 		AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEEC94254B8B1600D8140C /* BaseTableViewController.swift */; };
@@ -209,7 +209,7 @@
 		AEA67AC92547015300D783CD /* UserProfileListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileListItemView.swift; sourceTree = "<group>"; };
 		AEA67AD12547857F00D783CD /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		AEA67AED254790B500D783CD /* BaseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListItemView.swift; sourceTree = "<group>"; };
-		AEA67B73254905D800D783CD /* MomentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListViewController.swift; sourceTree = "<group>"; };
+		AEA67B73254905D800D783CD /* MomentsTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewController.swift; sourceTree = "<group>"; };
 		AEBC893B253958D0001D534E /* InternalProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = InternalProject.xcconfig; sourceTree = "<group>"; };
 		AEBC893D253958D0001D534E /* AppStoreTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStoreTarget.xcconfig; sourceTree = "<group>"; };
 		AEBC893F253958D0001D534E /* CompilerAndLanguage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CompilerAndLanguage.xcconfig; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBEEC83254AE35800D8140C /* MomentListItemView.swift */,
-				AEA67B73254905D800D783CD /* MomentsListViewController.swift */,
+				AEA67B73254905D800D783CD /* MomentsTimelineViewController.swift */,
 				AEA67AC92547015300D783CD /* UserProfileListItemView.swift */,
 			);
 			path = Views;
@@ -1142,8 +1142,8 @@
 				AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */,
 				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
-				AEA67B74254905D800D783CD /* MomentsListViewController.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
+				AEA67B74254905D800D783CD /* MomentsTimelineViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsTimelineViewModel.swift in Sources */,
 				AE9E029225CACE4F005E04C5 /* Navigating.swift in Sources */,
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
