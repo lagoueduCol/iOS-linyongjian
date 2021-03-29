@@ -36,7 +36,7 @@ final class UserProfileListItemView: BaseListItemView {
         self.init(frame: frame, remoteTogglesDataStore: RemoteTogglesDataStore.shared)
     }
 
-    init(frame: CGRect = .zero, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared) {
+    init(frame: CGRect, remoteTogglesDataStore: TogglesDataStoreType) {
         self.remoteTogglesDataStore = remoteTogglesDataStore
         super.init(frame: frame)
 
@@ -48,6 +48,7 @@ final class UserProfileListItemView: BaseListItemView {
     required init?(coder aDecoder: NSCoder) {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
+    // swiftlint:enable unavailable_function
 
     override func update(with viewModel: ListItemViewModel) {
         guard let viewModel = viewModel as? UserProfileListItemViewModel else {

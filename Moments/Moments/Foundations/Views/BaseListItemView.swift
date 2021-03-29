@@ -17,4 +17,5 @@ class BaseListItemView: UIView, ListItemView {
     func update(with viewModel: ListItemViewModel) {
         fatalError(L10n.Development.fatalErrorSubclassToImplement)
     }
+    // swiftlint:enable unavailable_function
 }

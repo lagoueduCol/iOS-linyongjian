@@ -93,6 +93,7 @@ final class MomentListItemView: BaseListItemView {
     required init?(coder aDecoder: NSCoder) {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
+    // swiftlint:enable unavailable_function
 
     override func update(with viewModel: ListItemViewModel) {
         guard let viewModel = viewModel as? MomentListItemViewModel else {

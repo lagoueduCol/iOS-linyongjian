@@ -45,6 +45,10 @@ class BaseTableViewController: BaseViewController {
 
         loadItems()
     }
+
+    var tableViewCellsToRegister: [String: UITableViewCell.Type] {
+        fatalError(L10n.Development.fatalErrorSubclassToImplement)
+    }
 }
 
 private extension BaseTableViewController {
@@ -52,10 +56,7 @@ private extension BaseTableViewController {
         view.backgroundColor = UIColor.designKit.background
         tableView.backgroundColor = UIColor.designKit.background
 
-        [
-            UserProfileListItemViewModel.reuseIdentifier: BaseTableViewCell<UserProfileListItemView>.self,
-            MomentListItemViewModel.reuseIdentifier: BaseTableViewCell<MomentListItemView>.self
-        ].forEach {
+        tableViewCellsToRegister.forEach {
             tableView.register($0.value, forCellReuseIdentifier: $0.key)
         }
 

@@ -22,4 +22,11 @@ final class MomentsTimelineViewController: BaseTableViewController {
         super.viewDidAppear(animated)
         viewModel.trackScreenviews()
     }
+
+    override var tableViewCellsToRegister: [String : UITableViewCell.Type] {
+        return [
+            UserProfileListItemViewModel.reuseIdentifier: BaseTableViewCell<UserProfileListItemView>.self,
+            MomentListItemViewModel.reuseIdentifier: BaseTableViewCell<MomentListItemView>.self
+        ]
+    }
 }
