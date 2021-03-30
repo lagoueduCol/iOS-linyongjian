@@ -7,4 +7,12 @@
 
 import Foundation
 
-protocol ListItemViewModel { }
+protocol ListItemViewModel {
+    static var reuseIdentifier: String { get }
+}
+
+extension ListItemViewModel {
+    static var reuseIdentifier: String {
+        String(describing: self)
+    }
+}

@@ -25,5 +25,6 @@ extension ListViewModel {
         return listItems
             .map { $0.isEmpty }
             .distinctUntilChanged()
+            .asObservable()
     }
 }

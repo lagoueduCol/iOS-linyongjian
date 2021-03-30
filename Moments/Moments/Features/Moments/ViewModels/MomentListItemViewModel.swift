@@ -47,10 +47,6 @@ struct MomentListItemViewModel: ListItemViewModel {
         }
     }
 
-    static var reuseIdentifier: String {
-        String(describing: self)
-    }
-
     func like(from userID: String) -> Observable<Void> {
         trackingRepo.trackAction(LikeActionTrackingEvent(momentID: momentID, userID: userID))
         return momentsRepo.updateLike(isLiked: true, momentID: momentID, fromUserID: userID)
