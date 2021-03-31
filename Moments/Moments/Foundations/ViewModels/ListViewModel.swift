@@ -23,7 +23,7 @@ protocol ListViewModel {
 extension ListViewModel {
     var hasContent: Observable<Bool> {
         return listItems
-            .map { $0.isEmpty }
+            .map(\.isEmpty)
             .distinctUntilChanged()
             .asObservable()
     }
