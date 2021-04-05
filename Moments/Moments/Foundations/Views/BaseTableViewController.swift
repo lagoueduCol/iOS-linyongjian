@@ -21,6 +21,7 @@ class BaseTableViewController: BaseViewController {
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 100
         $0.contentInsetAdjustmentBehavior = .never
+        $0.backgroundColor = UIColor.designKit.background
     }
     private let activityIndicatorView: UIActivityIndicatorView = configure(.init(style: .large)) {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +55,6 @@ class BaseTableViewController: BaseViewController {
 private extension BaseTableViewController {
     func setupUI() {
         view.backgroundColor = UIColor.designKit.background
-        tableView.backgroundColor = UIColor.designKit.background
 
         tableViewCellsToRegister.forEach {
             tableView.register($0.value, forCellReuseIdentifier: $0.key)
@@ -80,21 +80,19 @@ private extension BaseTableViewController {
     }
 
     func setupBindings() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.rx.controlEvent(.valueChanged)
-            .map { refreshControl.isRefreshing }
-            .filter { $0 }
-            .bind { [weak self] _ in self?.loadItems() }
-            .disposed(by: disposeBag)
-
-        tableView.refreshControl = refreshControl
+        tableView.refreshControl = configure(UIRefreshControl()) {
+            let refreshControl = $0
+            $0.rx.controlEvent(.valueChanged)
+                .filter { refreshControl.isRefreshing }
+                .bind { [weak self] _ in self?.loadItems() }
+                .disposed(by: disposeBag)
+        }
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ListItemViewModel>>(configureCell: { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: item)), for: indexPath)
             (cell as? ListItemCell)?.update(with: item)
             return cell
         })
-
         viewModel.listItems
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
