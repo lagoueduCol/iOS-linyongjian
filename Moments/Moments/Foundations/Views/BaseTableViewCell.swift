@@ -26,6 +26,7 @@ final class BaseTableViewCell<V: BaseListItemView>: UITableViewCell, ListItemCel
     required init?(coder: NSCoder) {
         fatalError(L10n.Development.fatalErrorInitCoderNotImplemented)
     }
+    // swiftlint:enable unavailable_function
 
     func update(with viewModel: ListItemViewModel) {
         view.update(with: viewModel)

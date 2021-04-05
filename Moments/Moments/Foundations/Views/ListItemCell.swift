@@ -5,9 +5,6 @@
 //  Created by Jake Lin on 26/10/20.
 //
 
-import Foundation
-import UIKit
-
-protocol ListItemCell {
+protocol ListItemCell: class {
     func update(with viewModel: ListItemViewModel)
 }
