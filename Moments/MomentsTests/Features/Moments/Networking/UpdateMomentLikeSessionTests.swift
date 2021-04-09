@@ -38,7 +38,8 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
 
                     it("should complete and map the response correctly") {
                         let expectedMomentsDetails = TestFixture.momentsDetails
-                        expect(testObserver.events).to(equal([.next(100, expectedMomentsDetails)]))
+                        let actualMomentsDetails = testObserver.events.first!.value.element!
+                        expect(actualMomentsDetails).toEventually(equal(expectedMomentsDetails))
                     }
                 }
 
@@ -51,7 +52,8 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                     }
 
                     it("should throw invalid json error") {
-                        expect(testObserver.events).to(equal([.error(100, invalidJSONError)]))
+                        let actualError = testObserver.events.first!.value.error as! APISessionError
+                        expect(actualError).toEventually(equal(.invalidJSON))
                     }
                 }
 
@@ -64,7 +66,8 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                     }
 
                     it("should throw a network error") {
-                        expect(testObserver.events).to(equal([.error(100, networkError)]))
+                        let actualError = testObserver.events.first!.value.error as! APISessionError
+                        expect(actualError).toEventually(equal(networkError))
                     }
                 }
             }
