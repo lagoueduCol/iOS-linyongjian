@@ -77,16 +77,14 @@ private extension UserProfileListItemView {
 
     func setupConstraints() {
         backgroundImageView.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top)
-            $0.leading.equalTo(self.snp.leading)
-            $0.trailing.equalTo(self.snp.trailing)
-            $0.bottom.equalTo(self.snp.bottom).offset(-Spacing.medium)
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-Spacing.medium)
             $0.height.equalTo(backgroundImageView.snp.width).multipliedBy(0.8).priority(999)
         }
 
         avatarImageView.snp.makeConstraints {
-            $0.right.equalTo(self.snp.right).offset(-Spacing.medium)
-            $0.bottom.equalTo(self.snp.bottom)
+            $0.right.equalToSuperview().offset(-Spacing.medium)
+            $0.bottom.equalToSuperview()
             $0.height.equalTo(80)
             $0.width.equalTo(80)
         }

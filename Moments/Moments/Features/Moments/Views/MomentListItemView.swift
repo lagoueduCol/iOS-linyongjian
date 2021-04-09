@@ -166,10 +166,8 @@ private extension MomentListItemView {
         }
 
         horizontalStackView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(Spacing.medium)
-            $0.bottom.equalToSuperview().offset(-Spacing.medium)
-            $0.leading.equalToSuperview().offset(Spacing.medium)
-            $0.trailing.equalToSuperview().offset(-Spacing.medium)
+            $0.leading.top.equalToSuperview().offset(Spacing.medium)
+            $0.bottom.trailing.equalToSuperview().offset(-Spacing.medium)
         }
 
         // Add `favoriteButton` if the toggle is ON
@@ -196,8 +194,7 @@ private extension MomentListItemView {
 
     func setupConstraints() {
         userAvatarImageView.snp.makeConstraints {
-            $0.height.equalTo(40)
-            $0.width.equalTo(40)
+            $0.height.width.equalTo(40)
         }
 
         momentImageView.snp.makeConstraints {
@@ -207,15 +204,12 @@ private extension MomentListItemView {
 
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
             favoriteButton.snp.makeConstraints {
-                $0.bottom.equalToSuperview().offset(-Spacing.medium)
-                $0.trailing.equalToSuperview().offset(-Spacing.medium)
+                $0.bottom.trailing.equalToSuperview().offset(-Spacing.medium)
             }
         }
 
         dividerView.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(1)
         }
     }
