@@ -23,7 +23,6 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
             var disposeBag: DisposeBag!
 
             beforeEach {
-                testSubject = UpdateMomentLikeSession()
                 testScheduler = TestScheduler(initialClock: 0)
                 testObserver = testScheduler.createObserver(MomentsDetails.self)
                 disposeBag = DisposeBag()
@@ -33,12 +32,13 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                 context("when response status code 200") {
                     beforeEach {
                         mockResponseEvent = .next(100, TestData.successResponse)
-                        updateLike(mockResponseEvent)
+                        updateLike(mockEvent: mockResponseEvent)
                     }
 
                     it("should complete and map the response correctly") {
                         let expectedMomentsDetails = TestFixture.momentsDetails
                         let actualMomentsDetails = testObserver.events.first!.value.element!
+
                         expect(actualMomentsDetails).toEventually(equal(expectedMomentsDetails))
                     }
                 }
@@ -48,7 +48,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
 
                     beforeEach {
                         mockResponseEvent = .error(100, invalidJSONError, UpdateMomentLikeSession.Response.self)
-                        updateLike(mockResponseEvent)
+                        updateLike(mockEvent: mockResponseEvent)
                     }
 
                     it("should throw invalid json error") {
@@ -62,7 +62,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
 
                     beforeEach {
                         mockResponseEvent = .error(100, networkError, UpdateMomentLikeSession.Response.self)
-                        updateLike(mockResponseEvent)
+                        updateLike(mockEvent: mockResponseEvent)
                     }
 
                     it("should throw a network error") {
@@ -72,7 +72,7 @@ final class UpdateMomentLikeSessionTests: QuickSpec {
                 }
             }
 
-            func updateLike(_ mockEvent: Recorded<Event<UpdateMomentLikeSession.Response>>) {
+            func updateLike(mockEvent: Recorded<Event<UpdateMomentLikeSession.Response>>) {
                 let testableObservable = testScheduler.createHotObservable([mockEvent])
                 testSubject = UpdateMomentLikeSession { _ in testableObservable.asObservable() }
                 testSubject.updateLike(true, momentID: "0", fromUserID: "1").subscribe(testObserver).disposed(by: disposeBag)

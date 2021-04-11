@@ -41,7 +41,6 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
             var disposeBag: DisposeBag!
 
             beforeEach {
-                testSubject = GetMomentsByUserIDSession()
                 testScheduler = TestScheduler(initialClock: 0)
                 testObserver = testScheduler.createObserver(MomentsDetails.self)
                 disposeBag = DisposeBag()
@@ -51,7 +50,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
                 context("when response status code 200") {
                     beforeEach {
                         mockResponseEvent = .next(100, TestData.successResponse)
-                        getMoments(mockResponseEvent)
+                        getMoments(mockEvent: mockResponseEvent)
                     }
 
                     it("should complete and map the response correctly") {
@@ -66,7 +65,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
 
                     beforeEach {
                         mockResponseEvent = .error(100, invalidJSONError, GetMomentsByUserIDSession.Response.self)
-                        getMoments(mockResponseEvent)
+                        getMoments(mockEvent: mockResponseEvent)
                     }
 
                     it("should throw invalid json error") {
@@ -80,7 +79,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
 
                     beforeEach {
                         mockResponseEvent = .error(100, networkError, GetMomentsByUserIDSession.Response.self)
-                        getMoments(mockResponseEvent)
+                        getMoments(mockEvent: mockResponseEvent)
                     }
 
                     it("should throw a network error") {
@@ -130,7 +129,7 @@ final class GetMomentsByUserIDSessionTests: QuickSpec {
                 }
             }
 
-            func getMoments(_ mockEvent: Recorded<Event<GetMomentsByUserIDSession.Response>>) {
+            func getMoments(mockEvent: Recorded<Event<GetMomentsByUserIDSession.Response>>) {
                 let testableObservable = testScheduler.createHotObservable([mockEvent])
                 testSubject = GetMomentsByUserIDSession { _ in testableObservable.asObservable() }
                 testSubject.getMoments(userID: "0").subscribe(testObserver).disposed(by: disposeBag)
