@@ -11,7 +11,6 @@ demo(of: "Observable sequence") {
     }.disposed(by: disposeBag)
 }
 
-
 demo(of: "Observable with object") {
     struct Person {
         let name: String
@@ -239,7 +238,6 @@ demo(of: "compactMap") {
         })
         .disposed(by: disposeBag)
 }
-
 
 demo(of: "flatMap") {
     struct TemperatureSensor {

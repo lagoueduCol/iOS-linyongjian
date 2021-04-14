@@ -48,18 +48,20 @@ final class MomentListItemView: BaseListItemView {
         $0.numberOfLines = 1
     }
 
-    private let favoriteButton: UIButton = configure(.init()) {
+    private let likesContainerView: UIView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.asHeartFavoriteButton()
+        $0.backgroundColor = UIColor.designKit.secondaryBackground
+        $0.layer.cornerRadius = 4
     }
 
     private let likesStakeView: UIStackView = configure(.init()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = UIColor.designKit.secondaryBackground
-        $0.layer.cornerRadius = 4
         $0.spacing = Spacing.twoExtraSmall
-        $0.isLayoutMarginsRelativeArrangement = true
-        $0.directionalLayoutMargins = NSDirectionalEdgeInsets(top: Spacing.twoExtraSmall, leading: Spacing.twoExtraSmall, bottom: Spacing.twoExtraSmall, trailing: Spacing.twoExtraSmall)
+    }
+
+    private let favoriteButton: UIButton = configure(.init()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.asHeartFavoriteButton()
     }
 
     private let dividerView: UIView = configure(.init()) {
@@ -113,7 +115,7 @@ final class MomentListItemView: BaseListItemView {
             likesStakeView.arrangedSubviews.forEach {
                 $0.removeFromSuperview()
             }
-            likesStakeView.isHidden = viewModel.likes.isEmpty
+            likesContainerView.isHidden = viewModel.likes.isEmpty
 
             if !viewModel.likes.isEmpty {
                 likesStakeView.addArrangedSubview(likeImageView)
@@ -152,7 +154,8 @@ private extension MomentListItemView {
         }
 
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
-            verticalStackView.addArrangedSubview(likesStakeView)
+            likesContainerView.addSubview(likesStakeView)
+            verticalStackView.addArrangedSubview(likesContainerView)
         }
 
         let horizontalStackView: UIStackView = configure(.init(arrangedSubviews:[userAvatarImageView, verticalStackView])) {
@@ -203,6 +206,11 @@ private extension MomentListItemView {
         }
 
         if togglesDataStore.isToggleOn(InternalToggle.isLikeButtonForMomentEnabled) {
+            likesStakeView.snp.makeConstraints {
+                $0.top.leading.equalToSuperview().offset(Spacing.twoExtraSmall)
+                $0.bottom.trailing.equalToSuperview().offset(-Spacing.twoExtraSmall)
+            }
+
             favoriteButton.snp.makeConstraints {
                 $0.bottom.trailing.equalToSuperview().offset(-Spacing.medium)
             }
