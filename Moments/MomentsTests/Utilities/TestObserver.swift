@@ -8,22 +8,22 @@
 import Foundation
 import RxSwift
 
-class TestObserver<ElementType> : ObserverType {
-    private(set) var events = [Event<ElementType>]()
-
-    var isCompleted: Bool {
-        return events.last?.isCompleted ?? false
-    }
-
-    var isStopEvent: Bool {
-        return events.last?.isStopEvent ?? false
-    }
+class TestObserver<ElementType>: ObserverType {
+    private var lastEvent: Event<ElementType>?
 
     var lastElement: ElementType? {
-        return events.last?.element
+        return lastEvent?.element
+    }
+
+    var lastError: Error? {
+        return lastEvent?.error
+    }
+
+    var isCompleted: Bool {
+        return lastEvent?.isCompleted ?? false
     }
 
     func on(_ event: Event<ElementType>) {
-        events.append(event)
+        lastEvent = event
     }
 }

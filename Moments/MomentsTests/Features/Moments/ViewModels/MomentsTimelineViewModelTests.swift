@@ -44,12 +44,12 @@ final class MomentsTimelineViewModelTests: QuickSpec {
                 testSubject = MomentsTimelineViewModel(userID: "1", momentsRepo: mockMomentsRepo)
             }
 
-            context("loadItems") {
+            context("loadItems()") {
                 beforeEach {
                     testSubject.loadItems().subscribe().disposed(by: disposeBag)
                 }
 
-                it("call `momentsRepo.getMoments` with the correct parameters") {
+                it("call `momentsRepo.getMoments()` with the correct parameters") {
                     expect(mockMomentsRepo.getMomentsHasBeenCalled).to(beTrue())
                     expect(mockMomentsRepo.passedUserID).to(equal("1"))
                 }

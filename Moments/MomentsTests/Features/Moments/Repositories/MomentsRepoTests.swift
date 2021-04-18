@@ -26,8 +26,10 @@ private class MockUserDefaultsPersistentDataStore: PersistentDataStoreType {
 
 private class MockGetMomentsByUserIDSession: GetMomentsByUserIDSessionType {
     private(set) var getMomentsHasbeenCalled = false
+    private(set) var passedUserID: String = ""
 
     func getMoments(userID: String) -> Observable<MomentsDetails> {
+        passedUserID = userID
         getMomentsHasbeenCalled = true
 
         return Observable.just(TestFixture.momentsDetails)
@@ -69,19 +71,13 @@ final class MomentsRepoTests: QuickSpec {
             }
 
             context("getMoments(userID:)") {
-                var testObserver: TestObserver<Void>!
-
                 beforeEach {
-                    testObserver = TestObserver<Void>()
-                    testSubject.getMoments(userID: "1").subscribe(testObserver).disposed(by: disposeBag)
-                }
-
-                it("should eventually complete") {
-                    expect(testObserver.isCompleted).toEventually(beTrue())
+                    testSubject.getMoments(userID: "1").subscribe().disposed(by: disposeBag)
                 }
 
                 it("should call `GetMomentsByUserIDSessionType.getMoments`") {
                     expect(mockGetMomentsByUserIDSession.getMomentsHasbeenCalled).to(beTrue())
+                    expect(mockGetMomentsByUserIDSession.passedUserID).to(be("1"))
                 }
 
                 it("should save a `MomentsDetails` object") {
@@ -90,15 +86,8 @@ final class MomentsRepoTests: QuickSpec {
             }
 
             context("updateLike(isLiked:momentID:fromUserID:)") {
-                var testObserver: TestObserver<Void>!
-
                 beforeEach {
-                    testObserver = TestObserver<Void>()
-                    testSubject.updateLike(isLiked: true, momentID: "0", fromUserID: "1").subscribe(testObserver).disposed(by: disposeBag)
-                }
-
-                it("should eventually complete") {
-                    expect(testObserver.isCompleted).toEventually(beTrue())
+                    testSubject.updateLike(isLiked: true, momentID: "0", fromUserID: "1").subscribe().disposed(by: disposeBag)
                 }
 
                 it("should call `UpdateMomentLikeSessionType.updateLike`") {
