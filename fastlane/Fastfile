@@ -114,11 +114,10 @@ platform :ios do
 
     create_keychain(
       name: keychain_name,
-      default_keychain: true,
       password: keychain_password,
-      unlock: true,
+      default_keychain: true,
       timeout: 3600,
-      lock_when_sleeps: true
+      unlock: true,
     )
 
     match(
