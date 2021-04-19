@@ -109,8 +109,22 @@ platform :ios do
   desc "Create all new provisioning profiles managed by fastlane match"
   lane :create_new_profiles do
     api_key = get_app_store_connect_api_key
+    keychain_name = "TemporaryKeychain"
+    keychain_password = SecureRandom.base64
+
+    create_keychain(
+      name: keychain_name,
+      default_keychain: true,
+      password: keychain_password,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: true
+    )
+
     match(
       type: "adhoc",
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments.internal",
@@ -120,6 +134,33 @@ platform :ios do
 
     match(
       type: "appstore",
+      keychain_name: keychain_name,
+      keychain_password: keychain_password,
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments",
+      team_id: "6HLFCRTYQU",
+      api_key: api_key
+    )
+  end
+
+  desc "Nuke all provisioning profiles managed by fastlane match"
+  lane :nuke_profiles do
+    api_key = get_app_store_connect_api_key
+    keychain_password = SecureRandom.base64
+    match_nuke(
+      type: "adhoc",
+      keychain_password: keychain_password,
+      storage_mode: "git",
+      git_url: "https://github.com/JakeLin/moments-codesign",
+      app_identifier: "com.ibanimatable.moments.internal",
+      team_id: "6HLFCRTYQU",
+      api_key: api_key
+    )
+
+    match_nuke(
+      type: "appstore",
+      keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments",

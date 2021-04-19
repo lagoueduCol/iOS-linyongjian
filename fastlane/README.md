@@ -56,6 +56,11 @@ Downlad certificates and profiles
 fastlane ios create_new_profiles
 ```
 Create all new provisioning profiles managed by fastlane match
+### ios nuke_profiles
+```
+fastlane ios nuke_profiles
+```
+Nuke all provisioning profiles managed by fastlane match
 ### ios add_device
 ```
 fastlane ios add_device
