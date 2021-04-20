@@ -70,7 +70,7 @@ platform :ios do
   end
 
   # Profile
-  desc "Downlad certificates and profiles"
+  desc "Download certificates and profiles"
   lane :download_profiles do
     keychain_name = "TemporaryKeychain"
     keychain_password = "TemporaryKeychainPassword"
@@ -78,7 +78,7 @@ platform :ios do
     create_keychain(
       name: keychain_name,
       password: keychain_password,
-      default_keychain: true,
+      default_keychain: false,
       timeout: 3600,
       unlock: true,
     )
@@ -115,7 +115,7 @@ platform :ios do
     create_keychain(
       name: keychain_name,
       password: keychain_password,
-      default_keychain: true,
+      default_keychain: false,
       timeout: 3600,
       unlock: true,
     )
@@ -148,6 +148,15 @@ platform :ios do
     api_key = get_app_store_connect_api_key
     keychain_name = "TemporaryKeychain"
     keychain_password = "TemporaryKeychainPassword"
+
+    create_keychain(
+      name: keychain_name,
+      password: keychain_password,
+      default_keychain: false,
+      timeout: 3600,
+      unlock: true,
+    )
+
     match_nuke(
       type: "adhoc",
       keychain_name: keychain_name,
@@ -192,16 +201,6 @@ platform :ios do
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
       app_identifier: "com.ibanimatable.moments.internal",
-      team_id: "6HLFCRTYQU",
-      api_key: api_key
-    )
-
-    match(
-      type: "appstore",
-      force: true,
-      storage_mode: "git",
-      git_url: "https://github.com/JakeLin/moments-codesign",
-      app_identifier: "com.ibanimatable.moments",
       team_id: "6HLFCRTYQU",
       api_key: api_key
     )
