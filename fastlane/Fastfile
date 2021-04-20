@@ -73,7 +73,7 @@ platform :ios do
   desc "Downlad certificates and profiles"
   lane :download_profiles do
     keychain_name = "TemporaryKeychain"
-    keychain_password = SecureRandom.base64
+    keychain_password = "TemporaryKeychainPassword"
 
     create_keychain(
       name: keychain_name,
@@ -110,7 +110,7 @@ platform :ios do
   lane :create_new_profiles do
     api_key = get_app_store_connect_api_key
     keychain_name = "TemporaryKeychain"
-    keychain_password = SecureRandom.base64
+    keychain_password = "TemporaryKeychainPassword"
 
     create_keychain(
       name: keychain_name,
@@ -146,9 +146,11 @@ platform :ios do
   desc "Nuke all provisioning profiles managed by fastlane match"
   lane :nuke_profiles do
     api_key = get_app_store_connect_api_key
-    keychain_password = SecureRandom.base64
+    keychain_name = "TemporaryKeychain"
+    keychain_password = "TemporaryKeychainPassword"
     match_nuke(
       type: "adhoc",
+      keychain_name: keychain_name,
       keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
@@ -159,6 +161,7 @@ platform :ios do
 
     match_nuke(
       type: "appstore",
+      keychain_name: keychain_name,
       keychain_password: keychain_password,
       storage_mode: "git",
       git_url: "https://github.com/JakeLin/moments-codesign",
