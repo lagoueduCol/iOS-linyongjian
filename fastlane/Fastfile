@@ -54,6 +54,7 @@ platform :ios do
     puts("Build development app")
     gym(scheme: "Moments",
       workspace: "Moments.xcworkspace",
+      export_method: "development",
       configuration: "Debug",
       xcargs: "-allowProvisioningUpdates")
   end
@@ -209,6 +210,10 @@ platform :ios do
   # Archive
   desc 'Creates an archive of the Internal app for testing'
   lane :archive_internal do
+    unlock_keychain(
+      path: "TemporaryKeychain-db",
+      password: "TemporaryKeychainPassword")
+
     update_code_signing_settings(
       use_automatic_signing: false,
       path: "Moments/Moments.xcodeproj",
@@ -231,6 +236,10 @@ platform :ios do
 
   desc 'Creates an archive of the Production app with Appstore distribution'
   lane :archive_appstore do
+    unlock_keychain(
+      path: "TemporaryKeychain-db",
+      password: "TemporaryKeychainPassword")
+
     update_code_signing_settings(
       use_automatic_signing: false,
       path: "Moments/Moments.xcodeproj",
@@ -271,7 +280,7 @@ platform :ios do
   end
 
   # Deploy
-  desc 'Deploy the Internal app to TestFlight'
+  desc 'Deploy the Internal app to Firebase Distribution'
   lane :deploy_internal do
     firebase_app_distribution(
         app: "1:374168413412:ios:912d89b30767d8e5a038f1",

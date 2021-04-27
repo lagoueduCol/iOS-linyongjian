@@ -50,7 +50,7 @@ Run unit tests
 ```
 fastlane ios download_profiles
 ```
-Downlad certificates and profiles
+Download certificates and profiles
 ### ios create_new_profiles
 ```
 fastlane ios create_new_profiles
@@ -90,7 +90,7 @@ Upload symbols to Crashlytics for Production app
 ```
 fastlane ios deploy_internal
 ```
-Deploy the Internal app to TestFlight
+Deploy the Internal app to Firebase Distribution
 ### ios deploy_appstore
 ```
 fastlane ios deploy_appstore
