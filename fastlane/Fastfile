@@ -63,8 +63,9 @@ platform :ios do
   desc "Run unit tests"
   lane :tests do
     puts("Run the tests")
-    run_tests(
+    scan(
       scheme: "Moments", 
+      workspace: "Moments.xcworkspace",
       output_directory: "./fastlane/dist", 
       output_types: "html", 
       buildlog_path: "./fastlane/dist")
