@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScreenviewsTrackingEvent: ScreenviewsTrackingEventType {
+struct ScreenviewsTrackingEvent: TrackingEventType {
     let screenName: String
     let screenClass: String
 }

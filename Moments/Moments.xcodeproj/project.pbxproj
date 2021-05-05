@@ -30,7 +30,6 @@
 		AE4FB60225541DED00CBD66B /* TrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60125541DED00CBD66B /* TrackingProvider.swift */; };
 		AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB60625541E1100CBD66B /* TrackingEventType.swift */; };
 		AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */; };
-		AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */; };
 		AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */; };
 		AE4FB63D255425A000CBD66B /* ActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */; };
 		AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FB6492554261B00CBD66B /* FirebaseActionTrackingEvent.swift */; };
@@ -152,7 +151,6 @@
 		AE4FB60125541DED00CBD66B /* TrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingProvider.swift; sourceTree = "<group>"; };
 		AE4FB60625541E1100CBD66B /* TrackingEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEventType.swift; sourceTree = "<group>"; };
 		AE4FB62925541F4C00CBD66B /* FirebaseTrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTrackingProvider.swift; sourceTree = "<group>"; };
-		AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEventType.swift; sourceTree = "<group>"; };
 		AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenviewsTrackingEvent.swift; sourceTree = "<group>"; };
 		AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTrackingEvent.swift; sourceTree = "<group>"; };
 		AE4FB6492554261B00CBD66B /* FirebaseActionTrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseActionTrackingEvent.swift; sourceTree = "<group>"; };
@@ -486,7 +484,6 @@
 			children = (
 				AE4FB63C255425A000CBD66B /* ActionTrackingEvent.swift */,
 				AE4FB6372554245000CBD66B /* ScreenviewsTrackingEvent.swift */,
-				AE4FB62F255423FA00CBD66B /* ScreenviewsTrackingEventType.swift */,
 				AEEACF8125550CE500F84562 /* TrackingEvent.swift */,
 				AE4FB60625541E1100CBD66B /* TrackingEventType.swift */,
 				AE4FB60125541DED00CBD66B /* TrackingProvider.swift */,
@@ -1154,7 +1151,6 @@
 				AE9E02EC25CAD9CD005E04C5 /* RoutingSource.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
-				AE4FB630255423FA00CBD66B /* ScreenviewsTrackingEventType.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
 				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
