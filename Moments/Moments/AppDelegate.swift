@@ -66,10 +66,6 @@ private extension AppDelegate {
         router.register(path: "DesignKit", navigator: DesignKitDemoNavigator())
         // swiftlint:enable no_hardcoded_strings
 
-        // Can register different remote config provider here
-        let remoateConfigRepo: RemoteConfigRepoType = RemoteConfigRepo.shared
-        remoateConfigRepo.register(remoteConfigProvider: FirebaseRemoteConfigProvider())
-
         let togglesDataStore: TogglesDataStoreType = BuildTargetTogglesDataStore.shared
         if togglesDataStore.isToggleOn(BuildTargetToggle.debug) {
             // There is still a bug in the Firebase Console, so the ID won't work until they fix it

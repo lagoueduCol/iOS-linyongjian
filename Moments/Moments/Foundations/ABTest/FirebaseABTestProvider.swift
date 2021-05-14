@@ -10,14 +10,14 @@ import Foundation
 struct FirebaseABTestProvider: ABTestProvider {
     static let shared: FirebaseABTestProvider = .init()
 
-    private let remoteConfigRepo: RemoteConfigRepoType
+    private let remoteConfigProvider: RemoteConfigProvider
 
-    private init(remoteConfigRepo: RemoteConfigRepoType = RemoteConfigRepo.shared) {
-        self.remoteConfigRepo = remoteConfigRepo
+    private init(remoteConfigProvider: RemoteConfigProvider = FirebaseRemoteConfigProvider.shared) {
+        self.remoteConfigProvider = remoteConfigProvider
     }
 
     var likeButtonStyle: LikeButtonStyle? {
-        guard let likeButtonStyleString = remoteConfigRepo.getString(by: FirebaseRemoteConfigKey.likeButtonStyle) else {
+        guard let likeButtonStyleString = remoteConfigProvider.getString(by: FirebaseRemoteConfigKey.likeButtonStyle) else {
             return nil
         }
         return LikeButtonStyle(rawValue: likeButtonStyleString)

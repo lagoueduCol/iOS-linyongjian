@@ -33,7 +33,7 @@ final class UserProfileListItemView: BaseListItemView {
     private let remoteTogglesDataStore: TogglesDataStoreType
 
     convenience override init(frame: CGRect = .zero) {
-        self.init(frame: frame, remoteTogglesDataStore: RemoteTogglesDataStore.shared)
+        self.init(frame: frame, remoteTogglesDataStore: FirebaseRemoteTogglesDataStore.shared)
     }
 
     init(frame: CGRect, remoteTogglesDataStore: TogglesDataStoreType) {

@@ -79,7 +79,7 @@ final class MomentListItemView: BaseListItemView {
         self.init(frame: frame, userDataStore: UserDataStore.current)
     }
 
-    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, remoteTogglesDataStore: TogglesDataStoreType = RemoteTogglesDataStore.shared, abTestProvider: ABTestProvider = FirebaseABTestProvider.shared) {
+    init(frame: CGRect = .zero, userDataStore: UserDataStoreType = UserDataStore.current, togglesDataStore: TogglesDataStoreType = InternalTogglesDataStore.shared, remoteTogglesDataStore: TogglesDataStoreType = FirebaseRemoteTogglesDataStore.shared, abTestProvider: ABTestProvider = FirebaseABTestProvider.shared) {
         self.userDataStore = userDataStore
         self.togglesDataStore = togglesDataStore
         self.remoteTogglesDataStore = remoteTogglesDataStore

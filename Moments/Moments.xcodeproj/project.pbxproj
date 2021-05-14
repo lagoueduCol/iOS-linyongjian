@@ -18,8 +18,7 @@
 		AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */; };
 		AE3EF37C255BFFAE004B7FB0 /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF37B255BFFAE004B7FB0 /* RemoteConfigProvider.swift */; };
 		AE3EF381255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF380255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift */; };
-		AE3EF386255C09BC004B7FB0 /* RemoteConfigRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF385255C09BC004B7FB0 /* RemoteConfigRepo.swift */; };
-		AE3EF3BA255C1336004B7FB0 /* RemoteTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF3B9255C1336004B7FB0 /* RemoteTogglesDataStore.swift */; };
+		AE3EF3BA255C1336004B7FB0 /* FirebaseRemoteTogglesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF3B9255C1336004B7FB0 /* FirebaseRemoteTogglesDataStore.swift */; };
 		AE3EF3C2255C1CED004B7FB0 /* FirebaseRemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE3EF3C1255C1CED004B7FB0 /* FirebaseRemoteConfigDefaults.plist */; };
 		AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B7FD25455EDB003DFED0 /* Configuration.swift */; };
 		AE47B80425455FCF003DFED0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47B80325455FCF003DFED0 /* API.swift */; };
@@ -138,8 +137,7 @@
 		AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTargetTogglesDataStore.swift; sourceTree = "<group>"; };
 		AE3EF37B255BFFAE004B7FB0 /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
 		AE3EF380255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigProvider.swift; sourceTree = "<group>"; };
-		AE3EF385255C09BC004B7FB0 /* RemoteConfigRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepo.swift; sourceTree = "<group>"; };
-		AE3EF3B9255C1336004B7FB0 /* RemoteTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTogglesDataStore.swift; sourceTree = "<group>"; };
+		AE3EF3B9255C1336004B7FB0 /* FirebaseRemoteTogglesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteTogglesDataStore.swift; sourceTree = "<group>"; };
 		AE3EF3C1255C1CED004B7FB0 /* FirebaseRemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FirebaseRemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		AE47B7F925455DD2003DFED0 /* BaseConfigurations.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfigurations.xcconfig; sourceTree = "<group>"; };
 		AE47B7FD25455EDB003DFED0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -378,7 +376,6 @@
 				AE3EF3C1255C1CED004B7FB0 /* FirebaseRemoteConfigDefaults.plist */,
 				AE3EF380255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift */,
 				AE3EF37B255BFFAE004B7FB0 /* RemoteConfigProvider.swift */,
-				AE3EF385255C09BC004B7FB0 /* RemoteConfigRepo.swift */,
 			);
 			path = RemoteConfig;
 			sourceTree = "<group>";
@@ -387,8 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				AE3EF340255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift */,
+				AE3EF3B9255C1336004B7FB0 /* FirebaseRemoteTogglesDataStore.swift */,
 				AEBEECA0254D581000D8140C /* InternalTogglesDataStore.swift */,
-				AE3EF3B9255C1336004B7FB0 /* RemoteTogglesDataStore.swift */,
 				AE3EF33B255BC8A0004B7FB0 /* TogglesDataStoreType.swift */,
 			);
 			path = Toggles;
@@ -1112,6 +1109,7 @@
 				AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */,
 				AE4FB64A2554261B00CBD66B /* FirebaseActionTrackingEvent.swift in Sources */,
 				AE3EF381255C011C004B7FB0 /* FirebaseRemoteConfigProvider.swift in Sources */,
+				AE3EF3BA255C1336004B7FB0 /* FirebaseRemoteTogglesDataStore.swift in Sources */,
 				AE4FB62A25541F4C00CBD66B /* FirebaseTrackingProvider.swift in Sources */,
 				AE73790D2539D62C0025AA69 /* Functions.swift in Sources */,
 				AE47B8BD25467BA0003DFED0 /* GetMomentsByUserIDSession.swift in Sources */,
@@ -1146,8 +1144,6 @@
 				AEBEED3425517DF800D8140C /* PersistentDataStoreType.swift in Sources */,
 				AE94DB352563F80900E907EF /* RelativeDateTimeFormatterType.swift in Sources */,
 				AE3EF37C255BFFAE004B7FB0 /* RemoteConfigProvider.swift in Sources */,
-				AE3EF386255C09BC004B7FB0 /* RemoteConfigRepo.swift in Sources */,
-				AE3EF3BA255C1336004B7FB0 /* RemoteTogglesDataStore.swift in Sources */,
 				AE9E02EC25CAD9CD005E04C5 /* RoutingSource.swift in Sources */,
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,

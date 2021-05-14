@@ -14,7 +14,11 @@ enum FirebaseRemoteConfigKey: String, CaseIterable, RemoteConfigKey {
 }
 
 struct FirebaseRemoteConfigProvider: RemoteConfigProvider {
-    let remoteConfig = RemoteConfig.remoteConfig()
+    static let shared: FirebaseRemoteConfigProvider = .init()
+
+    private let remoteConfig = RemoteConfig.remoteConfig()
+
+    private init() { }
 
     func setup() {
         // swiftlint:disable no_hardcoded_strings

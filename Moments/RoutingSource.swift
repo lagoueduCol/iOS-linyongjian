@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol RoutingSource: class { }
+protocol RoutingSource: AnyObject { }
 
 typealias RoutingSourceProvider = () -> RoutingSource?
 
