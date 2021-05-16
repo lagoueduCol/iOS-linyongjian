@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseRemoteConfig
 
-enum FirebaseRemoteConfigKey: String, CaseIterable, RemoteConfigKey {
+enum FirebaseRemoteConfigKey: String, RemoteConfigKey {
     case isRoundedAvatar
     case likeButtonStyle
 }

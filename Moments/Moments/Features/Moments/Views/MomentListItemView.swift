@@ -122,21 +122,21 @@ final class MomentListItemView: BaseListItemView {
             }
             viewModel.likes.forEach {
                 let avatarURL = $0
-                let avatar: UIImageView = configure(.init()) {
+                let avatarImageView: UIImageView = configure(.init()) {
                     $0.translatesAutoresizingMaskIntoConstraints = false
                     $0.asAvatar(cornerRadius: 2)
                     $0.kf.setImage(with: avatarURL)
                 }
 
-                avatar.snp.makeConstraints {
+                avatarImageView.snp.makeConstraints {
                     $0.width.equalTo(20)
                     $0.height.equalTo(20)
                 }
 
                 if remoteTogglesDataStore.isToggleOn(RemoteToggle.isRoundedAvatar) {
-                    avatar.asAvatar(cornerRadius: 10)
+                    avatarImageView.asAvatar(cornerRadius: 10)
                 }
-                likesStakeView.addArrangedSubview(avatar)
+                likesStakeView.addArrangedSubview(avatarImageView)
             }
         }
     }
