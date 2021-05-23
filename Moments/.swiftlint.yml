@@ -18,7 +18,6 @@ only_rules:
   - custom_rules
   - deployment_target
   - discarded_notification_center_observer
-  - discouraged_object_literal
   - duplicate_enum_cases
   - duplicate_imports
   - dynamic_inline
