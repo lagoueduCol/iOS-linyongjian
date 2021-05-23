@@ -15,14 +15,14 @@ struct IdentifiableListItemViewModel: Identifiable {
 }
 
 final class MomentsListObservableObject: ObservableObject {
-    private let viewModel: MomentsListViewModel
+    private let viewModel: MomentsTimelineViewModel
     private let disposeBag: DisposeBag = .init()
 
     @Published var listItems: [IdentifiableListItemViewModel] = []
 
     init(userID: String,
          momentsRepo: MomentsRepoType) {
-        viewModel = MomentsListViewModel(userID: userID, momentsRepo: momentsRepo)
+        viewModel = MomentsTimelineViewModel(userID: userID, momentsRepo: momentsRepo)
 
         setupBindings()
     }
