@@ -11,7 +11,7 @@ import struct Kingfisher.KFImage
 struct SwiftUIUserProfileListItemView: View {
     let viewModel: UserProfileListItemViewModel
 
-    @State private var viewState = CGSize.zero
+    @State private var viewSize = CGSize.zero
     @Binding var isDragging: Bool
 
     var body: some View {
@@ -49,20 +49,20 @@ struct SwiftUIUserProfileListItemView: View {
         .background(
             KFImage(viewModel.backgroundImageURL)
                 .resizable()
-                .offset(x: viewState.width / 25, y: viewState.height / 25)
+                .offset(x: viewSize.width / 25, y: viewSize.height / 25)
         )
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .scaleEffect(isDragging ? 0.9 : 1)
         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-        .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
+        .rotation3DEffect(Angle(degrees: 5), axis: (x: viewSize.width, y: viewSize.height, z: 0))
         .gesture(
             DragGesture().onChanged({ value in
                 // Seems there is bug: `onChanged` will be called after `onEnded`, will fix later
                 self.isDragging = true
-                self.viewState = value.translation
+                self.viewSize = value.translation
             }).onEnded({ _ in
                 self.isDragging = false
-                self.viewState = .zero
+                self.viewSize = .zero
             })
         )
     }

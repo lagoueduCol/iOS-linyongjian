@@ -16,7 +16,7 @@ struct SwiftUIMomentsListItemView: View {
         if let viewModel = viewModel as? UserProfileListItemViewModel {
             SwiftUIUserProfileListItemView(viewModel: viewModel, isDragging: $isDragging)
         } else if let viewModel = viewModel as? MomentListItemViewModel {
-            SwiftUIMomentListItemView(viewModel: viewModel, isLiked: viewModel.isLiked)
+            SwiftUIMomentListItemView(viewModel: viewModel)
         }
     }
 }

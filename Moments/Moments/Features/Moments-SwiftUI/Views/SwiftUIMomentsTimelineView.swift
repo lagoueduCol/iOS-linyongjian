@@ -1,5 +1,5 @@
 //
-//  SwiftUIMomentsListView.swift
+//  SwiftUIMomentsTimelineView.swift
 //  Moments
 //
 //  Created by Jake Lin on 19/11/20.
@@ -8,8 +8,10 @@
 import Combine
 import SwiftUI
 
-struct SwiftUIMomentsListView: View {
-    @ObservedObject var momentsList: MomentsListObservableObject = MomentsListObservableObject(userID: UserDataStore.current.userID, momentsRepo: MomentsRepo.shared)
+struct SwiftUIMomentsTimelineView: View {
+    @StateObject private var userDataStore = UserDataStoreObservableObject()
+
+    @StateObject private var momentsList: MomentsListObservableObject = MomentsListObservableObject(userID: UserDataStore.current.userID, momentsRepo: MomentsRepo.shared)
 
     @State private var isDragging: Bool = false
 
@@ -27,17 +29,18 @@ struct SwiftUIMomentsListView: View {
         .background(Color("background"))
         //swiftlint:enable no_hardcoded_strings
         .ignoresSafeArea(.all)
+        .environmentObject(userDataStore)
     }
 }
 
-private extension SwiftUIMomentsListView {
+private extension SwiftUIMomentsTimelineView {
     var axes: Axis.Set {
         return isDragging ? [] : .vertical
     }
 }
 
-struct SwiftUIMomentsListView_Previews: PreviewProvider {
+struct SwiftUIMomentsTimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIMomentsListView()
+        SwiftUIMomentsTimelineView()
     }
 }

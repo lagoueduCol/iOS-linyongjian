@@ -13,7 +13,7 @@
 		AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */; };
 		AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */; };
 		AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */; };
-		AE2154EB2566985900CE71C2 /* SwiftUIMomentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */; };
+		AE2154EB2566985900CE71C2 /* SwiftUIMomentsTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */; };
 		AE2154FA256699BE00CE71C2 /* MomentsListObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */; };
 		AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
@@ -139,7 +139,7 @@
 		AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSessionTests.swift; sourceTree = "<group>"; };
 		AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentListItemView.swift; sourceTree = "<group>"; };
 		AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIUserProfileListItemView.swift; sourceTree = "<group>"; };
-		AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsListView.swift; sourceTree = "<group>"; };
+		AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsTimelineView.swift; sourceTree = "<group>"; };
 		AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListObservableObject.swift; sourceTree = "<group>"; };
 		AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsListItemView.swift; sourceTree = "<group>"; };
 		AE3727E3255FA80A004AD01E /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 				AEF2D71F256906F3006307EF /* BlurView.swift */,
 				AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */,
 				AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */,
-				AE2154E82566985900CE71C2 /* SwiftUIMomentsListView.swift */,
+				AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */,
 				AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */,
 			);
 			path = Views;
@@ -1197,7 +1197,7 @@
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
 				AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */,
 				AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */,
-				AE2154EB2566985900CE71C2 /* SwiftUIMomentsListView.swift in Sources */,
+				AE2154EB2566985900CE71C2 /* SwiftUIMomentsTimelineView.swift in Sources */,
 				AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */,
 				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
