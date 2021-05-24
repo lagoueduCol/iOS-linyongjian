@@ -12,10 +12,10 @@ import DesignKit
 
 private struct IdentifiableURL: Identifiable {
     let url: URL
-    var id = UUID()
+    let id = UUID()
 }
 
-struct LikeToggleBackground<S: Shape>: View {
+private struct LikeToggleBackground<S: Shape>: View {
     var isHighlighted: Bool
     var shape: S
 
@@ -40,7 +40,7 @@ struct LikeToggleBackground<S: Shape>: View {
     //swiftlint:enable no_hardcoded_strings
 }
 
-struct LikeToggleStyle: ToggleStyle {
+private struct LikeToggleStyle: ToggleStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         Button(action: {
             configuration.isOn.toggle()
@@ -58,10 +58,15 @@ struct LikeToggleStyle: ToggleStyle {
 struct SwiftUIMomentListItemView: View {
     let viewModel: MomentListItemViewModel
 
-    @State var isLiked: Bool
+    @State private var isLiked: Bool
     @EnvironmentObject var userDataStore: UserDataStoreObservableObject
 
     private let disposeBag: DisposeBag = .init()
+
+    init(viewModel: MomentListItemViewModel) {
+        self.viewModel = viewModel
+        _isLiked = State(initialValue: viewModel.isLiked)
+    }
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {

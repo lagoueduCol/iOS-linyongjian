@@ -11,7 +11,7 @@ import RxSwift
 
 struct IdentifiableListItemViewModel: Identifiable {
     let id = UUID()
-    var viewModel: ListItemViewModel
+    let viewModel: ListItemViewModel
 }
 
 final class MomentsListObservableObject: ObservableObject {
@@ -37,6 +37,7 @@ final class MomentsListObservableObject: ObservableObject {
 private extension MomentsListObservableObject {
     func setupBindings() {
         viewModel.listItems
+            .observeOn(MainScheduler.instance)
             .do(onNext: { [weak self] items in
                 guard let self = self else { return }
                 self.listItems.removeAll()
