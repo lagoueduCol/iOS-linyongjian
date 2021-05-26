@@ -57,9 +57,9 @@ private struct LikeToggleStyle: ToggleStyle {
 
 struct SwiftUIMomentListItemView: View {
     let viewModel: MomentListItemViewModel
+    @EnvironmentObject var userDataStore: UserDataStoreObservableObject
 
     @State private var isLiked: Bool
-    @EnvironmentObject var userDataStore: UserDataStoreObservableObject
 
     private let disposeBag: DisposeBag = .init()
 
@@ -152,9 +152,3 @@ private extension LinearGradient {
         self.init(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }
-
-//struct SwiftUIMomentListItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUIMomentListItemView()
-//    }
-//}

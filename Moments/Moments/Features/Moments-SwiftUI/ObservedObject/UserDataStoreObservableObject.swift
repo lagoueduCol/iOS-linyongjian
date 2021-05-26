@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import RxSwift
 
 final class UserDataStoreObservableObject: ObservableObject {
     @Published var currentUser: UserDataStoreType = UserDataStore.current
