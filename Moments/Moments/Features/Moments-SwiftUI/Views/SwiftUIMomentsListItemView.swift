@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SwiftUIMomentsListItemView: View {
     let viewModel: ListItemViewModel
-
     @Binding var isDragging: Bool
 
     var body: some View {

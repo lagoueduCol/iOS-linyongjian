@@ -10,9 +10,9 @@ import struct Kingfisher.KFImage
 
 struct SwiftUIUserProfileListItemView: View {
     let viewModel: UserProfileListItemViewModel
+    @Binding var isDragging: Bool
 
     @State private var viewSize = CGSize.zero
-    @Binding var isDragging: Bool
 
     var body: some View {
         VStack {
