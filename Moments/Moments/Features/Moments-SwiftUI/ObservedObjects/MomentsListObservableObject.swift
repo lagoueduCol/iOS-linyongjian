@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import Combine
 import RxSwift
 
 struct IdentifiableListItemViewModel: Identifiable {
-    let id = UUID()
+    let id: UUID = .init()
     let viewModel: ListItemViewModel
 }
 
@@ -38,12 +37,11 @@ private extension MomentsListObservableObject {
     func setupBindings() {
         viewModel.listItems
             .observeOn(MainScheduler.instance)
-            .do(onNext: { [weak self] items in
+            .subscribe(onNext: { [weak self] items in
                 guard let self = self else { return }
                 self.listItems.removeAll()
                 self.listItems.append(contentsOf: items.flatMap { $0.items }.map { IdentifiableListItemViewModel(viewModel: $0) })
             })
-            .subscribe()
             .disposed(by: disposeBag)
     }
 }

@@ -12,7 +12,7 @@ struct SwiftUIUserProfileListItemView: View {
     let viewModel: UserProfileListItemViewModel
     @Binding var isDragging: Bool
 
-    @State private var viewSize = CGSize.zero
+    @State private var viewSize: CGSize = .zero
 
     var body: some View {
         VStack {
@@ -49,7 +49,7 @@ struct SwiftUIUserProfileListItemView: View {
         .background(
             KFImage(viewModel.backgroundImageURL)
                 .resizable()
-                .offset(x: viewSize.width / 25, y: viewSize.height / 25)
+                .offset(x: viewSize.width / 20, y: viewSize.height / 20)
         )
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .scaleEffect(isDragging ? 0.9 : 1)
