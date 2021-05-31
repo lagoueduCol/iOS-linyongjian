@@ -5,13 +5,12 @@
 //  Created by Jake Lin on 19/11/20.
 //
 
-import Combine
 import SwiftUI
 
 struct SwiftUIMomentsTimelineView: View {
-    @StateObject private var userDataStore = UserDataStoreObservableObject()
+    @StateObject private var userDataStore: UserDataStoreObservableObject = .init()
 
-    @StateObject private var momentsList: MomentsListObservableObject = MomentsListObservableObject(userID: UserDataStore.current.userID, momentsRepo: MomentsRepo.shared)
+    @StateObject private var momentsList: MomentsListObservableObject = .init(userID: UserDataStore.current.userID, momentsRepo: MomentsRepo.shared)
 
     @State private var isDragging: Bool = false
 

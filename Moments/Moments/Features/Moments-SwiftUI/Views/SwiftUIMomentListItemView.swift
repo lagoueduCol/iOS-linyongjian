@@ -11,8 +11,8 @@ import struct Kingfisher.KFImage
 import DesignKit
 
 private struct IdentifiableURL: Identifiable {
+    let id: UUID = .init()
     let url: URL
-    let id = UUID()
 }
 
 private struct LikeToggleBackground<S: Shape>: View {
