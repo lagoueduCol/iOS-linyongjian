@@ -123,6 +123,9 @@ only_rules:
   - xct_specific_matcher
   - yoda_condition
 
+included:
+  - "../Frameworks/DesignKit"
+
 excluded:
   - Pods
   - "./MomentsTests"
