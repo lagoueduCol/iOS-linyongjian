@@ -56,8 +56,7 @@ struct SwiftUIUserProfileListItemView: View {
         .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
         .rotation3DEffect(Angle(degrees: 5), axis: (x: viewSize.width, y: viewSize.height, z: 0))
         .gesture(
-            DragGesture().onChanged({ value in
-                // Seems there is bug: `onChanged` will be called after `onEnded`, will fix later
+            DragGesture(minimumDistance: 0).onChanged({ value in
                 self.isDragging = true
                 self.viewSize = value.translation
             }).onEnded({ _ in
