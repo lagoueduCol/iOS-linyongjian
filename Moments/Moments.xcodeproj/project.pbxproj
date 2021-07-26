@@ -378,7 +378,7 @@
 		AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				AE2154F2256698AC00CE71C2 /* ObservedObjects */,
+				AE2154F2256698AC00CE71C2 /* ObservableObjects */,
 				AE2154E52566985900CE71C2 /* Views */,
 			);
 			path = "Moments-SwiftUI";
@@ -396,13 +396,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AE2154F2256698AC00CE71C2 /* ObservedObjects */ = {
+		AE2154F2256698AC00CE71C2 /* ObservableObjects */ = {
 			isa = PBXGroup;
 			children = (
 				AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */,
 				AEF2D72725694447006307EF /* UserDataStoreObservableObject.swift */,
 			);
-			path = ObservedObjects;
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 		AE3727E2255FA7F4004AD01E /* ABTest */ = {
