@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 public extension UIButton {
+    // swiftlint:disable no_hardcoded_strings
     func asStarFavoriteButton(pointSize: CGFloat = 18, weight: UIImage.SymbolWeight = .semibold, scale: UIImage.SymbolScale = .default, fillColor: UIColor = UIColor(hex: 0xf1c40f)) {
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: pointSize, weight: weight, scale: scale)
         let starImage = UIImage(systemName: "star", withConfiguration: symbolConfiguration)
@@ -32,6 +33,7 @@ public extension UIButton {
         tintColor = fillColor
         addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
     }
+    // swiftlint:enable no_hardcoded_strings
 }
 
 private extension UIButton {
