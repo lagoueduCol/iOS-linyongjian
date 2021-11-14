@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 import RxSwift
 
 let disposeBag: DisposeBag = .init()
@@ -333,10 +333,10 @@ demo(of: "zip") {
 // MARK: - Scheduler
 demo(of: "Scheduler") {
     Observable.of(1, 2, 3, 4)
-        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
         .dumpObservable()
         .map { "\(getThreadName()): \($0)" }
-        .observeOn(MainScheduler.instance)
+        .observe(on: MainScheduler.instance)
         .dumpObserver()
         .disposed(by: disposeBag)
 }
