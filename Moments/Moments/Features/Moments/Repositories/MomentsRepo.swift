@@ -46,7 +46,7 @@ struct MomentsRepo: MomentsRepoType {
             .getMoments(userID: userID)
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }
-            .catchErrorJustReturn(())
+            .catchAndReturn(())
     }
 
     func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) -> Observable<Void> {
@@ -54,7 +54,7 @@ struct MomentsRepo: MomentsRepoType {
             .updateLike(isLiked, momentID: momentID, fromUserID: userID)
             .do(onNext: { persistentDataStore.save(momentsDetails: $0) })
             .map { _ in () }
-            .catchErrorJustReturn(())
+            .catchAndReturn(())
     }
 }
 
