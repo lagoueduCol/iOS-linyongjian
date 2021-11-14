@@ -15,8 +15,8 @@ def dev_pods
 end
 
 def core_pods
-  pod 'RxSwift', '= 5.1.1'
-  pod 'RxRelay', '= 5.1.1'
+  pod 'RxSwift', '= 6.2.0'
+  pod 'RxRelay', '= 6.2.0'
   pod 'Alamofire', '= 5.3.0'
 end
 
@@ -30,8 +30,8 @@ end
 def ui_pods
   pod 'SnapKit', '= 5.0.1'
   pod 'Kingfisher', '= 5.15.6'
-  pod 'RxCocoa', '= 5.1.1'
-  pod 'RxDataSources', '= 4.0.1'
+  pod 'RxCocoa', '= 6.2.0'
+  pod 'RxDataSources', '= 5.0.0'
 end
 
 def internal_pods
@@ -41,8 +41,8 @@ end
 def test_pods
   pod 'Quick', '= 3.0.0'
   pod 'Nimble', '= 9.0.0'
-  pod 'RxTest', '= 5.1.1'
-  pod 'RxBlocking', '= 5.1.1'
+  pod 'RxTest', '= 6.2.0'
+  pod 'RxBlocking', '= 6.2.0'
 end
 
 target 'Moments' do
