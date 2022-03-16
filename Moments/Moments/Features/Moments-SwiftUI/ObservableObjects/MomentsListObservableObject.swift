@@ -17,7 +17,7 @@ final class MomentsListObservableObject: ObservableObject {
     private let viewModel: MomentsTimelineViewModel
     private let disposeBag: DisposeBag = .init()
 
-    @Published var listItems: [IdentifiableListItemViewModel] = []
+    @Published private(set) var listItems: [IdentifiableListItemViewModel] = []
 
     init(userID: String,
          momentsRepo: MomentsRepoType) {
