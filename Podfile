@@ -30,6 +30,7 @@ end
 def ui_pods
   pod 'SnapKit', '= 5.0.1'
   pod 'Kingfisher', '= 5.15.6'
+  pod 'Kingfisher/SwiftUI', '= 5.15.6'
   pod 'RxCocoa', '= 5.1.1'
   pod 'RxDataSources', '= 4.0.1'
 end

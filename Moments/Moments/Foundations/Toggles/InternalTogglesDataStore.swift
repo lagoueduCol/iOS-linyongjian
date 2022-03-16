@@ -9,6 +9,7 @@ import Foundation
 
 enum InternalToggle: String, ToggleType {
     case isLikeButtonForMomentEnabled
+    case isSwiftUIEnabled
 }
 
 struct InternalTogglesDataStore: TogglesDataStoreType {
@@ -17,7 +18,8 @@ struct InternalTogglesDataStore: TogglesDataStoreType {
     private init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
         self.userDefaults.register(defaults: [
-            InternalToggle.isLikeButtonForMomentEnabled.rawValue: false
+            InternalToggle.isLikeButtonForMomentEnabled.rawValue: false,
+            InternalToggle.isSwiftUIEnabled.rawValue: false
             ])
     }
 

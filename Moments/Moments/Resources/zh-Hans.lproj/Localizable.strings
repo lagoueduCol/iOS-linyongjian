@@ -25,6 +25,7 @@
 "internalMenu.heartFavoriteButton" = "心形点赞按钮";
 
 "internalMenu.likeButtonForMomentEnabled" = "开启点赞按钮";
+"internalMenu.swiftUIEnabled" = "开启 SwiftUI";
 
 // Moments List
 "momentsList.errorMessage" = "出错啦，请稍后再试";

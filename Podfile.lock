@@ -104,6 +104,8 @@ PODS:
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
+  - Kingfisher/SwiftUI (5.15.6):
+    - Kingfisher/Core
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -139,6 +141,7 @@ DEPENDENCIES:
   - Firebase/Performance (= 7.0.0)
   - Firebase/RemoteConfig (= 7.0.0)
   - Kingfisher (= 5.15.6)
+  - Kingfisher/SwiftUI (= 5.15.6)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
   - RxBlocking (= 5.1.1)
@@ -223,6 +226,6 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: fba3684ee289286d0d415188646618577132eed8
+PODFILE CHECKSUM: 521fbf94d236e9cf2618bf4a25f5848cc190e56a
 
 COCOAPODS: 1.11.2

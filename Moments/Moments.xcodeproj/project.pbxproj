@@ -11,6 +11,11 @@
 		AE1D1CC42560B841006D82FA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CC32560B841006D82FA /* main.swift */; };
 		AE1D1D04256162DD006D82FA /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */; };
 		AE1D1D1525616839006D82FA /* GetMomentsByUserIDSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */; };
+		AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */; };
+		AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */; };
+		AE2154EB2566985900CE71C2 /* SwiftUIMomentsTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */; };
+		AE2154FA256699BE00CE71C2 /* MomentsListObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */; };
+		AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */; };
 		AE3727E4255FA80A004AD01E /* ABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E3255FA80A004AD01E /* ABTestProvider.swift */; };
 		AE3727E9255FA86A004AD01E /* FirebaseABTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */; };
 		AE3EF145255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */; };
@@ -100,6 +105,8 @@
 		AEEACFE82562AEB500323827 /* TestFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFE72562AEB500323827 /* TestFixture.swift */; };
 		AEEACFF02562B18200323827 /* TestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEACFEF2562B18200323827 /* TestObserver.swift */; };
 		AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */; };
+		AEF2D720256906F3006307EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2D71F256906F3006307EF /* BlurView.swift */; };
+		AEF2D72825694447006307EF /* UserDataStoreObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2D72725694447006307EF /* UserDataStoreObservableObject.swift */; };
 		FCC389F37262FEF7B578ED59 /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01141CCFDA45B22A74D0337A /* Pods_Moments.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +137,11 @@
 		AE1D1CC32560B841006D82FA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE1D1CD42560C97D006D82FA /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		AE1D1D1425616839006D82FA /* GetMomentsByUserIDSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMomentsByUserIDSessionTests.swift; sourceTree = "<group>"; };
+		AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentListItemView.swift; sourceTree = "<group>"; };
+		AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIUserProfileListItemView.swift; sourceTree = "<group>"; };
+		AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsTimelineView.swift; sourceTree = "<group>"; };
+		AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsListObservableObject.swift; sourceTree = "<group>"; };
+		AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMomentsListItemView.swift; sourceTree = "<group>"; };
 		AE3727E3255FA80A004AD01E /* ABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestProvider.swift; sourceTree = "<group>"; };
 		AE3727E8255FA86A004AD01E /* FirebaseABTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTestProvider.swift; sourceTree = "<group>"; };
 		AE3EF144255A2A36004B7FB0 /* InternalMenuCrashAppItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalMenuCrashAppItemViewModel.swift; sourceTree = "<group>"; };
@@ -240,6 +252,8 @@
 		AEEACFE72562AEB500323827 /* TestFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixture.swift; sourceTree = "<group>"; };
 		AEEACFEF2562B18200323827 /* TestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObserver.swift; sourceTree = "<group>"; };
 		AEECB10925FF264D00FE1A3B /* DebuggingUltils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingUltils.swift; sourceTree = "<group>"; };
+		AEF2D71F256906F3006307EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		AEF2D72725694447006307EF /* UserDataStoreObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStoreObservableObject.swift; sourceTree = "<group>"; };
 		C85D8572490841CAC7E028C2 /* Pods-MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B832B8E990C342B45CFA9C /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 		EFF3A1C13F397A634E2F4666 /* Pods-MomentsTests.internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsTests.internal.xcconfig"; path = "Target Support Files/Pods-MomentsTests/Pods-MomentsTests.internal.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +373,36 @@
 				AEEACFDA2562A4FA00323827 /* UnlikeActionTrackingEventTests.swift */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				AE2154F2256698AC00CE71C2 /* ObservableObjects */,
+				AE2154E52566985900CE71C2 /* Views */,
+			);
+			path = "Moments-SwiftUI";
+			sourceTree = "<group>";
+		};
+		AE2154E52566985900CE71C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEF2D71F256906F3006307EF /* BlurView.swift */,
+				AE2154E62566985900CE71C2 /* SwiftUIMomentListItemView.swift */,
+				AE2154FE2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift */,
+				AE2154E82566985900CE71C2 /* SwiftUIMomentsTimelineView.swift */,
+				AE2154E72566985900CE71C2 /* SwiftUIUserProfileListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE2154F2256698AC00CE71C2 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				AE2154F9256699BE00CE71C2 /* MomentsListObservableObject.swift */,
+				AEF2D72725694447006307EF /* UserDataStoreObservableObject.swift */,
+			);
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 		AE3727E2255FA7F4004AD01E /* ABTest */ = {
@@ -543,6 +587,7 @@
 			children = (
 				AE73792F2539D9880025AA69 /* InternalMenu */,
 				AE47B89C25467410003DFED0 /* Moments */,
+				AE2154C1256665EE00CE71C2 /* Moments-SwiftUI */,
 			);
 			name = Features;
 			path = Moments/Features;
@@ -1101,6 +1146,7 @@
 				AEA67AC02546FEC400D783CD /* BaseTableViewCell.swift in Sources */,
 				AEBEEC95254B8B1600D8140C /* BaseTableViewController.swift in Sources */,
 				AE73794B2539DCA10025AA69 /* BaseViewController.swift in Sources */,
+				AEF2D720256906F3006307EF /* BlurView.swift in Sources */,
 				AE3EF341255BC8C3004B7FB0 /* BuildTargetTogglesDataStore.swift in Sources */,
 				AE47B7FE25455EDB003DFED0 /* Configuration.swift in Sources */,
 				AEECB10A25FF264D00FE1A3B /* DebuggingUltils.swift in Sources */,
@@ -1137,6 +1183,7 @@
 				AEBEEC84254AE35800D8140C /* MomentListItemView.swift in Sources */,
 				AEBEEC7F254ADDE400D8140C /* MomentListItemViewModel.swift in Sources */,
 				AE47B8B0254679BE003DFED0 /* MomentsDetails.swift in Sources */,
+				AE2154FA256699BE00CE71C2 /* MomentsListObservableObject.swift in Sources */,
 				AEA67A952546C15600D783CD /* MomentsRepo.swift in Sources */,
 				AEA67B74254905D800D783CD /* MomentsTimelineViewController.swift in Sources */,
 				AEA67A9D2546EE5700D783CD /* MomentsTimelineViewModel.swift in Sources */,
@@ -1148,6 +1195,10 @@
 				AE8A243A25381E4F00DE782E /* SceneDelegate.swift in Sources */,
 				AE4FB6382554245000CBD66B /* ScreenviewsTrackingEvent.swift in Sources */,
 				AE81B4C825416EA200472755 /* Strings.swift in Sources */,
+				AE2154E92566985900CE71C2 /* SwiftUIMomentListItemView.swift in Sources */,
+				AE2154FF2566AA7000CE71C2 /* SwiftUIMomentsListItemView.swift in Sources */,
+				AE2154EB2566985900CE71C2 /* SwiftUIMomentsTimelineView.swift in Sources */,
+				AE2154EA2566985900CE71C2 /* SwiftUIUserProfileListItemView.swift in Sources */,
 				AE3EF33C255BC8A0004B7FB0 /* TogglesDataStoreType.swift in Sources */,
 				AEEACF8225550CE500F84562 /* TrackingEvent.swift in Sources */,
 				AE4FB60725541E1100CBD66B /* TrackingEventType.swift in Sources */,
@@ -1160,6 +1211,7 @@
 				AE4FB66025542CCF00CBD66B /* UnlikeActionTrackingEvent.swift in Sources */,
 				AEBEED23255127B500D8140C /* UpdateMomentLikeSession.swift in Sources */,
 				AEBEED1B255046C900D8140C /* UserDataStore.swift in Sources */,
+				AEF2D72825694447006307EF /* UserDataStoreObservableObject.swift in Sources */,
 				AEBEED3925517E2400D8140C /* UserDefaultsPersistentDataStore.swift in Sources */,
 				AEA67ACA2547015300D783CD /* UserProfileListItemView.swift in Sources */,
 				AEA67AB32546FBA300D783CD /* UserProfileListItemViewModel.swift in Sources */,

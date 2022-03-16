@@ -56,6 +56,8 @@ internal enum L10n {
     internal static let likeButtonForMomentEnabled = L10n.tr("Localizable", "internalMenu.likeButtonForMomentEnabled")
     /// Star favorite button
     internal static let starFavoriteButton = L10n.tr("Localizable", "internalMenu.starFavoriteButton")
+    /// SwiftUI Enable
+    internal static let swiftUIEnabled = L10n.tr("Localizable", "internalMenu.swiftUIEnabled")
     /// Tools
     internal static let tools = L10n.tr("Localizable", "internalMenu.tools")
     /// Typography
